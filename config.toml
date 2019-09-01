@@ -1,5 +1,5 @@
 <<<<<<< HEAD
-baseurl = "/"
+baseURL = "https://simonbuettner.netlify.com"
 languageCode = "en-us"
 title = "A Hugo website"
 theme = "hugo-lithium"
