@@ -6,10 +6,19 @@
     <description>Recent content in Posts on Psychometric Kindergarten</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 30 Dec 2016 21:49:57 -0700</lastBuildDate>
+    <lastBuildDate>Sun, 01 Sep 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://simonbuettner.netlify.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>My first Blogpost</title>
+      <link>https://simonbuettner.netlify.com/2019/09/my-first-blogpost/</link>
+      <pubDate>Sun, 01 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://simonbuettner.netlify.com/2019/09/my-first-blogpost/</guid>
+      <description>Beginning a BlogIn my first blog post I want to investigate a data set that I found on https://openpsychometrics.org/_rawdata/, namely the “Protestant Work Ethic Scale” consisting of 19 likert scale items with n = 558 answers. Ever since I was interested in predictors of job success, where in numerous studies it shown that following measures of General Intelligence, Conscientiousness (and/or Integrity) was the leading predictor of job success, I thought “Wow, so old fashioned virtues really do hold today (overall) when it comes to being succesful.</description>
+    </item>
     
     <item>
       <title>A Plain Markdown Post</title>
