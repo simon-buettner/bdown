@@ -18,7 +18,7 @@ library(dplyr)
 load("../../static/data/ProtestandWorkEthic/PWES.Rdata")
 ```
 # Protestantische Arbeitsethik
-In meinem ersten Post möchte ich eine etwas ungewöhnliche Skala untersuchen, die ich auf  [Openpsychometrics]<https://openpsychometrics.org/_rawdata/> gefunden habe und zwar die "Protestant Work Ethic Scale" bestehend aus 19 Likerskalen Items mit n = 558 Antwortn. 
+In meinem ersten Post möchte ich eine etwas ungewöhnliche Skala untersuchen, die ich auf  [Openpsychometrics](https://openpsychometrics.org/_rawdata/) gefunden habe und zwar die "Protestant Work Ethic Scale" bestehend aus 19 Likerskalen Items mit n = 558 Antwortn. 
 Mein Interesse rürt daher, dass nach Maßen der allgemeinen Intelligenz vor allem die Persönlichkeitskonstrukte Integrität und Gewissenhaftigkeit Prädiktoren des Berufserfolgs sind.
 Ich fand das immer ein wenig verwunderlich, da es sich vor allem bei der Gewissenhaftigkeit um eine sehr klassische Tugenden handelt, die heutzutage irgendwie stark an Ansehen verloren haben - ja gerne sogar auch in die Nähe der "autoritären Persönlichkeit" gestellt werden und beinahe etwas schmuddeliges an sich hängen haben.
 In Deutschland hat das eine gewisse Sonderstellung, da es sich vor allem um "klassische preußische Tugenden" (Pünktlichkeit, Arbeitsamkeit, Pflichtbewusstsein, Fleiß) handelt.
@@ -51,7 +51,7 @@ Der vorliegende Datensatz bietet leider nicht die Möglichkeit, (wirklich stichh
 * Q18	I feel uneasy when there is little work for me to do. 
 * Q19	A distaste for hard work usually reflects a weakness of character.
 
-Wie man sieht, stellt verkörpert diese Skala unsere (Groß-)Eltern, die erhobenen Zeigefinders mahnen, unsere Zeit nicht zu verschwenden, mehr Geld zu sparen, und stets hart zu arbeiten (oder auch an Ludwig Höltys Gedicht ["Der alte Landmann an seinen Sohn"]<https://upload.wikimedia.org/wikipedia/commons/3/32/Ludwig_H%C3%B6lty_-_Der_alte_Landmann_an_seinen_Sohn_%28%C3%9Cb_immer_Treu_und_Redlichkeit%29.jpg>, v.a. bekannt für die Zeile "Üb' immer Treu und Redlichkeit").
+Wie man sieht, stellt verkörpert diese Skala unsere (Groß-)Eltern, die erhobenen Zeigefinders mahnen, unsere Zeit nicht zu verschwenden, mehr Geld zu sparen, und stets hart zu arbeiten (oder auch an Ludwig Höltys Gedicht ["Der alte Landmann an seinen Sohn"](https://upload.wikimedia.org/wikipedia/commons/3/32/Ludwig_H%C3%B6lty_-_Der_alte_Landmann_an_seinen_Sohn_%28%C3%9Cb_immer_Treu_und_Redlichkeit%29.jpg), v.a. bekannt für die Zeile "Üb' immer Treu und Redlichkeit").
 
 Bevor ich zu den weiteren Analysen komme, möchte ich vorwegnehmen, dass die Items Q7 und Q14 nicht recht zu funktionieren scheinen. 
 Egal welche Faktorenstruturen ich mir angeschaut habe - so richtig reingepasst haben diese beiden Items nicht.
