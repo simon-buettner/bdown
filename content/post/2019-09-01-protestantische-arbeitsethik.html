@@ -1,0 +1,380 @@
+---
+title: Protestantische Arbeitsethik
+author: Simon Büttner
+date: '2019-09-01'
+slug: protestantische-arbeitsethik
+categories: []
+tags: []
+keywords:
+  - tech
+---
+
+
+
+<div id="protestantische-arbeitsethik" class="section level1">
+<h1>Protestantische Arbeitsethik</h1>
+<p>In meinem ersten Post möchte ich eine etwas ungewöhnliche Skala untersuchen, die ich auf [Openpsychometrics]<a href="https://openpsychometrics.org/_rawdata/" class="uri">https://openpsychometrics.org/_rawdata/</a> gefunden habe und zwar die “Protestant Work Ethic Scale” bestehend aus 19 Likerskalen Items mit n = 558 Antwortn.
+Mein Interesse rürt daher, dass nach Maßen der allgemeinen Intelligenz vor allem die Persönlichkeitskonstrukte Integrität und Gewissenhaftigkeit Prädiktoren des Berufserfolgs sind.
+Ich fand das immer ein wenig verwunderlich, da es sich vor allem bei der Gewissenhaftigkeit um eine sehr klassische Tugenden handelt, die heutzutage irgendwie stark an Ansehen verloren haben - ja gerne sogar auch in die Nähe der “autoritären Persönlichkeit” gestellt werden und beinahe etwas schmuddeliges an sich hängen haben.
+In Deutschland hat das eine gewisse Sonderstellung, da es sich vor allem um “klassische preußische Tugenden” (Pünktlichkeit, Arbeitsamkeit, Pflichtbewusstsein, Fleiß) handelt.
+Heutzutage rühmt man sich besonders hier im Ländle dieser Tugenden (im Besonderen der Sparsamkeit).</p>
+<p>Ich hatte mich deswegen schon einige Zeit gefragt, wieso niemand auf die Idee kommt, eine Skala hierzu erstellen (am liebsten im Sinne einer “Schwäbische Hausfrauenskala”, etwas leichter von der Zunge würde wahrscheinlich eine “Ländleskala” gehen).
+Nun letzten Freitagabend hatte ich etwas Muse, weshalb ich statt auf dem Stuttgarter Weinfest mein Viertele zu schlonzen (don’t judge me), nach freiverfügbaren Datensätze gesucht hatte und dann interessanterweise die “Protestant Work Ethic Scale” (PWES) gefunden hatte.
+Diese Skala geht zurück auf Max Webers Werk “Die protestantische Ethik und der Geist des Kapitalismus”, in dem Weber die These verfolgt, der asketisch angelegte in Nordeuropa (und mit Nordeuropa assoziierte Nationen) verbreitete Protestantismus sei als eine Triebkraft hinter der Entwicklung des Kapitalismus zu verstehen.
+Der vorliegende Datensatz bietet leider nicht die Möglichkeit, (wirklich stichhaltige) Zusammenhänge mit Verhaltensdaten zu untersuchen, weshalb ich zunächst die grundsätzliche Struktur in den Antworten auf diese Skala untersuchen möchte bzw.kann.</p>
+<div id="aber-zunachst-wie-sehen-die-pwes-items-aus" class="section level2">
+<h2>Aber zunächst, wie sehen die PWES Items aus?</h2>
+<ul>
+<li>Q1 Most people spend too much time in unprofitable amusements.</li>
+<li>Q2 Our society would have fewer problems if people had less leisure time.</li>
+<li>Q3 Money acquired easily (e.g. through gambling or speculation) is usually spent unwisely.</li>
+<li>Q4 There are few satisfactions equal to the realization that one has done one’s best at a job.</li>
+<li>Q5 The most difficult college courses usually turn out to be the most rewarding.</li>
+<li>Q6 Most people who don’t succeed in life are just plain lazy.</li>
+<li>Q7 The self-made person is likely to be more ethical than someone who is born to wealth.<br />
+</li>
+<li>Q8 I often feel I would be more successful if I sacrificed certain pleasures.</li>
+<li>Q9 People should have more leisure time to spend in relaxation.<br />
+</li>
+<li>Q10 Anyone who is able and willing to work hard has a good chance of succeeding.</li>
+<li>Q11 People who fail at a job have usually not tried hard enough.</li>
+<li>Q12 Life would have very little meaning if we never had to suffer.</li>
+<li>Q13 Hard work offers little guarantee of success.</li>
+<li>Q14 The credit card is a ticket to careless spending.</li>
+<li>Q15 Life would be more meaningful if we had more leisure time.</li>
+<li>Q16 The person who can approach an unpleasant task with enthusiasm is the one who gets ahead.</li>
+<li>Q17 If one works hard enough they are likely to make a good life for themselves.</li>
+<li>Q18 I feel uneasy when there is little work for me to do.</li>
+<li>Q19 A distaste for hard work usually reflects a weakness of character.</li>
+</ul>
+<p>Wie man sieht, stellt verkörpert diese Skala unsere (Groß-)Eltern, die erhobenen Zeigefinders mahnen, unsere Zeit nicht zu verschwenden, mehr Geld zu sparen, und stets hart zu arbeiten (oder auch an Ludwig Höltys Gedicht [“Der alte Landmann an seinen Sohn”]<a href="https://upload.wikimedia.org/wikipedia/commons/3/32/Ludwig_H%C3%B6lty_-_Der_alte_Landmann_an_seinen_Sohn_%28%C3%9Cb_immer_Treu_und_Redlichkeit%29.jpg" class="uri">https://upload.wikimedia.org/wikipedia/commons/3/32/Ludwig_H%C3%B6lty_-_Der_alte_Landmann_an_seinen_Sohn_%28%C3%9Cb_immer_Treu_und_Redlichkeit%29.jpg</a>, v.a. bekannt für die Zeile “Üb’ immer Treu und Redlichkeit”).</p>
+<p>Bevor ich zu den weiteren Analysen komme, möchte ich vorwegnehmen, dass die Items Q7 und Q14 nicht recht zu funktionieren scheinen.
+Egal welche Faktorenstruturen ich mir angeschaut habe - so richtig reingepasst haben diese beiden Items nicht.
+Grund genug, diese Items auszuschließen.</p>
+<p>In Bezug auf die Skala hat das auch schon Bedeutung für uns: die schnell gezückte (goldene) Kreditkarte scheint für die vorliegenden Testpersonen wenig mit eine eher asketisch angeregten Ethik zu tun zu haben.
+Ich schätze, dass die Autoren dieser Skala vor allem darauf hinauswollten, dass mancher Personen Konsumwünsche größer als ihre Geldbeutel sind, sodass diese auf Pump erfüllt werden statt auf ein gefülltes Sparschwein zu warten (ich habe noch nicht geschaut, von wann diese Daten überhaupt sind; vorstellbar ist, dass sich die Nutzung von Kreditkarten doch heute deutlich davon unterscheidet, wie diese noch 1970 eingesetzt wurden - dann ist das Item einfach aus der Zeit gefallen).
+Jedenfalls scheinen diese Items diese Einstellung entweder nicht recht zu erfassen oder aber die Einstellung ist einfach unabhängig vom zugrundeliegenden latenten Konstrukt.</p>
+<p>Item Q7 scheint meinem Gefühl nach darauf abzuzielen, die Einstellung Reichgeborene seien tendenziell dekadent oder verdienten zumindest ihren Reichtum nicht so sehr wie ein Self-Made-(Wo)Man.
+In gewisser Weise macht es deshalb meiner Meinung nach Sinn, dass diese relativ spezielle Meinung über Reiche nicht zum allgemeinen PWES Konstrukt passt (wie dieses zu verstehen ist, kann unten erst wirklich untersucht werden).</p>
+</div>
+</div>
+<div id="grundlegende-faktorenstruktur-fa.parallel" class="section level1">
+<h1>Grundlegende Faktorenstruktur: fa.parallel()</h1>
+<p>G’nug g’schwätzt, jetzt schaffet mer was naus.
+Um die Frage zu beantworten, welche Faktorstruktur der PWES zugrundeliegt, ist zunächst zu klären, wie viele Faktoren sich hinter den Daten verbergen.
+Klassischerweise wird hierfür der Screeplot genutzt, der die Eigenwerte extrahierter Hauptkomponenten/Faktoren der größe nach sortiert.
+Von den zahlreichen Möglichkeiten, jetzt zu entscheiden, ob und inwiefern die Daten multidimensional bedingt sind, ist so recht überzeugend nur die Parallelanalyse nach Horn, die, Autoren von R Paketen sei dank, ohne große Umstände mit fa.parallel() aufgerufen werden kann.
+Zum einen erstellt diese Funktion einen Scree Plot für Hauptokomponenten (PCA) - und Faktorenanalysen (FA).
+Zum anderen stellt den dabei manifesten Eigenwerten zufällig simulierte Eigenwerte gegenüber, die zufällig generiert wurden, indem eine der empirischen Datenmatrix identische zufällig befüllte Datenmatrix erstellt.
+Das ermöglicht es, abzuschätzen, was in den vorliegenden Daten Signal ist und was nur Rauschen.</p>
+<p>Man sieht nun sehr schön, dass besonders ein Faktor / eine Hauptkomponente hinter den Daten steckt.
+Das heißt die gesamte Datenmatrix ohne allzugroßen Informationsverlust mit einem zugrundeliegenden Faktor erklärt werden.
+Daneben sieht man außerdem, dass es einige weitere weniger bedeutsame Faktoren gibt.
+Laut PCA (je nach Simulationsergebnis) ggf. noch eine weitere Hauptkomponente; laut FA sogar bis zu 5 Faktoren, wobei vielleicht drei dieser Faktoren sinnvoll extrahiert werden könnten.</p>
+<pre class="r"><code>set.seed(1234)
+fa.parallel(dat)</code></pre>
+<p><img src="/post/2019-09-01-protestantische-arbeitsethik_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+<pre><code>## Parallel analysis suggests that the number of factors =  5  and the number of components =  1</code></pre>
+</div>
+<div id="aber-was-fur-faktoren-omega" class="section level1">
+<h1>… aber was für Faktoren? omega()</h1>
+<p>Jetzt geht es darum die Verbindung zwischen Faktorenstruktur und Items herzustellen.
+Am einfachsten geht es mit der omega() Funktion, die einem direkt sehr viele wichtige Kennwerte liefert und außerdem Zusammenhänge zwischen Faktoren und Items übersichtlich veranschaulicht.
+Wieder greife ich hier vorweg: Wir können uns auf 4 Faktoren beschränken können (omega(dat,3) schätzt ein Bifactor-Model, mit einem g-Faktor und 3 spezifischen Faktoren = 4 Faktoren).
+Im Detail werde ich hier die nahegelegten Faktorzuordnungen nicht besprechen, denn so ganz traue ich der Omega Funktion nicht, da sie Cross-Loadings zulässt (ein Item kann auf meherern Subfaktoren laden, was grundsätzlich nicht wünschenswert ist) und einem anderen Ansatz folgt, als die Item-Response-Modelle (IRT), mit denen ich unten mehr arbeite.
+Hier ist anzumerken, dass meiner Erfahrung nach die Ergebnisse von omega nicht perfekt mit denen der IRT Analyse konvergiert - nichtsdestoweniger: omega ist einfach zu benutzen und deswegen ein Handlanger, für den es dankbar zu sein gilt.</p>
+<pre class="r"><code>omega(dat,3)</code></pre>
+<p><img src="/post/2019-09-01-protestantische-arbeitsethik_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<pre><code>## Omega 
+## Call: omega(m = dat, nfactors = 3)
+## Alpha:                 0.89 
+## G.6:                   0.9 
+## Omega Hierarchical:    0.74 
+## Omega H asymptotic:    0.82 
+## Omega Total            0.9 
+## 
+## Schmid Leiman Factor loadings greater than  0.2 
+##          g   F1*   F2*   F3*   h2   u2   p2
+## Q1A   0.56  0.21             0.39 0.61 0.80
+## Q2A   0.51              0.38 0.41 0.59 0.63
+## Q3A   0.41  0.25             0.24 0.76 0.73
+## Q4A   0.53  0.33             0.39 0.61 0.72
+## Q5A   0.38  0.31             0.25 0.75 0.59
+## Q6A   0.57        0.22       0.41 0.59 0.80
+## Q8A   0.38                   0.19 0.81 0.79
+## Q9A-  0.55              0.58 0.64 0.36 0.48
+## Q10A  0.63        0.54       0.70 0.30 0.58
+## Q11A  0.58  0.24             0.42 0.58 0.80
+## Q12A  0.43  0.25             0.28 0.72 0.67
+## Q13A- 0.52        0.38       0.42 0.58 0.63
+## Q15A- 0.53              0.52 0.55 0.45 0.50
+## Q16A  0.46        0.20       0.30 0.70 0.72
+## Q17A  0.69        0.47       0.71 0.29 0.68
+## Q18A  0.37  0.29             0.23 0.77 0.60
+## Q19A  0.63  0.34             0.51 0.49 0.77
+## 
+## With eigenvalues of:
+##    g  F1*  F2*  F3* 
+## 4.64 0.72 0.81 0.85 
+## 
+## general/max  5.43   max/min =   1.18
+## mean percent general =  0.68    with sd =  0.1 and cv of  0.15 
+## Explained Common Variance of the general factor =  0.66 
+## 
+## The degrees of freedom are 88  and the fit is  0.49 
+## The number of observations was  548  with Chi Square =  263.65  with prob &lt;  2e-19
+## The root mean square of the residuals is  0.04 
+## The df corrected root mean square of the residuals is  0.05
+## RMSEA index =  0.061  and the 10 % confidence intervals are  0.052 0.069
+## BIC =  -291.3
+## 
+## Compare this with the adequacy of just a general factor and no group factors
+## The degrees of freedom for just the general factor are 119  and the fit is  1.33 
+## The number of observations was  548  with Chi Square =  716.64  with prob &lt;  4.3e-86
+## The root mean square of the residuals is  0.08 
+## The df corrected root mean square of the residuals is  0.09 
+## 
+## RMSEA index =  0.097  and the 10 % confidence intervals are  0.089 0.103
+## BIC =  -33.8 
+## 
+## Measures of factor score adequacy             
+##                                                  g   F1*   F2*  F3*
+## Correlation of scores with factors            0.87  0.59  0.69 0.73
+## Multiple R square of scores with factors      0.76  0.35  0.48 0.54
+## Minimum correlation of factor score estimates 0.51 -0.31 -0.04 0.07
+## 
+##  Total, General and Subset omega for each subset
+##                                                  g  F1*  F2*  F3*
+## Omega total for total scores and subscales    0.90 0.79 0.83 0.77
+## Omega general for total scores and subscales  0.74 0.60 0.59 0.41
+## Omega group for total scores and subscales    0.11 0.19 0.23 0.36</code></pre>
+</div>
+<div id="das-graded-response-model-grm-model-fit" class="section level1">
+<h1>Das graded response model (GRM): model fit</h1>
+<p>Als kleiner IRT Fanboy teste ich grundsätzlich immer verschiedene IRT Modelle, beschränke mich hier aber auf ein Graded Response Model und weiter unten ein Bifactor Model.
+In letzter Zeit habe ich hierzu auch öfter lavaan benutzt, da Modelle hier schneller berechnet werden und man sich Vorschläge ausgeben lassen kann, um einen besseren Modelfit zu erreichen.
+Zu explorativen Zwecken ist lavaan deshalb ebenfalls ein nützlicher Handlanger.
+Aber wirklich von Interesse ist für mich und sollte generell eigentlich sein, die Beziehung zwischen Item Antwortverhalten und zugrundeliegenden Konstrukten - IRT Kampfgebiet.
+Zu diesem Zweck verlasse ich mich auf das “mirt” Paket von R. Philip Chalmers.
+Mit mirt lässt sich fast alles berechnen, was IRT Modelle so hergeben.
+Eingehens hatte ich mich als IRT Fanboy geoutet, tatsächlich bin ich noch viel mehr mirt Fanboy und wäre wahrscheinlich nicht so sehr IRT Fanboy, wenn ich nicht mirt Fanboy sein könnte.
+Zu mirt lässt sich eigentlich nur sagen: [Probierst Du’s einmal, bist Du für immer verliebt]<a href="https://www.youtube.com/watch?v=gMrH_UdPrY8&amp;t=2m54s" class="uri">https://www.youtube.com/watch?v=gMrH_UdPrY8&amp;t=2m54s</a>.</p>
+<p>Was wir jetzt zunächst einmal fitten möchte, ist ein eindimensionales Modell, denn seien wir mal ehrlich, die eine Komponente der PCA ist doch zu verführerisch, um ihr nicht den Vorrang zu geben.</p>
+<pre class="r"><code># gmodel1 &lt;- mirt(dat, 1, &quot;graded&quot;, TOL = .0001)
+summary(gmodel1)
+##          F1    h2
+## Q1A   0.655 0.429
+## Q2A   0.679 0.461
+## Q3A   0.490 0.240
+## Q4A   0.628 0.394
+## Q5A   0.457 0.209
+## Q6A   0.749 0.561
+## Q8A   0.459 0.211
+## Q9A  -0.691 0.478
+## Q10A  0.766 0.587
+## Q11A  0.693 0.481
+## Q12A  0.522 0.273
+## Q13A -0.662 0.438
+## Q15A -0.673 0.453
+## Q16A  0.596 0.355
+## Q17A  0.825 0.681
+## Q18A  0.440 0.193
+## Q19A  0.733 0.537
+## 
+## SS loadings:  6.98 
+## Proportion Var:  0.411 
+## 
+## Factor correlations: 
+## 
+##    F1
+## F1  1
+# (m2.gmodel1&lt;-M2(gmodel1, type = &quot;C2&quot;))
+m2.gmodel1
+##             M2  df p      RMSEA   RMSEA_5   RMSEA_95      SRMSR       TLI
+## stats 478.7592 119 0 0.07434279 0.0673893 0.08129151 0.06275646 0.8971765
+##             CFI
+## stats 0.9100295
+itemfit(gmodel1, method = &quot;PV_Q1&quot;)
+##    item    S_X2 df.S_X2 p.S_X2
+## 1   Q1A  90.209      94  0.592
+## 2   Q2A  96.179      76  0.059
+## 3   Q3A 105.028     104  0.453
+## 4   Q4A  84.754      93  0.717
+## 5   Q5A 112.194     116  0.583
+## 6   Q6A  63.159      77  0.872
+## 7   Q8A  93.221     102  0.721
+## 8   Q9A  85.313      85  0.470
+## 9  Q10A 106.672      79  0.021
+## 10 Q11A  55.734      89  0.998
+## 11 Q12A  82.253     105  0.951
+## 12 Q13A 100.341      96  0.361
+## 13 Q15A 118.786     103  0.137
+## 14 Q16A  87.002      86  0.449
+## 15 Q17A  96.273      74  0.042
+## 16 Q18A  96.974     111  0.826
+## 17 Q19A  85.034      85  0.479</code></pre>
+<p>Die summary-Funktion zeigt uns zweierlei: 1. ein eindimensionales Modell erklärt immerhin 41% der Varianz in den Daten und 2. alle Items laden hinreichend gut auf diesem Faktor.
+“M2” gibt uns einige CFA Fit Indizes, und wie wir sehen, fittet das eindimensionale GRM Modell ziemlich gut!
+Aber, aber: wir haben ja auch schon 2 Items ausgeschlossen.
+Und dennoch Raum nach oben ist auch hier noch.</p>
+<p>Eine weitere Sache, die wir direkt anschauen können, ist der Itemfit einzelner Items.
+Dabei steht die Frage im Vordergrund, ob die Antworten auf einzelne Items tatsächlich modellkonform sind, oder ob sich signifikante Abweichungen zeigen.
+Starken Itemmisfit finden wir hier nicht.
+Dennoch wollen wir einmal ein schlechter fittendes mit einem besser fittenden vergleichen und sehen dabei … nicht sehr viel - was auch ein angenehmes Ergebnis ist.
+Zwar weichen einzelne Datenpunktgruppen (zu sehende Punkte sind immer gruppiert einzelne Punkte) von den erwarteten Werten (durchgezogene Linie) ab, aber so recht erschreckend ist hier nichts.
+Einzig auffällig ist meiner Meinung nach, dass die Kurve von Kategorie 1 des Items 9 etwas stark steil links ansteigt, gleichwohl hier nur relativ wenig Daten vorhanden sind.
+Aber das hat eigentlich nichts mit der signifikantne Abweichung zu tun.</p>
+<pre class="r"><code>itemfit(gmodel1, empirical.plot = 9, group.bins = 16)</code></pre>
+<p><img src="/post/2019-09-01-protestantische-arbeitsethik_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<pre class="r"><code>itemfit(gmodel1, empirical.plot = 16, group.bins = 16)</code></pre>
+<p><img src="/post/2019-09-01-protestantische-arbeitsethik_files/figure-html/unnamed-chunk-4-2.png" width="672" /></p>
+</div>
+<div id="the-graded-response-model-person-parameters" class="section level1">
+<h1>The graded response model: person parameters</h1>
+<p>Jetzt schauen wir einmal in Richtung Benutzbarkeit der Skala.
+Wir schauen uns hierfür die Reliabilität der Skala an und außerdem die Verteilung der (latenten) Faktorscores einzelner Personen, also deren Theta-Werte an.</p>
+<div id="good-things-first---reliabilitat" class="section level2">
+<h2>Good things first - Reliabilität</h2>
+<p>An diese Stelle könnten zwei Einwände folgen:
+1. “Warte mal, Reliabilität in Abhängigkeit der Personenfähigkeit? Das ist mir nicht geheuer! Normalerweise habe ich doch meine Retestreliabilität, mein Cronbachs Alpha oder mein Omega - also ein (1) Wert für die Reliabiliät! Hochstapler”
+2. Warte mal, der nennt sich IRT Fanboy, und kommt dann mit Reliabilität um die Ecke? Iteminformation? Testinformation? IRT, hallo? Hochstapler!</p>
+<ol style="list-style-type: decimal">
+<li>Innerhalb der IRT gibt es eigentlich keinen einen natürlichen Wert, um die Messgenauigkeit eines Instruments unabhängig der Personenfähigkeit angibt.
+Stattdessen, liefert jedes einzelne Item für unterschiedliche Personenfähigkeiten unterschiedlich viel Information (hierbei können wir die statistische Information, die Fischer-Information, relativ unproblematisch als alltagssprachliche Information auffassen).
+Manche Items helfen uns also sehr gut im oberen Bereich zu differenzieren, umgekehrt aber im unteren Bereich nicht so sehr; oder auch anders herum.
+Grundsätzlich ist diese Auffassung der Messgenauigkeit sehr intuitiv.
+Wir stellen uns vor, wir möchten die Mathematikfähigkeit von Gymnasiasten in Erfahrung bringen.
+Dazu stellen wir ihnen die Frage “Was gibt 2+2?”.
+Wahrscheinlich (hoffentlich) wird jeder diese Frage korrekt beantworten, denn sie ist viel zu einfach für diese Zielgruppe.
+Die Beantwortung liefert uns also keine Information.
+Ein anderes Prinzip, das hier ebenfalls erkennbar wird, besteht darin, dass ein Test gemäß IRT nicht in allen Fähigkeitsbereichen gleich gut misst.
+Recht einleuchtend ist das deshalb,</li>
+</ol>
+<p>In item response theory there is no “natural” single value to reflect how precise our test measures the underlying ability. Instead, every item has the capacity to inform us about the underlying latent trait of a single person. This capacity is an item specific attribute and is called “item information”. The item information is a function of the theta parameter, i.e., some items are decent in order to differentiate between persons on the higher end of the theta spectrum, some in the middle (my experience is: mostly in the middle) and some in the lower end. The easiest way to grasp this is to think of some math test. In this test you ask participants “2+2= ?”. Clearly, this item won’t help us differentiate between anyone beyond middleschool because every one will get it right. However, to test low ability persons (kindergarden kids that just started learning about calculating) this item might just be perfect. Asking for the solution of some complex equation containing some weird integrals however, might help differentiate bteween test persons after middleschool, but asking some kindergarten kids to give you an answer won’t help differentiation between these kids (no matter how many sweets you promise for a correct answer).
+So much about item information. The nice thing in IRT is that in order to know how precise a test is overall, you just have to add the single iteminformation functions. The result is the test information function that is depicted in terms of the “reliability” as used in classical test theory.</p>
+<ol start="2" style="list-style-type: decimal">
+<li>Since only a few “normal” psychologists know a big deal about IRT, the use of “reliability” makes things a lot more comprehensible. Of course, this reliability depends perfectly on the test information (and thus on the Standard Error of the theta).</li>
+</ol>
+<pre class="r"><code>empirical_rxx(thetgm1)
+##        F1 
+## 0.9083824
+plot(gmodel1, type = &quot;rxx&quot;, theta_lim = c(-2,2) )</code></pre>
+<p><img src="/post/2019-09-01-protestantische-arbeitsethik_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<pre class="r"><code># thetgm1 &lt;- fscores(gmodel1, full.scores.SE = TRUE, method = &quot;EAP&quot;)
+
+hist(thetgm1, breaks = 40)</code></pre>
+<p><img src="/post/2019-09-01-protestantische-arbeitsethik_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p>Since we get the fat clustering of theta values, we’re gonna be interested in the model more in general. We will therefor look at the expected score given our model, at the expected chosen category of the model and the expected item score - all depending on theta. We do not really find oddities here. Except that (plot 2) item response behavior is not in line with the usual likert scale assumption of equal intervals between item scores.</p>
+<pre class="r"><code>plot(gmodel1, type = &quot;score&quot;, theta_lim = c(-2,2))</code></pre>
+<p><img src="/post/2019-09-01-protestantische-arbeitsethik_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<pre class="r"><code>plot(gmodel1, type = &quot;trace&quot;, theta_lim = c(-2,2))</code></pre>
+<p><img src="/post/2019-09-01-protestantische-arbeitsethik_files/figure-html/unnamed-chunk-7-2.png" width="672" /></p>
+<pre class="r"><code>plot(gmodel1, type = &quot;itemscore&quot;, theta_lim = c(-2,2))</code></pre>
+<p><img src="/post/2019-09-01-protestantische-arbeitsethik_files/figure-html/unnamed-chunk-7-3.png" width="672" /></p>
+</div>
+</div>
+<div id="the-graded-response-model-short-summary" class="section level1">
+<h1>The graded response model: short summary</h1>
+<p>So far we’re kind of happy, because our model- and itemfit is decent and we get a great reliability. Yay! However, the theta we get is, imho, just trash. What to do about that? We need some different modelling approach, and, lucky as we are, a different modelling approach can be used righteously - just remember our extra small factors!</p>
+</div>
+<div id="bifactor-models-of-protestant-ethics." class="section level1">
+<h1>Bifactor models of protestant ethics.</h1>
+<div id="specific-factors" class="section level2">
+<h2>2 Specific factors</h2>
+<pre class="r"><code>spec1 &lt;- rep(NA, 18)
+spec1[c(10,16,13)] &lt;- 1
+spec1[c(9,14,2)] &lt;- 2
+# bf1 &lt;- bfactor(dat, spec1, TOL = .0001)
+summary(bf1)
+##           G     S1     S2     h2
+## Q1A   0.668  0.000  0.000 0.4461
+## Q2A   0.640  0.000 -0.368 0.5452
+## Q3A   0.516  0.000  0.000 0.2667
+## Q4A   0.648  0.000  0.000 0.4198
+## Q5A   0.497  0.000  0.000 0.2471
+## Q6A   0.751  0.000  0.000 0.5642
+## Q7A   0.304  0.000  0.000 0.0927
+## Q8A   0.494  0.000  0.000 0.2439
+## Q9A  -0.622  0.000  0.654 0.8145
+## Q10A  0.693  0.571  0.000 0.8061
+## Q11A  0.724  0.000  0.000 0.5248
+## Q12A  0.544  0.000  0.000 0.2956
+## Q13A -0.594 -0.390  0.000 0.5052
+## Q15A -0.599  0.000  0.614 0.7353
+## Q16A  0.601  0.000  0.000 0.3607
+## Q17A  0.773  0.477  0.000 0.8254
+## Q18A  0.463  0.000  0.000 0.2140
+## Q19A  0.765  0.000  0.000 0.5849
+## 
+## SS loadings:  6.845 0.706 0.941 
+## Proportion Var:  0.38 0.039 0.052 
+## 
+## Factor correlations: 
+## 
+##    G S1 S2
+## G  1  0  0
+## S1 0  1  0
+## S2 0  0  1</code></pre>
+<pre class="r"><code>theta_bf1 &lt;- fscores(bf1, full.scores.SE = TRUE)
+hist(theta_bf1[,&quot;F1&quot;])</code></pre>
+<p><img src="/post/2019-09-01-protestantische-arbeitsethik_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<pre class="r"><code>hist(theta_bf1[,&quot;F2&quot;])</code></pre>
+<p><img src="/post/2019-09-01-protestantische-arbeitsethik_files/figure-html/unnamed-chunk-9-2.png" width="672" /></p>
+<pre class="r"><code>hist(theta_bf1[,&quot;F3&quot;])</code></pre>
+<p><img src="/post/2019-09-01-protestantische-arbeitsethik_files/figure-html/unnamed-chunk-9-3.png" width="672" /></p>
+<pre class="r"><code>empirical_rxx(theta_bf1)
+##        F1        F2        F3 
+## 0.8940109 0.5484565 0.6066023</code></pre>
+</div>
+<div id="specific-factors-1" class="section level2">
+<h2>3 Specific factors</h2>
+<pre class="r"><code>spec2 &lt;- rep(NA, 18)
+spec2[c(6,4,17)] &lt;- 1
+spec2[c(10,16,13)] &lt;- 2
+spec2[c(9,14,2)] &lt;- 3
+# bf2 &lt;- bfactor(dat, spec2, TOL = .001)
+summary(bf2)
+##           G     S1     S2     S3     h2
+## Q1A   0.665  0.000  0.000  0.000 0.4422
+## Q2A   0.644  0.000  0.000 -0.365 0.5482
+## Q3A   0.510  0.000  0.000  0.000 0.2598
+## Q4A   0.656  0.442  0.000  0.000 0.6259
+## Q5A   0.495  0.000  0.000  0.000 0.2454
+## Q6A   0.777 -0.282  0.000  0.000 0.6835
+## Q7A   0.302  0.000  0.000  0.000 0.0913
+## Q8A   0.489  0.000  0.000  0.000 0.2395
+## Q9A  -0.620  0.000  0.000  0.654 0.8118
+## Q10A  0.695  0.000  0.568  0.000 0.8048
+## Q11A  0.728  0.000  0.000  0.000 0.5306
+## Q12A  0.537  0.000  0.000  0.000 0.2881
+## Q13A -0.594  0.000 -0.390  0.000 0.5048
+## Q15A -0.596  0.000  0.000  0.617 0.7363
+## Q16A  0.592  0.000  0.000  0.000 0.3506
+## Q17A  0.774  0.000  0.476  0.000 0.8259
+## Q18A  0.462  0.428  0.000  0.000 0.3961
+## Q19A  0.760  0.000  0.000  0.000 0.5775
+## 
+## SS loadings:  6.861 0.458 0.7 0.942 
+## Proportion Var:  0.381 0.025 0.039 0.052 
+## 
+## Factor correlations: 
+## 
+##    G S1 S2 S3
+## G  1  0  0  0
+## S1 0  1  0  0
+## S2 0  0  1  0
+## S3 0  0  0  1</code></pre>
+<pre class="r"><code>theta_bf2 &lt;- fscores(bf2, full.scores.SE = TRUE)
+## Warning: High-dimensional models factor scores should use quasi-Monte Carlo
+## integration. Pass QMC=TRUE
+hist(theta_bf2[,&quot;F1&quot;], breaks = 18)</code></pre>
+<p><img src="/post/2019-09-01-protestantische-arbeitsethik_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<pre class="r"><code>hist(theta_bf2[,&quot;F2&quot;])</code></pre>
+<p><img src="/post/2019-09-01-protestantische-arbeitsethik_files/figure-html/unnamed-chunk-11-2.png" width="672" /></p>
+<pre class="r"><code>hist(theta_bf2[,&quot;F3&quot;])</code></pre>
+<p><img src="/post/2019-09-01-protestantische-arbeitsethik_files/figure-html/unnamed-chunk-11-3.png" width="672" /></p>
+<pre class="r"><code>empirical_rxx(theta_bf2)
+##        F1        F2        F3        F4 
+## 0.8942307 0.4207336 0.5917202 0.6328800</code></pre>
+</div>
+</div>
