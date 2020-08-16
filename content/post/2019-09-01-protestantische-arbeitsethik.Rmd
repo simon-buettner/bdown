@@ -1,12 +1,11 @@
 ---
 title: Protestantische Arbeitsethik
 author: Simon Büttner
-date: '2019-09-01'
+date: '2020-08-16'
 slug: protestantische-arbeitsethik
 categories: []
 tags: []
-keywords:
-  - tech
+keywords: []
 ---
 
 ```{r setup, include=FALSE}

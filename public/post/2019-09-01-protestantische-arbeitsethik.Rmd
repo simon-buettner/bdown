@@ -1,12 +1,11 @@
 ---
 title: Protestantische Arbeitsethik
 author: Simon Büttner
-date: '2019-09-01'
+date: '2020-08-16'
 slug: protestantische-arbeitsethik
 categories: []
 tags: []
-keywords:
-  - tech
+keywords: []
 ---
 
 ```{r setup, include=FALSE}
@@ -18,16 +17,28 @@ library(dplyr)
 load("../../static/data/ProtestandWorkEthic/PWES.Rdata")
 ```
 # Protestantische Arbeitsethik
-In meinem ersten Post möchte ich eine etwas ungewöhnliche Skala untersuchen, die ich auf  [Openpsychometrics](https://openpsychometrics.org/_rawdata/) gefunden habe und zwar die "Protestant Work Ethic Scale" bestehend aus 19 Likerskalen Items mit n = 558 Antwortn. 
-Mein Interesse rürt daher, dass nach Maßen der allgemeinen Intelligenz vor allem die Persönlichkeitskonstrukte Integrität und Gewissenhaftigkeit Prädiktoren des Berufserfolgs sind.
-Ich fand das immer ein wenig verwunderlich, da es sich vor allem bei der Gewissenhaftigkeit um eine sehr klassische Tugenden handelt, die heutzutage irgendwie stark an Ansehen verloren haben - ja gerne sogar auch in die Nähe der "autoritären Persönlichkeit" gestellt werden und beinahe etwas schmuddeliges an sich hängen haben.
-In Deutschland hat das eine gewisse Sonderstellung, da es sich vor allem um "klassische preußische Tugenden" (Pünktlichkeit, Arbeitsamkeit, Pflichtbewusstsein, Fleiß) handelt.
-Heutzutage rühmt man sich besonders hier im Ländle dieser Tugenden (im Besonderen der Sparsamkeit).
+Mein erster Post soll Einblick darin geben, wie ein Psychologe grundsätzlich versucht, bestimmte psychologische Konstrukte/Eigenschaften, die er sich ausgedacht hat, empirisch zu untersuchen. 
+Den eigentlich sehr spannenden Prozess der Itemgenerierung lassen wir hier außen vor und steigen bei der empirischen Überprüfung der Items ein.
+Items sind die einzelnen Aufgaben, die man in einem Test bearbeitet. 
+Bei Persönlichkeitstests sind es Aussagen wie "Ich lese gerne Blogs", die man z.B. von 1-5 danach bewerten soll, inwiefern man diesen zustimmt.
+Bei solchen Einschätzungen von 1-5 spricht man dann von Likert-Skalen bzw. einem Likert-Skalen Item.
+Bei Leistungstests wäre ein Item z.B. eine Rechenaufgabe im offenen oder Multiple-Choice Format.
 
-Ich hatte mich deswegen schon einige Zeit gefragt, wieso niemand auf die Idee kommt, eine Skala hierzu erstellen (am liebsten im Sinne einer "Schwäbische Hausfrauenskala", etwas leichter von der Zunge würde wahrscheinlich eine "Ländleskala" gehen). 
-Nun letzten Freitagabend hatte ich etwas Muse, weshalb ich statt auf dem Stuttgarter Weinfest mein Viertele zu schlonzen (don't judge me), nach freiverfügbaren Datensätze gesucht hatte und dann interessanterweise die "Protestant Work Ethic Scale" (PWES) gefunden hatte. 
-Diese Skala geht zurück auf Max Webers Werk "Die protestantische Ethik und der Geist des Kapitalismus", in dem Weber die These verfolgt, der asketisch angelegte in Nordeuropa (und mit Nordeuropa assoziierte Nationen) verbreitete Protestantismus sei als eine Triebkraft hinter der Entwicklung des Kapitalismus zu verstehen.
-Der vorliegende Datensatz bietet leider nicht die Möglichkeit, (wirklich stichhaltige) Zusammenhänge mit Verhaltensdaten zu untersuchen, weshalb ich zunächst die grundsätzliche Struktur in den Antworten auf diese Skala untersuchen möchte bzw.kann.
+Den empirischen Teil der Fragebogenkonstruktion möchte ich dabei anhand der etwas ungewöhnliche "Protestant Work Ethic Scale" bestehend aus 19 Likert-Skalen Items untersuchen.
+Die dazugehörigen Daten sind auf [Open Psychometrics](https://openpsychometrics.org/_rawdata/) frei abrufbar. 
+Wieso ausgerechnet so eine Randerscheinung psychologischer Konstrukte?
+Mein Interesse rührt daher, dass nach Maßen der allgemeinen Intelligenz vor allem die Persönlichkeitskonstrukte Integrität und Gewissenhaftigkeit Prädiktoren des Berufserfolgs, aber auch weiter angelegter Maße des "gelungenden Lebens" sind.
+Grundsätzlich würde ich (auch nach Sichtung der Items der PWES) das damit erfasste Konstrukt in der Nähe von Gewissenhaftigkeit und Integrität ansiedeln.
+Erstaunlich fand ich eigentlich immer, dass diese Konstrukte klassischer (Sekundär-)Tugenden so bedeutsam sind, haben diese heutzutage doch irgendwie an Ansehen verloren - werden im schlimmsten Fall sogar auch in die Nähe der "autoritären Persönlichkeit" gestellt werden, wodurch sie beinahe etwas schmuddeliges an sich hängen haben.
+
+In Deutschland haben diese Eigenschaften und das Verhältnis zu ihnen eine gewisse Sonderstellung, da es sich vor allem um "preußische Tugenden" (Pünktlichkeit, Arbeitsamkeit, Pflichtbewusstsein, Fleiß) handelt.
+Heutzutage rühmt man sich besonders hier im Ländle dieser Tugenden (im Besonderen der Sparsamkeit), was sich nicht nur aber auch über die religiöse Geschichte ein Stück weit erklären lassen könnte: In Preußen wie in Schwaben (sind und) waren große Teile der Bevölkerung Protestanten. 
+Diese Verwandtschaft findet schönen Ausdruck in den historischen Begebenheiten, dass der Schwabe Hegel im preußischen Berlin lehrte oder dass die schwäbischen Hohenzollern die preußischen Könige stellten.
+Dass hierbei a nicht zwingend zu b führt kann man sich am ebenfalls protestantischen (pietistisch erzogenem) Hölderlin ins Bewusstsein rufen, der wenig bis gar nichts mit Preußentum am Hut hat. 
+
+Ich hatte mich deswegen schon einige Zeit gefragt, wieso noch niemand auf die Idee gekommen ist, eine Art "Schwäbische Hausfrauentest" oder etwas leichter von der Zunge gehenden "Ländlestest" zu entwickeln. 
+Solange sich niemand dieses Unternehmens annimmt, muss eben auf die "Protestant Work Ethic Scale" (PWES) zurückgegriffen werden.
+Diese Skala geht zurück auf Max Webers Werk "Die protestantische Ethik und der Geist des Kapitalismus", in dem Weber die These verfolgt, der asketisch angelegte in Nordeuropa (und mit Nordeuropa assoziierte Nationen/Kulturkreise) verbreitete Protestantismus (im Besonderen der Calvinismus) sei als eine Triebkraft hinter der Entstehung des (Geist des) Kapitalismus zu verstehen.
 
 ## Aber zunächst, wie sehen die PWES Items aus?
 
@@ -37,75 +48,64 @@ Der vorliegende Datensatz bietet leider nicht die Möglichkeit, (wirklich stichh
 * Q4	There are few satisfactions equal to the realization that one has done one's best at a job. 
 * Q5	The most difficult college courses usually turn out to be the most rewarding. 
 * Q6	Most people who don’t succeed in life are just plain lazy. 
-* Q7	The self-made person is likely to be more ethical than someone who is born to wealth.  
+* [Q7	The self-made person is likely to be more ethical than someone who is born to wealth.]
 * Q8	I often feel I would be more successful if I sacrificed certain pleasures. 
-* Q9	People should have more leisure time to spend in relaxation.  
+* Q9__R	People should have more leisure time to spend in relaxation.  
 * Q10	Anyone who is able and willing to work hard has a good chance of succeeding. 
 * Q11	People who fail at a job have usually not tried hard enough. 
 * Q12	Life would have very little meaning if we never had to suffer. 
-* Q13	Hard work offers little guarantee of success. 
-* Q14	The credit card is a ticket to careless spending. 
-* Q15	Life would be more meaningful if we had more leisure time. 
+* Q13__R	Hard work offers little guarantee of success. 
+* [Q14	The credit card is a ticket to careless spending.]
+* Q15__R	Life would be more meaningful if we had more leisure time. 
 * Q16	The person who can approach an unpleasant task with enthusiasm is the one who gets ahead. 
 * Q17	If one works hard enough they are likely to make a good life for themselves. 
 * Q18	I feel uneasy when there is little work for me to do. 
 * Q19	A distaste for hard work usually reflects a weakness of character.
 
-Wie man sieht, stellt verkörpert diese Skala unsere (Groß-)Eltern, die erhobenen Zeigefinders mahnen, unsere Zeit nicht zu verschwenden, mehr Geld zu sparen, und stets hart zu arbeiten (oder auch an Ludwig Höltys Gedicht ["Der alte Landmann an seinen Sohn"](https://upload.wikimedia.org/wikipedia/commons/3/32/Ludwig_H%C3%B6lty_-_Der_alte_Landmann_an_seinen_Sohn_%28%C3%9Cb_immer_Treu_und_Redlichkeit%29.jpg), v.a. bekannt für die Zeile "Üb' immer Treu und Redlichkeit").
+Wie man sieht, stellt verkörpert diese Skala unsere (Groß-)Eltern, die erhobenen Zeigefinders mahnen, unsere Zeit nicht zu verschwenden, mehr Geld zu sparen, und stets hart zu arbeiten (oder auch an Ludwig Höltys Gedicht ["Der alte Landmann an seinen Sohn"](https://upload.wikimedia.org/wikipedia/commons/3/32/Ludwig_H%C3%B6lty_-_Der_alte_Landmann_an_seinen_Sohn_%28%C3%9Cb_immer_Treu_und_Redlichkeit%29.jpg), v.a. bekannt für die Zeile "Üb' immer Treu und Redlichkeit", die in gewisser Weise Wahlspruch des preußischen Staates war).
+Was man außerdem sieht, ist dass jeglicher Bezug zur Prädestinationslehre fehlt. 
+Ein solcher Bezug wäre sicher unheimlich spannend, denn psychologisch kann der calvinistische Glaube an Prädestination mit interessanten Effekten einhergehen.
+Zum einen sucht man durch weltlichen Erfolg zu bestätigen, dass man von Gott auserwählt ist und zum anderen kann der Glaube, auserwählt zu sein, ungeheurlich das Selbstvertrauen steigern. 
+Nicht zu unrecht konzentriert sich Weber deshalb auf den Calvinismus. 
 
 Bevor ich zu den weiteren Analysen komme, möchte ich vorwegnehmen, dass die Items Q7 und Q14 nicht recht zu funktionieren scheinen. 
-Egal welche Faktorenstruturen ich mir angeschaut habe - so richtig reingepasst haben diese beiden Items nicht.
+Egal welche Faktorenstruturen ich mir angeschaut habe - so richtig reingepasst haben diese beiden Items nicht (sie lieferten allerdings auch keine komplett absurden Ergebnisse).
 Grund genug, diese Items auszuschließen. 
 
-In Bezug auf die Skala hat das auch schon Bedeutung für uns: die schnell gezückte (goldene) Kreditkarte scheint für die vorliegenden Testpersonen wenig mit eine eher asketisch angeregten Ethik zu tun zu haben.
-Ich schätze, dass die Autoren dieser Skala vor allem darauf hinauswollten, dass mancher Personen Konsumwünsche größer als ihre Geldbeutel sind, sodass diese auf Pump erfüllt werden statt auf ein gefülltes Sparschwein zu warten (ich habe noch nicht geschaut, von wann diese Daten überhaupt sind; vorstellbar ist, dass sich die Nutzung von Kreditkarten doch heute deutlich davon unterscheidet, wie diese noch 1970 eingesetzt wurden - dann ist das Item einfach aus der Zeit gefallen).
-Jedenfalls scheinen diese Items diese Einstellung entweder nicht recht zu erfassen oder aber die Einstellung ist einfach unabhängig vom zugrundeliegenden latenten Konstrukt.
+<!-- In Bezug auf die Skala hat das auch schon Bedeutung für uns: die schnell gezückte (goldene) Kreditkarte scheint für die vorliegenden Testpersonen wenig mit eine eher asketisch angeregten Ethik zu tun zu haben. -->
+<!-- Ich schätze, dass die Autoren dieser Skala vor allem darauf hinauswollten, dass mancher Personen Konsumwünsche größer als ihre Geldbeutel sind, sodass diese auf Pump erfüllt werden statt auf ein gefülltes Sparschwein zu warten (ich habe noch nicht geschaut, von wann diese Daten überhaupt sind; vorstellbar ist, dass sich die Nutzung von Kreditkarten doch heute deutlich davon unterscheidet, wie diese noch 1970 eingesetzt wurden - dann ist das Item einfach aus der Zeit gefallen). -->
+<!-- Jedenfalls scheinen diese Items diese Einstellung entweder nicht recht zu erfassen oder aber die Einstellung ist einfach unabhängig vom zugrundeliegenden latenten Konstrukt. -->
 
-Item Q7 scheint meinem Gefühl nach darauf abzuzielen, die Einstellung Reichgeborene seien tendenziell dekadent oder verdienten zumindest ihren Reichtum nicht so sehr wie ein Self-Made-(Wo)Man. 
-In gewisser Weise macht es deshalb meiner Meinung nach Sinn, dass diese relativ spezielle Meinung über Reiche nicht zum allgemeinen PWES Konstrukt passt (wie dieses zu verstehen ist, kann unten erst wirklich untersucht werden).
+<!-- Item Q7 scheint meinem Gefühl nach darauf abzuzielen, die Einstellung Reichgeborene seien tendenziell dekadent oder verdienten zumindest ihren Reichtum nicht so sehr wie ein Self-Made-(Wo)Man.  -->
+<!-- In gewisser Weise macht es deshalb meiner Meinung nach Sinn, dass diese relativ spezielle Meinung über Reiche nicht zum allgemeinen PWES Konstrukt passt (wie dieses zu verstehen ist, kann unten erst wirklich untersucht werden). -->
 
 # Grundlegende Faktorenstruktur: fa.parallel()
 G'nug g'schwätzt, jetzt schaffet mer was naus.
-Um die Frage zu beantworten, welche Faktorstruktur der PWES zugrundeliegt, ist zunächst zu klären, wie viele Faktoren sich hinter den Daten verbergen.
-Klassischerweise wird hierfür der Screeplot genutzt, der die Eigenwerte extrahierter Hauptkomponenten/Faktoren der größe nach sortiert. 
-Von den zahlreichen Möglichkeiten, jetzt zu entscheiden, ob und inwiefern die Daten multidimensional bedingt sind, ist so recht überzeugend nur die Parallelanalyse nach Horn, die, Autoren von R Paketen sei dank, ohne große Umstände mit fa.parallel() aufgerufen werden kann.
-Zum einen erstellt diese Funktion einen Scree Plot für Hauptokomponenten (PCA) - und Faktorenanalysen (FA).
-Zum anderen stellt den dabei manifesten Eigenwerten zufällig simulierte Eigenwerte gegenüber, die zufällig generiert wurden, indem eine der empirischen Datenmatrix identische zufällig befüllte Datenmatrix erstellt.
-Das ermöglicht es, abzuschätzen, was in den vorliegenden Daten Signal ist und was nur Rauschen. 
+Um die Frage zu beantworten, welche Faktorstruktur der PWES zugrundeliegt, ist zunächst zu klären, wie viele Faktoren/Dimensionen sich hinter den Daten verbergen.
+Aber was bedeutet das eigentlich? Wenn Psychologen einen Test konstruieren, untersuchen sie in der Regel, inwiefern einzelne Items des Tests miteinander zusammenhängen. 
+Bei uns: Stimmt jemand, der der Aussage "Wenn man hart genug arbeitet, wird das eigene Leben mit höherer Wahrscheinlicheit besser" (Q17) zustimmt, auch der Aussage "Jeder der fähig und willens ist, hart zu arbeiten, hat eine gute Chance erfolgreich zu sein" (Q10).
+Und wenn ja, welchen Aussagen stimmt er dann noch zu? Und wenn nicht, welchen Aussagen stimmt er stattdessen zu? 
+Ziel ist dann, aus den einzelnen Antworten eine aggregierte Information zu erhalten. 
+Also statt zu sagen, Person A stimmt Items 1, 2, 3 etc. zu, zu sagen Person A ist sehr gewissenhaft.
+Diese übergeordneten Eigenschaften zu erfassen, ist das Ziel der meisten Testentwickler. 
+Wichtig ist dabei, dass die einzelnen Items hoch mit dieser statistisch konstruierten Dimension zusammenhängen (und im einfachsten Fall sehr wenig mit anderen Dimensionen), man sagt hoch auf der konstruierten Dimension lädt.
+Hat man dann eine Zuordnung von Items zu den Dimensionen gefunden, berechnet man in irgendeiner Weise (zumeist ein einfacher Summenscore über die Items hinweg) auf Basis genau dieser Items inwiefern eine Person gewissenhaft ist.
 
+Das erste Problem besteht dann darin, zu entscheiden, wie viel Struktur tatsächlich hinter den Daten steht, also wie viele psychologische Eigenschaften wir finden können.
+Klassischerweise wird hierfür ein Screeplot genutzt, der die Eigenwerte extrahierter Hauptkomponenten/Faktoren (das sind quasi die übergeordneten Dimensionen, die wir suchen) der größe nach sortiert. 
+Außerdem werden mit der hier verwendet fa.parallel Funktion zufällig Daten simuliert, die unseren Daten ähneln, aber keine der dahinterliegenden Struktur enthält. 
+Auf diese Weise können wir dann entscheiden, was echte Struktur in den Daten ist und was nur Rauschen ist.
 Man sieht nun sehr schön, dass besonders ein Faktor / eine Hauptkomponente hinter den Daten steckt.
-Das heißt die gesamte Datenmatrix ohne allzugroßen Informationsverlust mit einem zugrundeliegenden Faktor erklärt werden.
-Daneben sieht man außerdem, dass es einige weitere weniger bedeutsame Faktoren gibt.
-Laut PCA (je nach Simulationsergebnis) ggf. noch eine weitere Hauptkomponente; laut FA sogar bis zu 5 Faktoren, wobei vielleicht drei dieser Faktoren sinnvoll extrahiert werden könnten.
+Allerdings ließen sich auch weitere Dimensionen finden, die nicht rein zufälliger Natur zu sein scheinen - doch das wird dann vielleicht einmal ein eigener Eintrag.
+
 
 ```{r}
 set.seed(1234)
 fa.parallel(dat)
 ```
 
-# ... aber was für Faktoren? omega()
-Jetzt geht es darum die Verbindung zwischen Faktorenstruktur und Items herzustellen.
-Am einfachsten geht es mit der omega() Funktion, die einem direkt sehr viele wichtige Kennwerte liefert und außerdem Zusammenhänge zwischen Faktoren und Items übersichtlich veranschaulicht.
-Wieder greife ich hier vorweg: Wir können uns auf 4 Faktoren beschränken können (omega(dat,3) schätzt ein Bifactor-Model, mit einem g-Faktor und 3 spezifischen Faktoren = 4 Faktoren).
-Im Detail werde ich hier die nahegelegten Faktorzuordnungen nicht besprechen, denn so ganz traue ich der Omega Funktion nicht, da sie Cross-Loadings zulässt (ein Item kann auf meherern Subfaktoren laden, was grundsätzlich nicht wünschenswert ist) und einem anderen Ansatz folgt, als die Item-Response-Modelle (IRT), mit denen ich unten mehr arbeite. 
-Hier ist anzumerken, dass meiner Erfahrung nach die Ergebnisse von omega nicht perfekt mit denen der IRT Analyse konvergiert - nichtsdestoweniger: omega ist einfach zu benutzen und deswegen ein Handlanger, für den es dankbar zu sein gilt. 
-
-```{r}
-omega(dat,3)
-```
-
-
 # Das graded response model (GRM): model fit
-Als kleiner IRT Fanboy teste ich grundsätzlich immer verschiedene IRT Modelle, beschränke mich hier aber auf ein Graded Response Model und weiter unten ein Bifactor Model.
-In letzter Zeit habe ich hierzu auch öfter lavaan benutzt, da Modelle hier schneller berechnet werden und man sich Vorschläge ausgeben lassen kann, um einen besseren Modelfit zu erreichen.
-Zu explorativen Zwecken ist lavaan deshalb ebenfalls ein nützlicher Handlanger.
-Aber wirklich von Interesse ist für mich und sollte generell eigentlich sein, die Beziehung zwischen Item Antwortverhalten und zugrundeliegenden Konstrukten - IRT Kampfgebiet.
-Zu diesem Zweck verlasse ich mich auf das "mirt" Paket von R. Philip Chalmers.
-Mit mirt lässt sich fast alles berechnen, was IRT Modelle so hergeben.
-Eingehens hatte ich mich als IRT Fanboy geoutet, tatsächlich bin ich noch viel mehr mirt Fanboy und wäre wahrscheinlich nicht so sehr IRT Fanboy, wenn ich nicht mirt Fanboy sein könnte.
-Zu mirt lässt sich eigentlich nur sagen: [Probierst Du's einmal, bist Du für immer verliebt]<https://www.youtube.com/watch?v=gMrH_UdPrY8&t=2m54s>.
-
-Was wir jetzt zunächst einmal fitten möchte, ist ein eindimensionales Modell, denn seien wir mal ehrlich, die eine Komponente der PCA ist doch zu verführerisch, um ihr nicht den Vorrang zu geben.
+Was wir jetzt zunächst einmal fitten möchte, ist ein eindimensionales Modell, denn die eine Komponente der PCA ist doch zu verführerisch, um ihr nicht den Vorrang zu geben und zu sagen "alles ist eindimensional genug".
 
 ```{r}
 # gmodel1 <- mirt(dat, 1, "graded", TOL = .0001)
@@ -119,46 +119,22 @@ Die summary-Funktion zeigt uns zweierlei: 1. ein eindimensionales Modell erklär
 Aber, aber: wir haben ja auch schon 2 Items ausgeschlossen. 
 Und dennoch Raum nach oben ist auch hier noch.
 
-Eine weitere Sache, die wir direkt anschauen können, ist der Itemfit einzelner Items.
-Dabei steht die Frage im Vordergrund, ob die Antworten auf einzelne Items tatsächlich modellkonform sind, oder ob sich signifikante Abweichungen zeigen.
-Starken Itemmisfit finden wir hier nicht. 
-Dennoch wollen wir einmal ein schlechter fittendes mit einem besser fittenden vergleichen und sehen dabei ... nicht sehr viel - was auch ein angenehmes Ergebnis ist.
-Zwar weichen einzelne Datenpunktgruppen (zu sehende Punkte sind immer gruppiert einzelne Punkte) von den erwarteten Werten (durchgezogene Linie) ab, aber so recht erschreckend ist hier nichts.
-Einzig auffällig ist meiner Meinung nach, dass die Kurve von Kategorie 1 des Items 9 etwas stark steil links ansteigt, gleichwohl hier nur relativ wenig Daten vorhanden sind. 
-Aber das hat eigentlich nichts mit der signifikantne Abweichung zu tun.
-
-```{r}
-itemfit(gmodel1, empirical.plot = 9, group.bins = 16)
-itemfit(gmodel1, empirical.plot = 16, group.bins = 16)
-```
-
-
 # The graded response model: person parameters
 Jetzt schauen wir einmal in Richtung Benutzbarkeit der Skala.
 Wir schauen uns hierfür die Reliabilität der Skala an und außerdem die Verteilung der (latenten) Faktorscores einzelner Personen, also deren Theta-Werte an.
 
-## Good things first - Reliabilität
-An diese Stelle könnten zwei Einwände folgen: 
-1. "Warte mal, Reliabilität in Abhängigkeit der Personenfähigkeit? Das ist mir nicht geheuer! Normalerweise habe ich doch meine Retestreliabilität, mein Cronbachs Alpha oder mein Omega - also ein (1) Wert für die Reliabiliät! Hochstapler"
-2. Warte mal, der nennt sich IRT Fanboy, und kommt dann mit Reliabilität um die Ecke? Iteminformation? Testinformation? IRT, hallo? Hochstapler!
-
-
-1. Innerhalb der IRT gibt es eigentlich keinen einen natürlichen Wert, um die Messgenauigkeit eines Instruments unabhängig der Personenfähigkeit angibt. 
+Innerhalb der IRT gibt es eigentlich keinen einen natürlichen Wert, um die Messgenauigkeit eines Instruments unabhängig der Personenfähigkeit angibt. 
 Stattdessen, liefert jedes einzelne Item für unterschiedliche Personenfähigkeiten unterschiedlich viel Information (hierbei können wir die statistische Information, die Fischer-Information, relativ unproblematisch als alltagssprachliche Information auffassen).
 Manche Items helfen uns also sehr gut im oberen Bereich zu differenzieren, umgekehrt aber im unteren Bereich nicht so sehr; oder auch anders herum. 
 Grundsätzlich ist diese Auffassung der Messgenauigkeit sehr intuitiv. 
 Wir stellen uns vor, wir möchten die Mathematikfähigkeit von Gymnasiasten in Erfahrung bringen.
-Dazu stellen wir ihnen die Frage "Was gibt 2+2?". 
-Wahrscheinlich (hoffentlich) wird jeder diese Frage korrekt beantworten, denn sie ist viel zu einfach für diese Zielgruppe.
-Die Beantwortung liefert uns also keine Information.
-Ein anderes Prinzip, das hier ebenfalls erkennbar wird, besteht darin, dass ein Test gemäß IRT nicht in allen Fähigkeitsbereichen gleich gut misst. 
-Recht einleuchtend ist das deshalb, 
-
-In item response theory there is no "natural" single value to reflect how precise our test measures the underlying ability. Instead, every item has the capacity to inform us about the underlying latent trait of a single person. This capacity is an item specific attribute and is called "item information". The item information is a function of the theta parameter, i.e., some items are decent in order to differentiate between persons on the higher end of the theta spectrum, some in the middle (my experience is: mostly in the middle) and some in the lower end. The easiest way to grasp this is to think of some math test. In this test you ask participants "2+2= ?". Clearly, this item won't help us differentiate between anyone beyond middleschool because every one will get it right. However, to test low ability persons (kindergarden kids that just started learning about calculating) this item might just be perfect. Asking for the solution of some complex equation containing some weird integrals however, might help differentiate bteween test persons after middleschool, but asking some kindergarten kids to give you an answer  won't help differentiation between these kids (no matter how many sweets you promise for a correct answer). 
-So much about item information. The nice thing in IRT is that in order to know how precise a test is overall, you just have to add the single iteminformation functions. The result is the test information function that is depicted in terms of the  "reliability" as used in classical test theory.
-
-2. Since only a few "normal" psychologists know a big deal about IRT, the use of "reliability" makes things a lot more comprehensible. Of course, this reliability depends perfectly on the test information (and thus on the Standard Error of the theta).
-
+Dazu stellen wir ihnen die Frage "Was ergibt 2+2?". 
+Wahrscheinlich (und hoffentlich) wird jeder diese Frage korrekt beantworten, denn sie ist viel zu einfach für diese Zielgruppe.
+Wir haben dann keine Grundlage um einem Schüler zu attestieren, er sei mehr oder weniger mathebegabt als ein anderer.
+Die Beantwortung von 2+2 liefert uns also keine Information.
+Schön ist nun, dass diese plausible Annahme innerhalb der IRT ebenfalls gilt.
+Unschön ist, dass man nicht direkt einen Wert anschauen kann, um die Messgenauigkeit des Tests zu beurteilen.
+Aber es gibt auch innerhalb der IRT Abhilfe, indem man sich die marginale bzw. empirische Reliabilität anschaut, die man "ganz normal" wie andere Reliabilitäten interpretieren kann.
 
 ```{r}
 empirical_rxx(thetgm1)
@@ -168,59 +144,16 @@ plot(gmodel1, type = "rxx", theta_lim = c(-2,2) )
 ```{r}
 # thetgm1 <- fscores(gmodel1, full.scores.SE = TRUE, method = "EAP")
 
-hist(thetgm1, breaks = 40)
+hist(thetgm1[,"F1"], breaks = 40)
 ```
 
-
-Since we get the fat clustering of theta values, we're gonna be interested in the model more in general. We will therefor look at the expected score given our model, at the expected chosen category of the model and the expected item score - all depending on theta. We do not really find oddities here. Except that (plot 2) item response behavior is not in line with the usual likert scale assumption of equal intervals between item scores.
-```{r}
-plot(gmodel1, type = "score", theta_lim = c(-2,2))
-plot(gmodel1, type = "trace", theta_lim = c(-2,2))
-plot(gmodel1, type = "itemscore", theta_lim = c(-2,2))
-```
 
 # The graded response model: short summary
-So far we're kind of happy, because our model- and itemfit is decent and we get a great reliability. Yay! However, the theta we get is, imho, just trash. What to do about that? We need some different modelling approach, and, lucky as we are, a different modelling approach can be used righteously - just remember our extra small factors!
+Bisher lief alles glatt. Die Reliabilität ist in Ordnung, der Modellfit ist in Ordnung, wir haben eine schöne einzelne Dimension protestantischer Arbeitsethik.
+Aber mehr leider auch nicht. 
+Spannend wäre jetzt zu untersuchen, inwiefern die psychologische Dimension, die wir gefunden haben mit anderen Dimensionen zusammenhängt und letztlich noch viel mehr, ob sie auch mit anderen Ereignissen, als der Beantwortung irgendwelcher Fragebögen einhergeht.
+Ob also beispielsweise Personen, die einen hohen Wert auf der PWES haben im echten Leben erfolgreich sind, viel arbeiten (work hard, play hardly) etc.
+Leider ist uns die Untersuchung des Letzteren vergönnt, da wir hierzu keine Daten haben.
+Eine Minivalidierung der PWES können wir dennoch in Angriff nehmen. 
 
-
-# Bifactor models of protestant ethics.
-
-## 2 Specific factors
-
-```{r}
-spec1 <- rep(NA, 18)
-spec1[c(10,16,13)] <- 1
-spec1[c(9,14,2)] <- 2
-# bf1 <- bfactor(dat, spec1, TOL = .0001)
-summary(bf1)
-```
-
-```{r}
-theta_bf1 <- fscores(bf1, full.scores.SE = TRUE)
-hist(theta_bf1[,"F1"])
-hist(theta_bf1[,"F2"])
-hist(theta_bf1[,"F3"])
-empirical_rxx(theta_bf1)
-```
-
-
-## 3 Specific factors
-
-```{r}
-spec2 <- rep(NA, 18)
-spec2[c(6,4,17)] <- 1
-spec2[c(10,16,13)] <- 2
-spec2[c(9,14,2)] <- 3
-# bf2 <- bfactor(dat, spec2, TOL = .001)
-summary(bf2)
-```
-
-
-```{r}
-theta_bf2 <- fscores(bf2, full.scores.SE = TRUE)
-hist(theta_bf2[,"F1"], breaks = 18)
-hist(theta_bf2[,"F2"])
-hist(theta_bf2[,"F3"])
-empirical_rxx(theta_bf2)
-```
 
