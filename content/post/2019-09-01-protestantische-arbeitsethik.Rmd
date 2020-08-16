@@ -3,7 +3,7 @@ title: Protestantische Arbeitsethik
 author: Simon Büttner
 date: '2019-09-01'
 slug: protestantische-arbeitsethik
-categories: [Test, Psychometrie, IRT]
+categories: []
 tags: []
 keywords:
   - tech
@@ -19,7 +19,7 @@ load("../../static/data/ProtestandWorkEthic/PWES.Rdata")
 ```
 # Protestantische Arbeitsethik
 Mein erster Post soll Einblick darin geben, wie ein Psychologe grundsätzlich versucht, bestimmte psychologische Konstrukte/Eigenschaften, die er sich ausgedacht hat, empirisch zu untersuchen. 
-Den eigentlich sehr spannenden Prozess der Itemgenerierung lassen wir hier außen vor und steigen bei deren empirischen Überprüfung ein.
+Den eigentlich sehr spannenden Prozess der Itemgenerierung lassen wir hier außen vor und steigen bei der empirischen Überprüfung der Items ein.
 Items sind die einzelnen Aufgaben, die man in einem Test bearbeitet. 
 Bei Persönlichkeitstests sind es Aussagen wie "Ich lese gerne Blogs", die man z.B. von 1-5 danach bewerten soll, inwiefern man diesen zustimmt.
 Bei solchen Einschätzungen von 1-5 spricht man dann von Likert-Skalen bzw. einem Likert-Skalen Item.
