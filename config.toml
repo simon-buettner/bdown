@@ -36,10 +36,11 @@ canonifyurls = true
   job = "R&D Consultant"
   location = "Esslingen, Germany"
   # Your Gravatar email. Overwrite `author.picture` everywhere in the blog
-  gravatarEmail = "simon_buettner123@hotmail.de"
+  # gravatarEmail = "simon_buettner123@hotmail.de"
   # Your profile picture
   # Overwritten by your gravatar image if `author.gravatarEmail` is filled
-  picture = "images/index.png"
+  # picture = "images/profilepic.png"
+  picture = "images/profilepic.png"
   # Your Twitter username without the @. E.g : thibaudlepretre
   # twitter = "thibaudlepretre"
   # Your google plus profile id. E.g : +ThibaudLepretre or 114625208755123718311
