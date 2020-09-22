@@ -1,5 +1,5 @@
 # Tranquilpeak
-# Version : 0.4.7-BETA
+# Version : 0.4.4-BETA
 # Author : Thibaud Leprêtre
 
 # I STRONGLY recommend you to use a CDN to speed up loading of pages.
@@ -12,18 +12,21 @@
 # For developpers, if you modify this theme, put your images in `source/images` folder and
 # use grunt task `build` to synchronize assets
 
-baseURL = "https://simonbuettner.netlify.com"
+baseURL = "https://simonbuettner.netlify.app/"
 languageCode = "en-us"
 defaultContentLanguage = "en-us"
-title = "Psychometric Kindergarten"
+title = "Psychometer"
 theme = "hugo-tranquilpeak-theme"
-disqusShortname = "sbutti"
-#googleAnalytics = "sbutti"
-paginate = 7
+#disqusShortname = "hugo-tranquilpeak-theme"
+#googleAnalytics = "UA-80069806-1"
+paginate = 5
 canonifyurls = true
+ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown", "_files$", "_cache$"]
+
 
 [permalinks]
-  post = "/:year/:month/:slug/"
+  post = "/:slug/"
+  page = "/:slug/"
 
 [taxonomies]
   tag = "tags"
@@ -32,20 +35,15 @@ canonifyurls = true
 
 [author]
   name = "Simon Büttner"
-  bio = "Hallo, ich bin Simon und Psychologe und beschäftige mich als Testentwickler vornehmlich mit der technischen Seite der Psychologie."
+  bio = "Als R&D Consultant bei HR Diagnostics beschäftige ich mich mit der datenlastigeren Seite der Psychologie"
   job = "R&D Consultant"
-  location = "Esslingen, Germany"
+  location = "Esslingen"
   # Your Gravatar email. Overwrite `author.picture` everywhere in the blog
-  # gravatarEmail = "simon_buettner123@hotmail.de"
   # Your profile picture
   # Overwritten by your gravatar image if `author.gravatarEmail` is filled
-<<<<<<< HEAD
-  # picture = "images/profilepic.png"
   picture = "images/profilepic.png"
+  # twitter = "robinson_es"
   # Your Twitter username without the @. E.g : thibaudlepretre
-  # twitter = "thibaudlepretre"
-  # Your google plus profile id. E.g : +ThibaudLepretre or 114625208755123718311
-  # googlePlus = "+ThibaudLepretre"
 
 # Menu Configuration
 [[menu.main]]
@@ -56,28 +54,16 @@ canonifyurls = true
   url = "/"
 [[menu.main]]
   weight = 2
-  identifier = "categories"
-  name = "Categories"
-  pre = "<i class=\"sidebar-button-icon fa fa-lg fa-bookmark\"></i>"
-  url = "/categories"
-[[menu.main]]
-  weight = 3
   identifier = "tags"
   name = "Tags"
   pre = "<i class=\"sidebar-button-icon fa fa-lg fa-tags\"></i>"
   url = "/tags"
 [[menu.main]]
-  weight = 4
+  weight = 3
   identifier = "archives"
   name = "Archives"
   pre = "<i class=\"sidebar-button-icon fa fa-lg fa-archive\"></i>"
   url = "/archives"
-[[menu.main]]
-  weight = 5
-  identifier = "about"
-  name = "About"
-  pre = "<i class=\"sidebar-button-icon fa fa-lg fa-question\"></i>"
-  url = "/#about"
 
 [[menu.links]]
   weight = 1
@@ -85,19 +71,35 @@ canonifyurls = true
   name = "GitHub"
   pre = "<i class=\"sidebar-button-icon fa fa-lg fa-github\"></i>"
   url = "https://github.com/simon-buettner"
-
-[[menu.misc]]
-  weight = 1
-  identifier = "rss"
-  name = "RSS"
+  
+[[menu.links]]
+  weight = 2
+  identifier = "speaking"
+  name = "Speaking"
   pre = "<i class=\"sidebar-button-icon fa fa-lg fa-rss\"></i>"
-  url = "/index.xml"
+  url = "/speaking"
+  
+[[menu.main]]
+  weight = 3
+  identifier = "about"
+  name = "About"
+  pre = "<i class=\"sidebar-button-icon fa fa-lg fa-question\"></i>"
+  url = "/about"
+  
+[[menu.main]]
+  weight = 4
+  identifier = "linkedin"
+  name = "Linkedin"
+  pre = "<i class=\"sidebar-button-icon fa fa-lg fa-linkedin\"></i>"
+  url = "https://www.linkedin.com/in/simon-b%C3%BCttner-480a8611a/"
+
+
 
 [params]
   # Customize date format use to render blog post date, categories and other
   # You must use date format used by Go Time package https://golang.org/pkg/time/
   # Months (not work with short month like "jan", "feb", etc) are translated if translation exists on i18n folders
-  # Default format is: January 2, 2006
+  # Default format is: January 2, 2006 
   # dateFormat = "2 January 2006"
 
   # Global keywords configuration. Following keywords will be add to every pages
@@ -110,11 +112,11 @@ canonifyurls = true
   # Hide sidebar on all article page to let article take full width to improve reading, and enjoy wide images and cover images. (true: enable, false: disable)
   clearReading = true
 
-  # Define categories will create hierarchy between parents: `categories = ["foo", "bar"]` will consider "bar" a sub-category of "foo".
+  # Define categories will create hierarchy between parents: `categories = ["foo", "bar"]` will consider "bar" a sub-category of "foo". 
   # If false it will flat categories.
   hierarchicalCategories = true
 
-  description = "In this blog I will just play around with some open source data files using some psychometric models."
+  description = "Psycho-Blog von Simon Büttner"
 
   # Customization
   # Define the behavior of the sidebar
@@ -129,15 +131,15 @@ canonifyurls = true
   #    large sidebar is swiped on all lower screens
   # 5: Display header bar on all screens and large sidebar is swiped on large screen
   # 6: Display header bar on all screens and medium sidebar is swiped
-  sidebarBehavior = 1
+  sidebarBehavior = 2
 
   # Your blog cover picture. I STRONGLY recommend you to use a CDN to speed up loading of pages.
   # There is many free CDN like Cloudinary or you can also use indirectly
   # by using services like Google Photos.
   # Current image is on AWS S3 and delivered by AWS CloudFront.
-  # Otherwise put your image, for example `cover.jpg` in folder `static/images/`,
-  # and use relative url : `images/cover.jpg`
-  coverImage = "images/why.jpg"
+  # Otherwise put your image in folder `static/_images/` (development)  or in `source/assets/images/` if you can't or don't want to build the theme,
+  # and use relative url : `your-image.png`
+  coverImage = "cover.jpg"
 
   # Display an image gallery at the end of a post which have photos variables (false: disabled, true: enabled)
   imageGallery = true
@@ -192,19 +194,15 @@ canonifyurls = true
     icon = "fa-twitter"
     url = "https://twitter.com/intent/tweet?text=%s"
 
-  [[params.sharingOptions]]
-    name = "Google+"
-    icon = "fa-google-plus"
-    url = "https://plus.google.com/share?url=%s"
-
   [params.header.rightLink]
     class = ""
     icon = ""
-    url = "/#about"
+    url = "/about"
+
 
   # Customize link of author avatar in sidebar
-  # [params.sidebar.profile]
-  #   url = "/#about"
+   [params.sidebar.profile]
+     url = "/about"
 
   # Customize copyright value "© 2017 <CUSTOMIZATION>. All Rights Reserved"
   # [params.footer]
