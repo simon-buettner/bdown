@@ -293,7 +293,7 @@ Allerdings ließen sich auch weitere Dimensionen finden, die nicht rein zufälli
 Wir halten im Sinne des Tests die Sparsamkeit hoch und betrachten nur die eine Hauptdimension.</p>
 <pre class="r"><code>set.seed(1234)
 fa.parallel(dat)</code></pre>
-<p><img src="https://simonbuettner.netlify.app/post/2019-09-01-protestantische-arbeitsethik_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+<p><img src="https://simonbuettner.netlify.app/post/01_2020-09-22-protestantische-arbeitsethik.html_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
 <pre><code>## Parallel analysis suggests that the number of factors =  4  and the number of components =  1</code></pre>
 </div>
 <div id="das-graded-response-model-der-protestantischen-arbeitsethik-model-fit" class="section level1">
@@ -351,11 +351,13 @@ itemfit(gmodel1, fit_stats = &quot;PV_Q1&quot;)
 ## 15 Q17A 22.983   20.367       0.015   0.309
 ## 16 Q18A 48.015   35.000       0.026   0.070
 ## 17 Q19A 31.862   27.467       0.017   0.257</code></pre>
-<p>Über die hier verwendeten Funktionen können wir schon einige Aussagen treffen:
-1. Die “summary”-Funktion zeigt uns: eindimensionales Modell erklärt immerhin 41% der Varianz in den Daten: “Proportion Var: 0.411”)
-2. Die “summary”-Funktion: alle Items laden hinreichend gut auf diesem Faktor: die Zahlen unter F1 geben die Faktoreladungen an ( = wie sehr hängt die Zustimmung zu einem Item von der zugrundeliegenden Eigenschaft ab) sind mindestens bei .44 - ab .32 ist es “gut genug”.
-3. “M2” gibt uns einige CFA Fit Indizes, das sind Kennwerte, die uns erlauben einzuschätzen, wie gut unser Modell auf die Daten passt. Dabei zeigt sich: die Modell und Daten passen relativ gut aufeinander (RMSEA nahe 0.05, SRMSR kleiner .1, TLI nahe .9). Aber, aber: wir haben ja auch schon 2 Items ausgeschlossen. Und dennoch Raum nach oben ist auch hier noch.
-4. “itemfit” zeigt uns, inwiefern die empirischen Antworten auf einzelne Items <em>nicht</em> modellkonform sind. Wünschenswert ist, dass “p.PV_Q1” größer als .05 oder .01 ist, dass also keine signifikante Modellabweichung bei einzelnen Items besteht. Das ist grundsätzlich der Fall.</p>
+<p>Über die hier verwendeten Funktionen können wir schon einige Aussagen treffen:</p>
+<ol style="list-style-type: decimal">
+<li><p>Die “summary”-Funktion zeigt uns: eindimensionales Modell erklärt immerhin 41% der Varianz in den Daten: “Proportion Var: 0.411”)</p></li>
+<li><p>Die “summary”-Funktion: alle Items laden hinreichend gut auf diesem Faktor: die Zahlen unter F1 geben die Faktoreladungen an ( = wie sehr hängt die Zustimmung zu einem Item von der zugrundeliegenden Eigenschaft ab) sind mindestens bei .44 - ab .32 ist es “gut genug”.</p></li>
+<li><p>“M2” gibt uns einige CFA Fit Indizes, das sind Kennwerte, die uns erlauben einzuschätzen, wie gut unser Modell auf die Daten passt. Dabei zeigt sich: die Modell und Daten passen relativ gut aufeinander (RMSEA nahe 0.05, SRMSR kleiner .1, TLI nahe .9). Aber, aber: wir haben ja auch schon 2 Items ausgeschlossen. Und dennoch Raum nach oben ist auch hier noch.</p></li>
+<li><p>“itemfit” zeigt uns, inwiefern die empirischen Antworten auf einzelne Items <em>nicht</em> modellkonform sind. Wünschenswert ist, dass “p.PV_Q1” größer als .05 oder .01 ist, dass also keine signifikante Modellabweichung bei einzelnen Items besteht. Das ist grundsätzlich der Fall.</p></li>
+</ol>
 </div>
 <div id="messgenauigkeit" class="section level1">
 <h1>Messgenauigkeit</h1>
@@ -379,13 +381,13 @@ Aber es gibt auch innerhalb der IRT Abhilfe, indem man sich die marginale (oder 
 <pre class="r"><code>marginal_rxx(gmodel1)
 ## [1] 0.9098585
 plot(gmodel1, type = &quot;rxx&quot;, theta_lim = c(-3,3) )</code></pre>
-<p><img src="https://simonbuettner.netlify.app/post/2019-09-01-protestantische-arbeitsethik_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p><img src="https://simonbuettner.netlify.app/post/01_2020-09-22-protestantische-arbeitsethik.html_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
 <p>Die marginale Reliabilität liegt bei .9 (Output von “marginal_rxx”), ist also ziemlich zufriedenstellend.
 Außerdem habe ich die Messgenauigkeit als Reliabilität (nicht direkt als Information, wie in der IRT üblich) in Abhängigkeit der Personenfähigkeit geplotted, was ein typisches Muster ergibt: im mittleren Bereich wird die höchste Messgenauigkeit erreicht, an den Rändern sinkt sie etwas.</p>
 <pre class="r"><code># thetgm1 &lt;- fscores(gmodel1, full.scores.SE = TRUE, method = &quot;EAP&quot;)
 
 plot(density(thetgm1[,&quot;F1&quot;]), main = &quot;Verteilung der resultierenden &#39;protestantischen Arbeitsethik&#39;-Eigenschaft&quot;)</code></pre>
-<p><img src="https://simonbuettner.netlify.app/post/2019-09-01-protestantische-arbeitsethik_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p><img src="https://simonbuettner.netlify.app/post/01_2020-09-22-protestantische-arbeitsethik.html_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
 </div>
 <div id="kurzzusammenfassung" class="section level1">
 <h1>Kurzzusammenfassung</h1>
@@ -419,7 +421,7 @@ Eine Minivalidierung der PWES können wir dennoch in Angriff nehmen - aber erst 
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://simonbuettner.netlify.app/protestantische-arbeitsethik/" data-tooltip="Protestantische Arbeitsethik 1">
+                <a class="post-action-btn btn btn--disabled">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -495,7 +497,7 @@ Eine Minivalidierung der PWES können wir dennoch in Angriff nehmen - aber erst 
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://simonbuettner.netlify.app/protestantische-arbeitsethik/" data-tooltip="Protestantische Arbeitsethik 1">
+                <a class="post-action-btn btn btn--disabled">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>

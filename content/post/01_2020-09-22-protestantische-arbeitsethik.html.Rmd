@@ -124,7 +124,7 @@ itemfit(gmodel1, fit_stats = "PV_Q1")
 ```
 Über die hier verwendeten Funktionen können wir schon einige Aussagen treffen:
 
-  1. Item Die "summary"-Funktion zeigt uns: eindimensionales Modell erklärt immerhin 41% der Varianz in den Daten: "Proportion Var:  0.411")
+  1. Die "summary"-Funktion zeigt uns: eindimensionales Modell erklärt immerhin 41% der Varianz in den Daten: "Proportion Var:  0.411")
   
   2. Die "summary"-Funktion: alle Items laden hinreichend gut auf diesem Faktor: die Zahlen unter F1 geben die Faktoreladungen an ( = wie sehr hängt die Zustimmung  zu einem Item von der zugrundeliegenden Eigenschaft ab) sind mindestens bei .44 - ab .32 ist es "gut genug".
   
