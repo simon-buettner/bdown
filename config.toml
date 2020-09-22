@@ -41,8 +41,6 @@ canonifyurls = true
   # Overwritten by your gravatar image if `author.gravatarEmail` is filled
 <<<<<<< HEAD
   # picture = "images/profilepic.png"
-=======
->>>>>>> 599bc8c33a57c6b4aefe274d40954a2b07a7bc54
   picture = "images/profilepic.png"
   # Your Twitter username without the @. E.g : thibaudlepretre
   # twitter = "thibaudlepretre"
