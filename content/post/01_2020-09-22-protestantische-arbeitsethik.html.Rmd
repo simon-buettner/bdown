@@ -123,10 +123,14 @@ m2.gmodel1 %>% round(.,3)
 itemfit(gmodel1, fit_stats = "PV_Q1")
 ```
 Über die hier verwendeten Funktionen können wir schon einige Aussagen treffen:
-1. Die "summary"-Funktion zeigt uns: eindimensionales Modell erklärt immerhin 41% der Varianz in den Daten: "Proportion Var:  0.411")
-2. Die "summary"-Funktion: alle Items laden hinreichend gut auf diesem Faktor: die Zahlen unter F1 geben die Faktoreladungen an ( = wie sehr hängt die Zustimmung  zu einem Item von der zugrundeliegenden Eigenschaft ab) sind mindestens bei .44 - ab .32 ist es "gut genug".
-3. "M2" gibt uns einige CFA Fit Indizes, das sind Kennwerte, die uns erlauben einzuschätzen, wie gut unser Modell auf die Daten passt. Dabei zeigt sich: die Modell und Daten passen relativ gut aufeinander (RMSEA nahe 0.05, SRMSR kleiner .1, TLI nahe .9). Aber, aber: wir haben ja auch schon 2 Items ausgeschlossen. Und dennoch Raum nach oben ist auch hier noch.
-4. "itemfit" zeigt uns, inwiefern die empirischen Antworten auf einzelne Items *nicht* modellkonform sind. Wünschenswert ist, dass "p.PV_Q1" größer als .05 oder .01 ist, dass also keine signifikante Modellabweichung bei einzelnen Items besteht. Das ist grundsätzlich der Fall.
+
+  1. Item Die "summary"-Funktion zeigt uns: eindimensionales Modell erklärt immerhin 41% der Varianz in den Daten: "Proportion Var:  0.411")
+  
+  2. Die "summary"-Funktion: alle Items laden hinreichend gut auf diesem Faktor: die Zahlen unter F1 geben die Faktoreladungen an ( = wie sehr hängt die Zustimmung  zu einem Item von der zugrundeliegenden Eigenschaft ab) sind mindestens bei .44 - ab .32 ist es "gut genug".
+  
+  3. "M2" gibt uns einige CFA Fit Indizes, das sind Kennwerte, die uns erlauben einzuschätzen, wie gut unser Modell auf die Daten passt. Dabei zeigt sich: die Modell und Daten passen relativ gut aufeinander (RMSEA nahe 0.05, SRMSR kleiner .1, TLI nahe .9). Aber, aber: wir haben ja auch schon 2 Items ausgeschlossen. Und dennoch Raum nach oben ist auch hier noch.
+  
+  4. "itemfit" zeigt uns, inwiefern die empirischen Antworten auf einzelne Items *nicht* modellkonform sind. Wünschenswert ist, dass "p.PV_Q1" größer als .05 oder .01 ist, dass also keine signifikante Modellabweichung bei einzelnen Items besteht. Das ist grundsätzlich der Fall.
 
 # Messgenauigkeit
 Jetzt schauen wir einmal in Richtung Benutzbarkeit der Skala.
