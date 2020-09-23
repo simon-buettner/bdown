@@ -16,7 +16,7 @@ library(mirt)
 library(dplyr)
 load("../../static/data/ProtestandWorkEthic/PWES.Rdata")
 ```
-# Protestantische Arbeitsethik
+# Protestantische Arbeitsethik 1: Was passiert bei der Testentwicklung?
 Mein erster Post soll Einblick darin geben, wie ein Psychologe grundsätzlich versucht, bestimmte psychologische Konstrukte/Eigenschaften, die er sich ausgedacht hat, empirisch zu untersuchen. 
 Den eigentlich sehr spannenden Prozess der Itemgenerierung lassen wir hier außen vor und steigen bei der empirischen Überprüfung der Items ein.
 **Items sind die einzelnen Aufgaben, die man in einem Test bearbeitet.**
@@ -24,7 +24,7 @@ Bei Persönlichkeitstests sind es Aussagen wie "Ich lese gerne Blogs", die man z
 Bei solchen Einschätzungen von 1-5 spricht man dann von Likert-Skalen bzw. einem Likert-Skalen Item.
 Bei Leistungstests wäre ein Item z.B. eine Rechenaufgabe im offenen oder Multiple-Choice Format.
 
-Den empirischen Teil der Fragebogenkonstruktion möchte ich dabei anhand der etwas ungewöhnlichen "Protestant Work Ethic Scale" bestehend aus 19 Likert-Skalen Items untersuchen.
+Den empirischen Teil der Fragebogenkonstruktion möchte ich dabei anhand der etwas ungewöhnlichen ["Protestant Work Ethic Scale"](https://psycnet.apa.org/record/1971-09987-001) bestehend aus 19 Likert-Skalen Items untersuchen.
 Die dazugehörigen Daten sind auf [Open Psychometrics](https://openpsychometrics.org/_rawdata/) frei abrufbar. 
 Wieso ausgerechnet so eine Randerscheinung psychologischer Konstrukte?
 Mein Interesse rührt daher, dass nach Maßen der allgemeinen Intelligenz vor allem die Persönlichkeitskonstrukte Integrität und Gewissenhaftigkeit Prädiktoren des Berufserfolgs, aber auch weiter angelegter Maße eines "gelungenen Lebens" sind.
