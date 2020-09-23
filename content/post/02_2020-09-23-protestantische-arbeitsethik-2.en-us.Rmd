@@ -62,7 +62,7 @@ Betrachten möchte ich insbesondere folgende Variablen:
 ```{r}
 dat_2 <- cbind.data.frame(dat, 
 			dat_raw %>% select(`Extraverted, enthusiastic`:`Conventional, uncreative`))
-gmodel1_pwes_tipi <- mirt(dat_2, 1, "graded")
+gmodel1_pwes_tipi <- mirt(dat_2, 1, "graded", verbose = FALSE)
 summary(gmodel1_pwes_tipi)
 ```
 Die erste Frage, der ich nachgehe, ist, inwiefern die PWES ein eigenständiges Konstrukt darstellt.
