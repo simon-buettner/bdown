@@ -1,7 +1,7 @@
 ---
 title: Protestantische Arbeitsethik 1
 author: Simon Büttner
-date: '2020-01-10'
+date: '2020-10-01'
 slug: 01_2020-10-01-protestantische-arbeitsethik-1.en-us
 categories: []
 tags: []
@@ -32,7 +32,7 @@ Grundsätzlich würde ich nach Sichtung der Items der PWES das damit erfasste Ko
 Erstaunlich fand ich eigentlich immer, dass diese Konstrukte klassischer (Sekundär-)Tugenden so bedeutsam sind, haben diese heutzutage doch irgendwie an Ansehen verloren - werden im schlimmsten Fall sogar auch in die Nähe der "autoritären Persönlichkeit" gestellt werden, wodurch sie beinahe etwas Schmuddeliges an sich hängen haben.
 Gleichzeitig möchte ich gar nicht bestreiten, dass die Bedeutsamkeit dieser klassischen Tugenden auf mittlerweile doch recht alter Forschung basiert und heute ggf. an Gültigkeit nicht verloren hat.
 Und dennoch: Auch bei agiler Arbeit dürfte am Ende wichtig sein, was bei dieser Arbeit rauskommt. 
-Fleiß, Gewissenhaftigkeit und ein grundsätziches Maß an Ehrlichkeit werden deshalb auch weiterhin bedeutsam sein.
+Fleiß, Gewissenhaftigkeit und ein grundsätzliches Maß an Ehrlichkeit werden deshalb auch weiterhin bedeutsam sein.
 
 
 In Deutschland haben diese Eigenschaften und das Verhältnis zu ihnen eine gewisse Sonderstellung, da es sich vor allem um "preußische Tugenden" (Pünktlichkeit, Arbeitsamkeit, Pflichtbewusstsein, Fleiß) handelt.
@@ -71,15 +71,15 @@ Diese Skala geht zurück auf Max Webers Werk "Die protestantische Ethik und der 
 Wie man sieht, verkörpert diese Skala unsere (Groß-)Eltern, die erhobenen Zeigefinders mahnen, unsere Zeit nicht zu verschwenden, mehr Geld zu sparen, und stets hart zu arbeiten, denn darauf kommt es an, das lohnt sich.
 Außerdem kann man erkennen, dass jeglicher Bezug zur für den Calvinismus bedeutsamen Prädestinationslehre fehlt.
 Ein solcher Bezug wäre sicher unheimlich spannend, denn psychologisch kann der calvinistische Glaube an Prädestination mit interessanten Effekten einhergehen.
-Zum einen sucht man als Gläubiger durch weltlichen Erfolg zu bestätigen, dass man von Gott auserwählt ist und zum anderen kann der Glaube, auserwählt zu sein, ungeheurlich das Selbstvertrauen steigern. 
+Zum einen sucht man als Gläubiger durch weltlichen Erfolg zu bestätigen, dass man von Gott auserwählt ist und zum anderen kann der Glaube, auserwählt zu sein, ungeheuerlich das Selbstvertrauen steigern. 
 Nicht zu unrecht konzentriert sich Weber deshalb auf den Calvinismus. 
 Interessant wäre die Wirkung von Prädestinationsüberzeugungen deshalb alle Mal, auch wenn diese gar nicht in der Skala aufgenommen wurden, was aber auch verständlich ist, ist die Skala doch eine "Arbeitsethik"-Skala.
 
 # Grundlegende Faktorenstruktur: fa.parallel()
 G'nug g'schwätzt.
-**Um die Frage zu beantworten, welche Faktorstruktur der PWES zugrundeliegt, ist für den gewieften Psychologen zunächst zu klären, wie viele Faktoren/Dimensionen sich hinter den Daten verbergen. Aber was bedeutet das?** 
+**Um die Frage zu beantworten, welche Faktorstruktur der PWES zugrunde liegt, ist für den gewieften Psychologen zunächst zu klären, wie viele Faktoren/Dimensionen sich hinter den Daten verbergen. Aber was bedeutet das?** 
 Wenn Psychologen einen Test konstruieren, untersuchen sie in der Regel, inwiefern einzelne Items des Tests miteinander zusammenhängen bzw. auch nicht miteinander zusammenhängen. 
-Bei uns: Stimmen jene, die der Aussage "Wenn man hart genug arbeitet, wird das eigene Leben mit höherer Wahrscheinlicheit besser" (Q17) zustimmen, auch der Aussage zu "Jeder der fähig und willens ist, hart zu arbeiten, hat eine gute Chance erfolgreich zu sein" (Q10).
+Bei uns: Stimmen jene, die der Aussage "Wenn man hart genug arbeitet, wird das eigene Leben mit höherer Wahrscheinlichkeit besser" (Q17) zustimmen, auch der Aussage zu "Jeder der fähig und willens ist, hart zu arbeiten, hat eine gute Chance erfolgreich zu sein" (Q10).
 Und wenn ja, welchen Aussagen stimmen sie dann noch zu? Welche Aussagen werden unabhängig eines solchen Bündels an Aussagen beantwortet?
 Ziel ist dann, aus den einzelnen Antworten eine aggregierte Information zu machen. 
 Also statt zu sagen, Person A stimmt Items 1, 2, 3 etc. zu, zu sagen Person A ist davon überzeugt, dass harte Arbeit zu Erfolg führt.
@@ -93,7 +93,7 @@ Hat man dann eine Zuordnung von Items zu den Dimensionen gefunden, berechnet man
 
 Zur Untersuchung der Faktorstruktur bedient man sich (im Zweifel über Umwege) vergleichsweise einfacher linearer Algebra, um die Struktur hinter den gegebenen Antworten auf die vielen Items zu untersuchen.
 **Über eine Hauptkomponenten- oder Faktorenanalyse kann man wie beschrieben Dimensionen aus ganz vielen verschiedenen gegebenen Antworten extrahieren.**
-Das sind keine psychologenspezifische Methoden, sondern vergleichsweise weit verbreitete Methoden.
+Das sind keine psychologiespezifische Methoden, sondern vergleichsweise weit verbreitete Methoden.
 So findet zum Beispiel die Hauptkomponentenanalyse auch im Machine Learning Einsatz, ebenfalls um aus vielen gegebenen Daten die wirklich vorhandene Struktur zu extrahieren, einen Datenwust also grundsätzlich zu vereinfachen.
 
 Das erste Problem besteht dann darin, zu entscheiden, wie viel Struktur tatsächlich hinter den Daten steht, also wie viele Dimensionen wir finden können.
@@ -111,7 +111,7 @@ fa.parallel(dat)
 ```
 
 # Das Graded Response Model der protestantischen Arbeitsethik: Model Fit
-Um den Test jetzt genauer statistisch zu untersuchen, stülpen wir den Daten ein eindimensionales statistisches Modell über (was genau das macht sei hier zurückgestelt. Eine Google Suche ergibt diese netten Seiten: [allgemeine Erklärung](https://www.statisticshowto.com/graded-response-model-ordered-categorical/) sowie [eine detailliertere Erklärung](http://statmath.wu-wien.ac.at/~hatz/psychometrics/11w/GPCM_GRM_GRASOM.pdf)). 
+Um den Test jetzt genauer statistisch zu untersuchen, stülpen wir den Daten ein eindimensionales statistisches Modell über (was genau das macht sei hier zurückgestellt. Eine Google Suche ergibt diese netten Seiten: [allgemeine Erklärung](https://www.statisticshowto.com/graded-response-model-ordered-categorical/) sowie [eine detailliertere Erklärung](http://statmath.wu-wien.ac.at/~hatz/psychometrics/11w/GPCM_GRM_GRASOM.pdf)). 
 Ganz einfach gesagt modellieren wir, wie die Items beantwortet werden in Abhängigkeit der zugrundeliegenden Fähigkeitsausprägung, also unserer sparsam gewählten Hauptdimension.
 Damit gehen wir etwas über eine normale Faktorenanalyse hinaus, erreichen aber ein sehr ähnliches (aber besseres) Ziel wie mit dieser.
 
@@ -126,7 +126,7 @@ itemfit(gmodel1, fit_stats = "PV_Q1")
 
   1. Die "summary"-Funktion zeigt uns: eindimensionales Modell erklärt immerhin 41% der Varianz in den Daten: "Proportion Var:  0.411")
   
-  2. Die "summary"-Funktion zeigt weiter: alle Items laden hinreichend gut auf diesem Faktor: die Zahlen unter F1 geben die Faktoreladungen an ( = wie sehr hängt die Zustimmung  zu einem Item von der zugrundeliegenden Eigenschaft ab) sind mindestens bei .44 - ab .32 ist es "gut genug".
+  2. Die "summary"-Funktion zeigt weiter: alle Items laden hinreichend gut auf diesem Faktor: die Zahlen unter F1 geben die Faktorladungen an ( = wie sehr hängt die Zustimmung  zu einem Item von der zugrundeliegenden Eigenschaft ab) sind mindestens bei .44 - ab .32 ist es "gut genug".
   
   3. "M2" gibt uns einige CFA Fit Indizes, das sind Kennwerte, die uns erlauben einzuschätzen, wie gut unser insgesamt Modell auf die Testdaten passt (oder andersherum). Dabei zeigt sich: Modell und Daten passen relativ gut aufeinander (RMSEA halbwegs nahe 0.05, SRMSR deutlich kleiner .1, TLI/CFI über .9). Aber, aber: wir haben ja auch schon 2 Items ausgeschlossen. Und dennoch Raum nach oben ist auch hier noch.
   
@@ -135,7 +135,7 @@ itemfit(gmodel1, fit_stats = "PV_Q1")
 # Messgenauigkeit
 Jetzt gehen wir einmal in Richtung Benutzbarkeit der Skala.
 Wir schauen uns hierfür die Reliabilität der Skala an und außerdem die Verteilung der (latenten) Theta-Werte an, also die PWES Dimension, die wir konstruiert haben.
-**Die Relabilität gibt an, wie genau wir messen können, welche Ausprägung eine Person auf einer psychologischen Dimension erreicht.**
+**Die Reliabilität gibt an, wie genau wir messen können, welche Ausprägung eine Person auf einer psychologischen Dimension erreicht.**
 Unsere psychologischen Messungen werden immer mit einer gewissen Ungenauigkeit behaftet sein.
 Um aber valide Aussagen darüber zu treffen, ob eine Person sehr gewissenhaft ist oder nicht sowie um zu entscheiden, ob Person A gewissenhafter als Person B ist, sollte unsere Einschätzung über einer Einschätzung mittels Würfelwurfs liegen.
 Die Reliabilität kann zwischen 0 (keine Messgenauigkeit, Würfelwurf) und 1 liegen (perfekte Messgenauigkeit).
@@ -180,5 +180,3 @@ Spannend wäre jetzt zu untersuchen, inwiefern die psychologische Dimension, die
 Ob also beispielsweise Personen, die einen hohen Wert auf der PWES haben im echten Leben erfolgreich sind, viel arbeiten und ihre Freizeit zurückstellen (work hard, play hardly) etc.
 Leider ist uns die Untersuchung des Letzteren vergönnt, da wir hierzu keine Daten haben.
 Eine Minivalidierung der PWES können wir dennoch in Angriff nehmen - aber erst in einem späteren Post. 
-
-
