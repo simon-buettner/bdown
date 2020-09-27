@@ -1,13 +1,13 @@
 ---
 title: Protestantische Arbeitsethik 1
-author: Simon Büttner
+author: Simon Buettner
 date: '2020-10-01'
-slug: 01_2020-10-01-protestantische-arbeitsethik-1.en-us
+slug: protestantische-arbeitsethik-1.en-us
 categories: []
 tags: []
-keywords: []
+keywords:
+  - tech
 ---
-
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(collapse = TRUE)
 library(psych)
@@ -16,7 +16,7 @@ library(mirt)
 library(dplyr)
 load("../../static/data/ProtestandWorkEthic/PWES.Rdata")
 ```
-# Was passiert bei einer Testentwicklung?
+# Was funktioniert Testentwicklung?
 Mein erster Post soll Einblick darin geben, wie Psychologen grundsätzlich versucht, bestimmte psychologische Konstrukte/Eigenschaften, die er sich ausgedacht hat, empirisch zu untersuchen. 
 Den eigentlich sehr spannenden Prozess der Itemgenerierung lassen wir hier außen vor und steigen bei der empirischen Überprüfung der Items ein.
 **Was sind Items? Items sind die einzelnen Aufgaben, die man in einem Test bearbeitet.**
@@ -179,4 +179,4 @@ Aber mehr leider auch nicht!
 Spannend wäre jetzt zu untersuchen, inwiefern die psychologische Dimension, die wir gefunden haben mit anderen Dimensionen zusammenhängt und letztlich noch viel mehr, ob sie auch mit anderen Ereignissen als der Beantwortung irgendwelcher Fragebögen einhergeht.
 Ob also beispielsweise Personen, die einen hohen Wert auf der PWES haben im echten Leben erfolgreich sind, viel arbeiten und ihre Freizeit zurückstellen (work hard, play hardly) etc.
 Leider ist uns die Untersuchung des Letzteren vergönnt, da wir hierzu keine Daten haben.
-Eine Minivalidierung der PWES können wir dennoch in Angriff nehmen - aber erst in einem späteren Post. 
+Eine Minivalidierung der PWES können wir dennoch in Angriff nehmen - aber erst in einem späteren Post.

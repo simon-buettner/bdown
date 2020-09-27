@@ -2,16 +2,26 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Psychometer</title>
-    <link>https://simonbuettner.netlify.app/</link>
+    <link>/</link>
     <description>Recent content on Psychometer</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://simonbuettner.netlify.app/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language>
+    <lastBuildDate>Thu, 01 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Protestantische Arbeitsethik 1</title>
+      <link>/protestantische-arbeitsethik-1.en-us/</link>
+      <pubDate>Thu, 01 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/protestantische-arbeitsethik-1.en-us/</guid>
+      <description>Was funktioniert Testentwicklung?Mein erster Post soll Einblick darin geben, wie Psychologen grundsätzlich versucht, bestimmte psychologische Konstrukte/Eigenschaften, die er sich ausgedacht hat, empirisch zu untersuchen.Den eigentlich sehr spannenden Prozess der Itemgenerierung lassen wir hier außen vor und steigen bei der empirischen Überprüfung der Items ein.Was sind Items? Items sind die einzelnen Aufgaben, die man in einem Test bearbeitet.Bei Persönlichkeitstests sind es Aussagen wie “Ich lese gerne Blogs”, die man z.</description>
+    </item>
+    
     <item>
       <title>About</title>
-      <link>https://simonbuettner.netlify.app/about/</link>
+      <link>/about/</link>
       <pubDate>Tue, 22 Sep 2020 21:48:51 -0700</pubDate>
       
-      <guid>https://simonbuettner.netlify.app/about/</guid>
+      <guid>/about/</guid>
       <description>Auf diesem Blog gehe ich psycholigschen Fragen nach - aber mit Daten!</description>
     </item>
     

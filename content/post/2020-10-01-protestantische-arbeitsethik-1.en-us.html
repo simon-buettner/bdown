@@ -1,17 +1,18 @@
 ---
 title: Protestantische Arbeitsethik 1
-author: Simon Büttner
+author: Simon Buettner
 date: '2020-10-01'
-slug: 01_2020-10-01-protestantische-arbeitsethik-1.en-us
+slug: protestantische-arbeitsethik-1.en-us
 categories: []
 tags: []
-keywords: []
+keywords:
+  - tech
 ---
 
 
 
-<div id="was-passiert-bei-einer-testentwicklung" class="section level1">
-<h1>Was passiert bei einer Testentwicklung?</h1>
+<div id="was-funktioniert-testentwicklung" class="section level1">
+<h1>Was funktioniert Testentwicklung?</h1>
 <p>Mein erster Post soll Einblick darin geben, wie Psychologen grundsätzlich versucht, bestimmte psychologische Konstrukte/Eigenschaften, die er sich ausgedacht hat, empirisch zu untersuchen.
 Den eigentlich sehr spannenden Prozess der Itemgenerierung lassen wir hier außen vor und steigen bei der empirischen Überprüfung der Items ein.
 <strong>Was sind Items? Items sind die einzelnen Aufgaben, die man in einem Test bearbeitet.</strong>
@@ -93,7 +94,7 @@ Allerdings ließen sich auch weitere Dimensionen finden, die nicht rein zufälli
 Wir halten ganz im Sinne des Tests die Sparsamkeit hoch und betrachten nur diese eine Hauptdimension.</p>
 <pre class="r"><code>set.seed(1234)
 fa.parallel(dat)</code></pre>
-<p><img src="/post/01_2020-09-22-protestantische-arbeitsethik.html_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+<p><img src="/post/2020-10-01-protestantische-arbeitsethik-1.en-us_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
 <pre><code>## Parallel analysis suggests that the number of factors =  4  and the number of components =  1</code></pre>
 </div>
 <div id="das-graded-response-model-der-protestantischen-arbeitsethik-model-fit" class="section level1">
@@ -185,14 +186,14 @@ Grundsätzlich wird die Messgenauigkeit an den einzelnen Fähigkeitsausprägunge
 <pre class="r"><code>marginal_rxx(gmodel1)
 ## [1] 0.9096733
 plot(gmodel1, type = &quot;rxx&quot;, theta_lim = c(-3,3) )</code></pre>
-<p><img src="/post/01_2020-09-22-protestantische-arbeitsethik.html_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p><img src="/post/2020-10-01-protestantische-arbeitsethik-1.en-us_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
 <p>Die marginale Reliabilität liegt bei .9 (Output von “marginal_rxx”), ist also ziemlich zufriedenstellend.
 Außerdem habe ich die Messgenauigkeit als Reliabilität (nicht direkt als Information, wie in der IRT üblich) in Abhängigkeit der Personenfähigkeit geplotted, was ein typisches Muster ergibt: im mittleren Bereich wird die höchste Messgenauigkeit erreicht, an den Rändern sinkt sie etwas.
 Grundsätzlich messen wir aber im gesamten Fähigkeitsbereich gut.
 Die untere Graphik gibt uns Aufschluss darüber, in welchem Bereich die modellbasierten Fähigkeitsschätzungen liegen - der Großteil liegt zwischen -3 und 3 (was eine Folge dessen ist, wie das statistische Modell arbeitet) und wir erreichen grundsätzlich eine Normalverteilung (was so gesehen aber auch “vorne” schon als Annahme ins Modell gesteckt wurde).</p>
 <pre class="r"><code># thetgm1 &lt;- fscores(gmodel1, full.scores.SE = TRUE, method = &quot;EAP&quot;)
 plot(density(thetgm1[,&quot;F1&quot;]), main = &quot;Verteilung der &#39;protestantischen Arbeitsethik&#39;-Dimension&quot;)</code></pre>
-<p><img src="/post/01_2020-09-22-protestantische-arbeitsethik.html_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p><img src="/post/2020-10-01-protestantische-arbeitsethik-1.en-us_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
 </div>
 <div id="kurzzusammenfassung" class="section level1">
 <h1>Kurzzusammenfassung</h1>
