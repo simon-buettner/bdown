@@ -2,26 +2,26 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Psychometer</title>
-    <link>/</link>
+    <link>https://simonbuettner.netlify.app/</link>
     <description>Recent content on Psychometer</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 22 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 22 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://simonbuettner.netlify.app/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>About</title>
-      <link>/about/</link>
+      <link>https://simonbuettner.netlify.app/about/</link>
       <pubDate>Tue, 22 Sep 2020 21:48:51 -0700</pubDate>
       
-      <guid>/about/</guid>
+      <guid>https://simonbuettner.netlify.app/about/</guid>
       <description>Auf diesem Blog gehe ich psycholigschen Fragen nach - aber mit Daten!</description>
     </item>
     
     <item>
       <title>Protestantische Arbeitsethik 1</title>
-      <link>/01_2020-10-01-protestantische-arbeitsethik-1.en-us/</link>
+      <link>https://simonbuettner.netlify.app/01_2020-10-01-protestantische-arbeitsethik-1.en-us/</link>
       <pubDate>Tue, 22 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>/01_2020-10-01-protestantische-arbeitsethik-1.en-us/</guid>
+      <guid>https://simonbuettner.netlify.app/01_2020-10-01-protestantische-arbeitsethik-1.en-us/</guid>
       <description>Protestantische Arbeitsethik 1: Was passiert bei der Testentwicklung?Mein erster Post soll Einblick darin geben, wie ein Psychologe grundsätzlich versucht, bestimmte psychologische Konstrukte/Eigenschaften, die er sich ausgedacht hat, empirisch zu untersuchen.Den eigentlich sehr spannenden Prozess der Itemgenerierung lassen wir hier außen vor und steigen bei der empirischen Überprüfung der Items ein.Was sins Items? Items sind die einzelnen Aufgaben, die man in einem Test bearbeitet.Bei Persönlichkeitstests sind es Aussagen wie “Ich lese gerne Blogs”, die man z.</description>
     </item>
     
