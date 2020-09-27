@@ -1,7 +1,7 @@
 ---
 title: Protestantische Arbeitsethik 1
 author: Simon Büttner
-date: '2020-09-22'
+date: '2020-31-01'
 slug: 01_2020-10-01-protestantische-arbeitsethik-1.en-us
 categories: []
 tags: []
@@ -27,7 +27,7 @@ Bei Leistungstests wäre ein Item z.B. eine Rechenaufgabe im offenen oder Multip
 Den empirischen Teil der Fragebogenkonstruktion möchte ich dabei anhand der etwas ungewöhnlichen ["Protestant Work Ethic Scale"](https://psycnet.apa.org/record/1971-09987-001) bestehend aus 19 Likert-Skalen Items untersuchen.
 Die dazugehörigen Daten sind auf [Open Psychometrics](https://openpsychometrics.org/_rawdata/) frei abrufbar. 
 Wieso ausgerechnet so eine Randerscheinung psychologischer Konstrukte?
-Mein Interesse rührt daher, dass nach Maßen der allgemeinen Intelligenz von Testseite her vor allem die Persönlichkeitskonstrukte [(]Integrität und Gewissenhaftigkeit Prädiktoren des Berufserfolgs](https://d1wqtxts1xzle7.cloudfront.net/44029822/Schmidt_and_Hunter_1998_Validity_and_Utility_of_Selection_Methods.pdf?1458742080=&response-content-disposition=inline%3B+filename%3DThe_Validity_and_Utility_of_Selection_Me.pdf&Expires=1601204492&Signature=APF0Po8QwU4hvdqoq6BGZ~5yrccNSPzkOxQtsuPV9VUXLa975b1rKCH0pbjUS-wPLsTXNBHOqpJh2nqcw61bkgqqHjxrAfOLQCEzhCxNr~U1Z9URk-cTdrx~UK3SbOxLyJuoN8~oz7eBkNSnbwjUAwYtp12zazFBQovcJZ2gtNfEFpxw1LcySHYIEaXi5Fmirq2WGcjPJ~P29j3bzfh7~aBVpUT7ddIeV6VxkrM5eUDMcAHJsY35UqPKxQT1v~uFIrzAcMs8DnZiq9OcjIkWBJ8~2dA2rdhWQQFbsgrUmhZwcVhsnEOhLbPG3236aGGiBHtGvuBzVanCHeGQQZPXEw__&Key-Pair-Id=APKAJLOHF5GGSLRBV4ZA) sind.
+Mein Interesse rührt daher, dass nach Maßen der allgemeinen Intelligenz von Testseite her vor allem die Persönlichkeitskonstrukte [Integrität und Gewissenhaftigkeit Prädiktoren des Berufserfolgs](https://d1wqtxts1xzle7.cloudfront.net/44029822/Schmidt_and_Hunter_1998_Validity_and_Utility_of_Selection_Methods.pdf?1458742080=&response-content-disposition=inline%3B+filename%3DThe_Validity_and_Utility_of_Selection_Me.pdf&Expires=1601204492&Signature=APF0Po8QwU4hvdqoq6BGZ~5yrccNSPzkOxQtsuPV9VUXLa975b1rKCH0pbjUS-wPLsTXNBHOqpJh2nqcw61bkgqqHjxrAfOLQCEzhCxNr~U1Z9URk-cTdrx~UK3SbOxLyJuoN8~oz7eBkNSnbwjUAwYtp12zazFBQovcJZ2gtNfEFpxw1LcySHYIEaXi5Fmirq2WGcjPJ~P29j3bzfh7~aBVpUT7ddIeV6VxkrM5eUDMcAHJsY35UqPKxQT1v~uFIrzAcMs8DnZiq9OcjIkWBJ8~2dA2rdhWQQFbsgrUmhZwcVhsnEOhLbPG3236aGGiBHtGvuBzVanCHeGQQZPXEw__&Key-Pair-Id=APKAJLOHF5GGSLRBV4ZA) sind.
 Grundsätzlich würde ich nach Sichtung der Items der PWES das damit erfasste Konstrukt in der Nähe von Gewissenhaftigkeit und Integrität ansiedeln.
 Erstaunlich fand ich eigentlich immer, dass diese Konstrukte klassischer (Sekundär-)Tugenden so bedeutsam sind, haben diese heutzutage doch irgendwie an Ansehen verloren - werden im schlimmsten Fall sogar auch in die Nähe der "autoritären Persönlichkeit" gestellt werden, wodurch sie beinahe etwas Schmuddeliges an sich hängen haben.
 Gleichzeitig möchte ich gar nicht bestreiten, dass die Bedeutsamkeit dieser klassischen Tugenden auf mittlerweile doch recht alter Forschung basiert und heute ggf. an Gültigkeit nicht verloren hat.
