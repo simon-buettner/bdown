@@ -6,16 +6,7 @@
     <description>Recent content on Psychometer</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 01 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Protestantische Arbeitsethik 1</title>
-      <link>/2020/10/01/protestantische-arbeitsethik-1.en-us/</link>
-      <pubDate>Thu, 01 Oct 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/2020/10/01/protestantische-arbeitsethik-1.en-us/</guid>
-      <description>Was funktioniert Testentwicklung?Mein erster Post soll Einblick darin geben, wie Psychologen grundsätzlich versucht, bestimmte psychologische Konstrukte/Eigenschaften, die er sich ausgedacht hat, empirisch zu untersuchen.Den eigentlich sehr spannenden Prozess der Itemgenerierung lassen wir hier außen vor und steigen bei der empirischen Überprüfung der Items ein.Was sind Items? Items sind die einzelnen Aufgaben, die man in einem Test bearbeitet.Bei Persönlichkeitstests sind es Aussagen wie “Ich lese gerne Blogs”, die man z.</description>
-    </item>
-    
+    <lastBuildDate>Tue, 01 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>About</title>
       <link>/about/</link>
@@ -23,6 +14,15 @@
       
       <guid>/about/</guid>
       <description>Auf diesem Blog gehe ich psycholigschen Fragen nach - aber mit Daten!</description>
+    </item>
+    
+    <item>
+      <title>Protestantische Arbeitsethik 1</title>
+      <link>/2020/09/01/protestantische-arbeitsethik-1.en-us/</link>
+      <pubDate>Tue, 01 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/2020/09/01/protestantische-arbeitsethik-1.en-us/</guid>
+      <description>Was funktioniert Testentwicklung?Mein erster Post soll Einblick darin geben, wie Psychologen grundsätzlich versucht, bestimmte psychologische Konstrukte/Eigenschaften, die er sich ausgedacht hat, empirisch zu untersuchen.Den eigentlich sehr spannenden Prozess der Itemgenerierung lassen wir hier außen vor und steigen bei der empirischen Überprüfung der Items ein.Was sind Items? Items sind die einzelnen Aufgaben, die man in einem Test bearbeitet.Bei Persönlichkeitstests sind es Aussagen wie “Ich lese gerne Blogs”, die man z.</description>
     </item>
     
   </channel>
