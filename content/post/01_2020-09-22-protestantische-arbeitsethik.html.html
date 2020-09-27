@@ -1,7 +1,7 @@
 ---
 title: Protestantische Arbeitsethik 1
 author: Simon Büttner
-date: '2020-31-01'
+date: '2020-01-10'
 slug: 01_2020-10-01-protestantische-arbeitsethik-1.en-us
 categories: []
 tags: []
@@ -12,7 +12,7 @@ keywords: []
 
 <div id="was-passiert-bei-einer-testentwicklung" class="section level1">
 <h1>Was passiert bei einer Testentwicklung?</h1>
-<p>Mein erster Post soll Einblick darin geben, wie ein Psychologe grundsätzlich versucht, bestimmte psychologische Konstrukte/Eigenschaften, die er sich ausgedacht hat, empirisch zu untersuchen.
+<p>Mein erster Post soll Einblick darin geben, wie Psychologen grundsätzlich versucht, bestimmte psychologische Konstrukte/Eigenschaften, die er sich ausgedacht hat, empirisch zu untersuchen.
 Den eigentlich sehr spannenden Prozess der Itemgenerierung lassen wir hier außen vor und steigen bei der empirischen Überprüfung der Items ein.
 <strong>Was sind Items? Items sind die einzelnen Aufgaben, die man in einem Test bearbeitet.</strong>
 Bei Persönlichkeitstests sind es Aussagen wie “Ich lese gerne Blogs”, die man z.B. von 1-5 danach bewerten soll, inwiefern man ihnen zustimmt.
@@ -58,7 +58,7 @@ Diese Skala geht zurück auf Max Webers Werk “Die protestantische Ethik und de
 <li>Q18 I feel uneasy when there is little work for me to do.</li>
 <li>Q19 A distaste for hard work usually reflects a weakness of character.</li>
 </ul>
-<p>Wie man sieht, verkörpert diese Skala unsere (Groß-)Eltern, die erhobenen Zeigefinders mahnen, unsere Zeit nicht zu verschwenden, mehr Geld zu sparen, und stets hart zu arbeiten.
+<p>Wie man sieht, verkörpert diese Skala unsere (Groß-)Eltern, die erhobenen Zeigefinders mahnen, unsere Zeit nicht zu verschwenden, mehr Geld zu sparen, und stets hart zu arbeiten, denn darauf kommt es an, das lohnt sich.
 Außerdem kann man erkennen, dass jeglicher Bezug zur für den Calvinismus bedeutsamen Prädestinationslehre fehlt.
 Ein solcher Bezug wäre sicher unheimlich spannend, denn psychologisch kann der calvinistische Glaube an Prädestination mit interessanten Effekten einhergehen.
 Zum einen sucht man als Gläubiger durch weltlichen Erfolg zu bestätigen, dass man von Gott auserwählt ist und zum anderen kann der Glaube, auserwählt zu sein, ungeheurlich das Selbstvertrauen steigern.
@@ -71,8 +71,8 @@ Interessant wäre die Wirkung von Prädestinationsüberzeugungen deshalb alle Ma
 <p>G’nug g’schwätzt.
 <strong>Um die Frage zu beantworten, welche Faktorstruktur der PWES zugrundeliegt, ist für den gewieften Psychologen zunächst zu klären, wie viele Faktoren/Dimensionen sich hinter den Daten verbergen. Aber was bedeutet das?</strong>
 Wenn Psychologen einen Test konstruieren, untersuchen sie in der Regel, inwiefern einzelne Items des Tests miteinander zusammenhängen bzw. auch nicht miteinander zusammenhängen.
-Bei uns: Stimmt jemand, der der Aussage “Wenn man hart genug arbeitet, wird das eigene Leben mit höherer Wahrscheinlicheit besser” (Q17) zustimmt, auch der Aussage zu “Jeder der fähig und willens ist, hart zu arbeiten, hat eine gute Chance erfolgreich zu sein” (Q10).
-Und wenn ja, welchen Aussagen stimmt er dann noch zu?
+Bei uns: Stimmen jene, die der Aussage “Wenn man hart genug arbeitet, wird das eigene Leben mit höherer Wahrscheinlicheit besser” (Q17) zustimmen, auch der Aussage zu “Jeder der fähig und willens ist, hart zu arbeiten, hat eine gute Chance erfolgreich zu sein” (Q10).
+Und wenn ja, welchen Aussagen stimmen sie dann noch zu? Welche Aussagen werden unabhängig eines solchen Bündels an Aussagen beantwortet?
 Ziel ist dann, aus den einzelnen Antworten eine aggregierte Information zu machen.
 Also statt zu sagen, Person A stimmt Items 1, 2, 3 etc. zu, zu sagen Person A ist davon überzeugt, dass harte Arbeit zu Erfolg führt.</p>
 <p>Auf diese Weise wird eine (statistische) Dimension / ein Faktor dann zu einem psychologischen Konstrukt, einer Persönlichkeitseigenschaft oder -fähigkeit oder einem latenten Trait - um nur einige Benennungen aufzuführen.
@@ -99,7 +99,7 @@ fa.parallel(dat)</code></pre>
 <div id="das-graded-response-model-der-protestantischen-arbeitsethik-model-fit" class="section level1">
 <h1>Das Graded Response Model der protestantischen Arbeitsethik: Model Fit</h1>
 <p>Um den Test jetzt genauer statistisch zu untersuchen, stülpen wir den Daten ein eindimensionales statistisches Modell über (was genau das macht sei hier zurückgestelt. Eine Google Suche ergibt diese netten Seiten: <a href="https://www.statisticshowto.com/graded-response-model-ordered-categorical/">allgemeine Erklärung</a> sowie <a href="http://statmath.wu-wien.ac.at/~hatz/psychometrics/11w/GPCM_GRM_GRASOM.pdf">eine detailliertere Erklärung</a>).
-Ganz einfach gesagt modellieren wir, wie die Items beantwortet werden in Abhängigkeit der zugrundeliegenden Fähigkeitsausprägung.
+Ganz einfach gesagt modellieren wir, wie die Items beantwortet werden in Abhängigkeit der zugrundeliegenden Fähigkeitsausprägung, also unserer sparsam gewählten Hauptdimension.
 Damit gehen wir etwas über eine normale Faktorenanalyse hinaus, erreichen aber ein sehr ähnliches (aber besseres) Ziel wie mit dieser.</p>
 <pre class="r"><code># gmodel1 &lt;- mirt(dat, 1, &quot;graded&quot;, TOL = .0001)
 summary(gmodel1)
@@ -169,17 +169,17 @@ Unsere psychologischen Messungen werden immer mit einer gewissen Ungenauigkeit b
 Um aber valide Aussagen darüber zu treffen, ob eine Person sehr gewissenhaft ist oder nicht sowie um zu entscheiden, ob Person A gewissenhafter als Person B ist, sollte unsere Einschätzung über einer Einschätzung mittels Würfelwurfs liegen.
 Die Reliabilität kann zwischen 0 (keine Messgenauigkeit, Würfelwurf) und 1 liegen (perfekte Messgenauigkeit).
 Ab .7 ist die Genauigkeit grundsätzlich in Ordnung, bei .8 werden wir langsam glücklich und (viel) mehr als .9 sollten wir nicht erwarten.</p>
-<p>Innerhalb der IRT gibt es nun eigentlich keinen solchen natürlichen Wert, um die Messgenauigkeit eines Tests unabhängig der Personenfähigkeit anzugeben.
+<p>Innerhalb der (Item-Response-Theory)[<a href="https://en.wikipedia.org/wiki/Item_response_theory" class="uri">https://en.wikipedia.org/wiki/Item_response_theory</a>] (IRT; vereinfacht: eine psychologische Testtheorie) gibt es nun eigentlich keinen solchen natürlichen Wert, um die Messgenauigkeit eines Tests unabhängig der Personenfähigkeit anzugeben.
 Stattdessen liefert jedes einzelne Item für unterschiedliche Personenfähigkeiten unterschiedlich viel Information (hierbei können wir die statistische [Fischer-]Information relativ unproblematisch als alltagssprachliche Information auffassen).
 Manche Items helfen uns also sehr gut im oberen Bereich zu differenzieren, umgekehrt aber im unteren Bereich nicht so sehr; oder auch anders herum.</p>
 <p>Grundsätzlich ist diese Auffassung der Messgenauigkeit sehr intuitiv.
-Wir stellen uns vor, wir möchten die Mathematikfähigkeit von Gymnasiasten in Erfahrung bringen.
+Wir stellen uns vor, wir möchten die Mathematikfähigkeit von Abiturienten in Erfahrung bringen.
 Dazu stellen wir ihnen die Frage “Was ergibt 2+2?”.
 Wahrscheinlich (und hoffentlich) wird jeder diese Frage korrekt beantworten, denn sie ist viel zu einfach für diese Zielgruppe.
 Wir haben dann keine Grundlage um einem Schüler zu attestieren, er sei mehr oder weniger mathebegabt als ein anderer.
-Die Beantwortung von 2+2 liefert uns also keine Information.
-Schön ist nun, dass diese plausible Annahme innerhalb der IRT ebenfalls gilt.
-Unschön ist, dass man nicht direkt einen Wert anschauen kann, um die Messgenauigkeit des Tests zu beurteilen.
+Die Beantwortung von 2+2 liefert uns also keine Information, denn jeder kann sie richtig beantworten, in einem Test zur Erfassung der Mathefähigkeit von Abiturienten wäre diese Frage also Fehl am Platz.
+Schön ist nun, dass diese plausible Betrachtungsweise innerhalb der IRT ebenfalls gilt.
+Unschön ist, dass man nicht direkt einen Wert anschauen kann, um die Messgenauigkeit eines Tests zu beurteilen.
 Aber es gibt auch innerhalb der IRT Abhilfe, indem man sich die marginale (oder empirische) Reliabilität anschaut, die man “ganz normal” wie andere Reliabilitäten interpretieren kann (<a href="https://stats.stackexchange.com/questions/427631/difference-between-empirical-and-marginal-reliability-of-an-irt-model">hier gut erklärt</a>, sogar im Kontext des R Pakets ‘mirt’, das ich hauptsächlich verwende.
 Grundsätzlich wird die Messgenauigkeit an den einzelnen Fähigkeitsausprägungen ins Verhältnis gesetzt zur allgemeinen Streuung der Fähigkeit - das entspricht der Definition der Messgenauigkeit nach klassischer Testtheorie).</p>
 <pre class="r"><code>marginal_rxx(gmodel1)
@@ -188,20 +188,19 @@ plot(gmodel1, type = &quot;rxx&quot;, theta_lim = c(-3,3) )</code></pre>
 <p><img src="/post/01_2020-09-22-protestantische-arbeitsethik.html_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
 <p>Die marginale Reliabilität liegt bei .9 (Output von “marginal_rxx”), ist also ziemlich zufriedenstellend.
 Außerdem habe ich die Messgenauigkeit als Reliabilität (nicht direkt als Information, wie in der IRT üblich) in Abhängigkeit der Personenfähigkeit geplotted, was ein typisches Muster ergibt: im mittleren Bereich wird die höchste Messgenauigkeit erreicht, an den Rändern sinkt sie etwas.
-Grundsätzlich messen wir aber im gesamten Fähigkeitsbereich gut.#
-Die untere Graphik gibt uns Aufschluss darüber, in welchem Bereich die modellbasierten Fähigkeitsschätzungen liegen - der Großteil liegt zwischen -3 und 3 (was eine Folge dessen ist, wie das statistische Modell arbeitet) und wir erreichen grundsätzlich eine Normalverteilung (was so gesehen aber auch vorne schon als Annahme ins Modell gesteckt wurde).</p>
+Grundsätzlich messen wir aber im gesamten Fähigkeitsbereich gut.
+Die untere Graphik gibt uns Aufschluss darüber, in welchem Bereich die modellbasierten Fähigkeitsschätzungen liegen - der Großteil liegt zwischen -3 und 3 (was eine Folge dessen ist, wie das statistische Modell arbeitet) und wir erreichen grundsätzlich eine Normalverteilung (was so gesehen aber auch “vorne” schon als Annahme ins Modell gesteckt wurde).</p>
 <pre class="r"><code># thetgm1 &lt;- fscores(gmodel1, full.scores.SE = TRUE, method = &quot;EAP&quot;)
-
 plot(density(thetgm1[,&quot;F1&quot;]), main = &quot;Verteilung der &#39;protestantischen Arbeitsethik&#39;-Dimension&quot;)</code></pre>
 <p><img src="/post/01_2020-09-22-protestantische-arbeitsethik.html_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
 </div>
 <div id="kurzzusammenfassung" class="section level1">
 <h1>Kurzzusammenfassung</h1>
 <p>Bisher lief alles schön glatt.
-Die Reliabilität ist in Ordnung, der Modellfit ist in Ordnung - wir haben eine schöne einzelne Dimension protestantischer Arbeitsethik.
-Aber mehr leider auch nicht.
+Der Modellfit ist in Ordnung, die Reliabilität ist in Ordnung - wir haben einen Test, der schöne einzelne Dimension protestantischer Arbeitsethik erfassbar macht.
+Aber mehr leider auch nicht!
 Spannend wäre jetzt zu untersuchen, inwiefern die psychologische Dimension, die wir gefunden haben mit anderen Dimensionen zusammenhängt und letztlich noch viel mehr, ob sie auch mit anderen Ereignissen als der Beantwortung irgendwelcher Fragebögen einhergeht.
-Ob also beispielsweise Personen, die einen hohen Wert auf der PWES haben im echten Leben erfolgreich sind, viel arbeiten (work hard, play hardly) etc.
+Ob also beispielsweise Personen, die einen hohen Wert auf der PWES haben im echten Leben erfolgreich sind, viel arbeiten und ihre Freizeit zurückstellen (work hard, play hardly) etc.
 Leider ist uns die Untersuchung des Letzteren vergönnt, da wir hierzu keine Daten haben.
-Eine Minivalidierung der PWES können wir dennoch in Angriff nehmen - aber erst im nächsten Post.</p>
+Eine Minivalidierung der PWES können wir dennoch in Angriff nehmen - aber erst in einem späteren Post.</p>
 </div>

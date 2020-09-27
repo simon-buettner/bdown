@@ -3,32 +3,35 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/about/</loc>
+    <loc>https://simonbuettner.netlify.app/about/</loc>
     <lastmod>2020-09-22T21:48:51-07:00</lastmod>
   </url>
   
   <url>
-    <loc>/archives/</loc>
+    <loc>https://simonbuettner.netlify.app/post/</loc>
+    <lastmod>2020-01-10T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/categories/</loc>
+    <loc>https://simonbuettner.netlify.app/01_2020-10-01-protestantische-arbeitsethik-1.en-us/</loc>
+    <lastmod>2020-01-10T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/</loc>
+    <loc>https://simonbuettner.netlify.app/</loc>
+    <lastmod>2020-01-10T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/01_2020-10-01-protestantische-arbeitsethik-1.en-us/</loc>
+    <loc>https://simonbuettner.netlify.app/archives/</loc>
   </url>
   
   <url>
-    <loc>/</loc>
+    <loc>https://simonbuettner.netlify.app/categories/</loc>
   </url>
   
   <url>
-    <loc>/tags/</loc>
+    <loc>https://simonbuettner.netlify.app/tags/</loc>
   </url>
   
 </urlset>
