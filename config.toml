@@ -34,7 +34,7 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown", "_files$", "_cache$"]
 
 [author]
   name = "Simon Büttner"
-  bio = "Als R&D Consultant bei beschäftige ich mich mit der datenlastigeren Seite der Psychologie"
+  bio = "Als R&D Consultant beschäftige ich mich mit der datenlastigeren Seite der Psychologie. Daran möchte ich mit diesem Blog gerne andere teilhaben lassen."
   job = "R&D Consultant"
   location = "Esslingen"
   # Your Gravatar email. Overwrite `author.picture` everywhere in the blog

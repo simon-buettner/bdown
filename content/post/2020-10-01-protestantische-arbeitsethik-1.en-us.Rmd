@@ -25,10 +25,10 @@ Bei Leistungstests wäre ein Item z.B. eine Rechenaufgabe im offenen oder Multip
 
 Den empirischen Teil der Fragebogenkonstruktion/-analyse möchte ich dabei anhand der etwas ungewöhnlichen ["Protestant Work Ethic Scale (PWES)"](https://psycnet.apa.org/record/1971-09987-001) bestehend aus 19 Likert-Skalen Items untersuchen.
 Die dazugehörigen Daten sind auf [Open Psychometrics](https://openpsychometrics.org/_rawdata/) frei abrufbar. 
-Wer den Test einmal selbst ausfüllen und herausfinden möchte, wie vergleichsweise hoch oder niedrig seine protestantische Arbeitsethik-Überzeugungen ausfallen, kann das [hier](https://openpsychometrics.org/tests/PWE/) tun.
+Wer den Test einmal selbst machen und herausfinden möchte, wie vergleichsweise hoch oder niedrig seine protestantische Arbeitsethik-Überzeugungen ausfallen, kann das [hier](https://openpsychometrics.org/tests/PWE/) tun.
 
 Wieso ausgerechnet so eine vermeintliche Randerscheinung psychologischer Konstrukte?
-Mein Interesse rührt daher, dass nach Maßen der allgemeinen Intelligenz von Testseite her vor allem die Persönlichkeitskonstrukte [Integrität und Gewissenhaftigkeit als Prädiktoren des Berufserfolgs](https://d1wqtxts1xzle7.cloudfront.net/44029822/Schmidt_and_Hunter_1998_Validity_and_Utility_of_Selection_Methods.pdf?1458742080=&response-content-disposition=inline%3B+filename%3DThe_Validity_and_Utility_of_Selection_Me.pdf&Expires=1601204492&Signature=APF0Po8QwU4hvdqoq6BGZ~5yrccNSPzkOxQtsuPV9VUXLa975b1rKCH0pbjUS-wPLsTXNBHOqpJh2nqcw61bkgqqHjxrAfOLQCEzhCxNr~U1Z9URk-cTdrx~UK3SbOxLyJuoN8~oz7eBkNSnbwjUAwYtp12zazFBQovcJZ2gtNfEFpxw1LcySHYIEaXi5Fmirq2WGcjPJ~P29j3bzfh7~aBVpUT7ddIeV6VxkrM5eUDMcAHJsY35UqPKxQT1v~uFIrzAcMs8DnZiq9OcjIkWBJ8~2dA2rdhWQQFbsgrUmhZwcVhsnEOhLbPG3236aGGiBHtGvuBzVanCHeGQQZPXEw__&Key-Pair-Id=APKAJLOHF5GGSLRBV4ZA) gelten können.
+Mein Interesse rührt daher, dass nach Maßen der allgemeinen Intelligenz von Testseite her vor allem die Persönlichkeitskonstrukte [Integrität und Gewissenhaftigkeit als Prädiktoren des Berufserfolgs](https://psycnet.apa.org/doiLanding?doi=10.1037%2F0033-2909.124.2.262) gelten können.
 Grundsätzlich würde ich nach Sichtung der Items der PWES das damit erfasste Konstrukt in der Nähe von Gewissenhaftigkeit und Integrität ansiedeln.
 Erstaunlich fand ich eigentlich immer, dass diese Konstrukte klassischer (Sekundär-)Tugenden so bedeutsam sind, haben diese heutzutage doch irgendwie an Ansehen verloren - werden im schlimmsten Fall sogar auch in die Nähe der "autoritären Persönlichkeit" gestellt werden, wodurch sie beinahe etwas Schmuddeliges an sich hängen haben.
 Gleichzeitig möchte ich gar nicht bestreiten, dass die Bedeutsamkeit dieser klassischen Tugenden auf mittlerweile doch recht alter Forschung basiert und heute ggf. ein Stück weit an Gültigkeit verloren haben könnte.
@@ -80,7 +80,7 @@ Interessant wäre die Wirkung von Prädestinationsüberzeugungen deshalb alle Ma
 
 # Grundlegende Faktorenstruktur: Was steckt hinter den Daten?
 G'nug g'schwätzt.
-**Um die Frage zu beantworten, welche Faktorstruktur der PWES zugrunde liegt, ist für den gewieften Psychologen zunächst zu klären, wie viele Faktoren/Dimensionen sich hinter den Daten verbergen. Aber was bedeutet das schon wieder?** 
+**Um die Frage zu beantworten, welche Faktorstruktur der PWES zugrunde liegt, ist für den gewieften Psychologen zunächst zu klären, wie viele Faktoren/Dimensionen sich hinter den Daten verbergen. Aber was bedeutet das jetzt?** 
 Wenn Psychologen einen Test konstruieren, untersuchen sie in der Regel, inwiefern einzelne Items des Tests miteinander zusammenhängen bzw. auch nicht miteinander zusammenhängen. 
 Bei uns: Stimmen jene, die der Aussage "Wenn man hart genug arbeitet, wird das eigene Leben mit höherer Wahrscheinlichkeit besser" (Q17) zustimmen, auch eher der Aussage zu "Jeder der fähig und willens ist, hart zu arbeiten, hat eine gute Chance erfolgreich zu sein" (Q10).
 Und wenn ja, welchen Aussagen stimmen sie dann noch zu? 
@@ -117,8 +117,7 @@ fa.parallel(dat)
 ```
 
 # Das 'Graded Response Model' der protestantischen Arbeitsethik: einige Kennwerte
-Um den Test jetzt genauer zu untersuchen, stülpen wir den Daten ein eindimensionales statistisches Modell über.
-Genauer: ein Graded Response Modell. 
+Um den Test jetzt eingehender zu untersuchen, stülpen wir den Daten ein eindimensionales statistisches Modell über: ein Graded Response Modell. 
 Was genau das macht sei hier zurückgestellt. 
 Eine Google Suche ergibt diese netten Seiten: [allgemeine Erklärung](https://www.statisticshowto.com/graded-response-model-ordered-categorical/) sowie [eine detailliertere Erklärung](http://statmath.wu-wien.ac.at/~hatz/psychometrics/11w/GPCM_GRM_GRASOM.pdf). 
 Ganz einfach gesagt modellieren wir, wie die Items beantwortet werden in Abhängigkeit der zugrundeliegenden Fähigkeitsausprägung, also unserer sparsam gewählten Hauptdimension.
@@ -127,15 +126,19 @@ Damit gehen wir etwas über eine normale Faktorenanalyse hinaus, erreichen aber 
 ```{r}
 # gmodel1 <- mirt(dat, 1, "graded", TOL = .0001)
 summary(gmodel1)
-# (m2.gmodel1<-M2(gmodel1, type = "C2"))
-m2.gmodel1 %>% round(.,3)
-itemfit(gmodel1, fit_stats = "PV_Q1")
 ```
 Über die hier verwendeten Funktionen können wir schon einige Aussagen treffen:
 
   1. Die **"summary"**-Funktion des Modells zeigt uns: das eindimensionale Modell erklärt immerhin 41% der Varianz in den Daten: "Proportion Var:  0.41")
   
-  2. Die **"summary"**-Funktion zeigt weiter: alle Items laden hinreichend gut auf diesem Faktor: die Zahlen unter F1 geben die Faktorladungen an ( = wie sehr hängt die Zustimmung zu einem Item von der zugrundeliegenden Eigenschaft ab) sind mindestens bei .398 -- ab .32 ist es "gut genug".
+  2. Die **"summary"**-Funktion zeigt weiter: alle Items laden hinreichend gut auf diesem Faktor: die Zahlen unter F1 geben die Faktorladungen an ( = wie sehr hängt die Zustimmung zu einem Item von der zugrundeliegenden Eigenschaft ab) sind absolut mindestens bei .398 -- ab .32 ist es "gut genug".
+
+
+```{r}
+# (m2.gmodel1<-M2(gmodel1, type = "C2"))
+m2.gmodel1 %>% round(.,3)
+itemfit(gmodel1, fit_stats = "PV_Q1")
+```
   
   3. **"M2"** gibt uns einige CFA Fit Indizes aus. Das sind Kennwerte, die uns einzuschätzen erlauben, wie gut unser Modell insgesamt auf die Testdaten passt (oder andersherum). Dabei zeigt sich: Modell und Daten passen relativ gut aufeinander (RMSEA halbwegs nahe 0.05, SRMSR deutlich kleiner .1, TLI/CFI über .9). Aber, aber: wir haben ja auch schon 2 Items ausgeschlossen. Und dennoch Raum nach oben ist auch hier noch.
   
@@ -143,7 +146,7 @@ itemfit(gmodel1, fit_stats = "PV_Q1")
 
 # Messgenauigkeit: Reliabilität
 Der erste Blick in die Daten der PWES ist schon recht vielversprechend (für die harte Analysearbeit scheinen wir belohnt zu werden), jetzt gehen wir einmal in Richtung Benutzbarkeit der Skala.
-Wir schauen uns hierfür die Reliabilität der Skala an und außerdem die Verteilung der (latenten) Theta-Werte, also die PWES Dimension, die wir konstruiert haben.
+Wir schauen uns hierfür die Reliabilität der Skala an und außerdem die Verteilung der latenten Theta-Werte, also die PWES Dimension, die wir statistisch konstruiert haben.
 **Die Reliabilität gibt an, wie genau wir messen können, welche Ausprägung eine Person auf einer psychologischen Dimension erreicht.**
 Unsere psychologischen Messungen werden immer mit einer gewissen Ungenauigkeit behaftet sein.
 Um aber valide Aussagen darüber zu treffen, ob eine Person sehr gewissenhaft ist oder nicht sowie um zu entscheiden, ob Person A gewissenhafter als Person B ist, sollte unsere Einschätzung über einer Einschätzung mittels Münzwurf liegen.
@@ -163,14 +166,14 @@ Die Beantwortung von 2+2 liefert uns also keine Information, denn jeder kann sie
 Schön ist nun, dass diese plausible Betrachtungsweise innerhalb der IRT ebenfalls gilt.
 Unschön ist, dass man deshalb nicht direkt einen Wert ausgeben kann, um die Messgenauigkeit eines Tests zu beurteilen.
 Aber um den steil aufgebauten Spannungsbogen wieder etwas zu senken: man kann sich natürlich auch innerhalb der IRT Abhilfe verschaffen, indem man sich die marginale (oder empirische) Reliabilität anschaut, die man "ganz normal" wie andere Reliabilitäten interpretieren kann ([hier gut erklärt](https://stats.stackexchange.com/questions/427631/difference-between-empirical-and-marginal-reliability-of-an-irt-model), sogar im Kontext des R Pakets 'mirt', das ich hauptsächlich verwende. 
-Grundsätzlich wird die mittlere Messgenauigkeit an den einzelnen Fähigkeitsausprägungen ins Verhältnis gesetzt zur allgemeinen Streuung der Fähigkeit - das entspricht der Definition der Messgenauigkeit nach klassischer Testtheorie).
+Grundsätzlich wird die Messgenauigkeit gemittelt über die einzelnen Fähigkeitsausprägungen ins Verhältnis gesetzt zur allgemeinen Streuung der Fähigkeit - das entspricht der Definition der Messgenauigkeit nach klassischer Testtheorie).
 
 ```{r}
 marginal_rxx(gmodel1)
 plot(gmodel1, type = "rxx", theta_lim = c(-3,3) )
 ```
 
-Die marginale Reliabilität liegt bei .9 (Output von "marginal_rxx"), ist also ziemlich zufriedenstellend.
+Die marginale Reliabilität liegt bei .91 (Output von "marginal_rxx"), ist also ziemlich zufriedenstellend.
 Außerdem habe ich die Messgenauigkeit als Reliabilität (nicht direkt als Information, wie in der IRT üblich) in Abhängigkeit der Personenfähigkeit geplotted, was ein typisches Muster ergibt: im mittleren Bereich wird die höchste Messgenauigkeit erreicht, an den Rändern sinkt sie etwas.
 Grundsätzlich messen wir aber im gesamten Fähigkeitsbereich gut.
 Die untere Graphik gibt uns Aufschluss darüber, in welchem Bereich die modellbasierten Fähigkeitsschätzungen liegen: der Großteil liegt zwischen -3 und 3 (was eine Folge dessen ist, wie das statistische Modell arbeitet) und wir erreichen grundsätzlich eine Normalverteilung (was so gesehen aber auch "vorne" schon als Annahme ins Modell gesteckt wurde).
