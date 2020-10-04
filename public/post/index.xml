@@ -6,14 +6,23 @@
     <description>Recent content in Posts on Psychometer</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 01 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 11 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Protestantische Arbeitsethik 2</title>
+      <link>/2020/10/11/2020-10-11-protestantische-arbeitsethik-2.en-us/</link>
+      <pubDate>Sun, 11 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/2020/10/11/2020-10-11-protestantische-arbeitsethik-2.en-us/</guid>
+      <description>Wie funktioniert eigentlich psychologische Testentwicklung? (2)So! Nachdem die testineterne Betrachtung der “Protestant Work Ethic Scale” (PWES) ergeben hat, dass Skala für sich genommen grundsätzlich brauchbar erscheint, stellt sich die nicht weniger wichtige Frage, ob das, was gemessen wird, über den Test hinaus auch irgendeinen Bezug zur Realität hat.Die nicht wenigen Zitationen und Arbeiten mit und um die PWES lassen wir hier (wieder) außen vor, konzentrieren uns stattdessen auf Variablen, die über die PWES hinaus im Openpsychometrics-Datensatz vorhanden sind.</description>
+    </item>
+    
     <item>
       <title>Protestantische Arbeitsethik 1</title>
-      <link>/2020/09/01/protestantische-arbeitsethik-1.en-us/</link>
-      <pubDate>Tue, 01 Sep 2020 00:00:00 +0000</pubDate>
+      <link>/2020/10/04/protestantische-arbeitsethik-1.en-us/</link>
+      <pubDate>Sun, 04 Oct 2020 00:00:00 +0000</pubDate>
       
-      <guid>/2020/09/01/protestantische-arbeitsethik-1.en-us/</guid>
-      <description>Was funktioniert Testentwicklung?Mein erster Post soll Einblick darin geben, wie Psychologen grundsätzlich versucht, bestimmte psychologische Konstrukte/Eigenschaften, die er sich ausgedacht hat, empirisch zu untersuchen.Den eigentlich sehr spannenden Prozess der Itemgenerierung lassen wir hier außen vor und steigen bei der empirischen Überprüfung der Items ein.Was sind Items? Items sind die einzelnen Aufgaben, die man in einem Test bearbeitet.Bei Persönlichkeitstests sind es Aussagen wie “Ich lese gerne Blogs”, die man z.</description>
+      <guid>/2020/10/04/protestantische-arbeitsethik-1.en-us/</guid>
+      <description>Wie funktioniert eigentlich psychologische Testentwicklung? (1)Mein erster Post soll Einblick darin geben, wie ein Großteil der Psychologen grundsätzlich versucht, bestimmte ausgedachte psychologische Eigenschaften, empirisch mit halbwegs modernen Tests zu untersuchen.Den eigentlich sehr spannenden Prozess der Itemgenerierung lassen wir hier außen vor und steigen bei der empirischen Überprüfung der Items ein.Halt erstmal: Was sind Items? Items sind die einzelnen Aufgaben, die man in einem Test bearbeitet.Bei Persönlichkeitstests sind es Aussagen in einem Frabogen wie “Ich lese gerne Blogs”, die man z.</description>
     </item>
     
   </channel>

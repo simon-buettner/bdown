@@ -1,0 +1,211 @@
+---
+title: Protestantische Arbeitsethik 2
+author: Simon Büttner
+date: '2020-10-11'
+slug: 2020-10-11-protestantische-arbeitsethik-2.en-us
+categories: []
+tags: []
+keywords: []
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(collapse = TRUE)
+library(psych)
+library(lavaan)
+library(ggstatsplot)
+library(mirt)
+library(dplyr)
+load("../../static/data/ProtestandWorkEthic/PWES.Rdata")
+dat_raw[dat_raw == 0] <- NA
+dat_raw <- dat_raw %>% mutate(
+							`Extraverted, enthusiastic` = TIPI1,
+							`Critical, quarrelsome` = TIPI2,
+							`Dependable, self-disciplined` = TIPI3,
+							`Anxious, easily upset` = TIPI4,
+							`Open to new experiences, complex` = TIPI5,
+							`Reserved, quiet` = TIPI6,
+							`Sympathetic, warm` = TIPI7,
+							`Disorganized, careless` = TIPI8,
+							`Calm, emotionally stable` = TIPI9,
+							`Conventional, uncreative` = TIPI10,
+							
+							education = factor(education, labels = c("<High School", 
+										"High School","University", "Graduate") ),
+							urban = factor(urban, labels = c("Rural","Suburban","Urban") ),
+							gender = factor(gender, labels = c("Male","Female","Other") ),
+							religion = factor(religion, labels =
+							           c("Agnostic","Atheist","Buddhist",
+												"Catholic","Mormon","Protestant","Christ_other",
+												"Hindu","Jewisch","Muslim","Sikh","Other") ),
+							orientation = factor(orientation, labels = c("Hetero","Bi","Homo",
+												"Asex","Other") ),
+							voted = factor(voted, labels = c("Yes","No") ),
+							married = factor(married, labels = c("Never", "married", "divorced" ) )
+						)#dat_raw <- dat_raw[-1181,]
+dat_raw$PWES_Theta <- thetgm1[,"F1"] %>% unlist %>% scale %>% c
+
+```
+
+# Wie funktioniert eigentlich psychologische Testentwicklung? (2)
+So! Nachdem die testineterne Betrachtung der ["Protestant Work Ethic Scale" (PWES)](https://psycnet.apa.org/record/1971-09987-001) ergeben hat, dass Skala für sich genommen grundsätzlich brauchbar erscheint, stellt sich die nicht weniger wichtige Frage, ob das, was gemessen wird, über den Test hinaus auch irgendeinen Bezug zur Realität hat.
+Die nicht wenigen Zitationen und Arbeiten mit und um die PWES lassen wir hier (wieder) außen vor, konzentrieren uns stattdessen auf Variablen, die über die PWES hinaus im Openpsychometrics-Datensatz vorhanden sind. 
+Betrachten möchte ich insbesondere folgende Variablen:
+
+
+* Das Ten Item Personality Inventory (TIPI; Gosling, S. D., Rentfrow, P. J., & Swann, W. B., Jr. (2003). A Very Brief Measure of the Big Five Personality Domains. Journal of Research in Personality, 37, 504-528.)
+* Religion (Achtung das wird das Highlight!), wobei ich den Fokus auf diejenigen Religionsangaben setze, für die genug Teilnehmer vorhanden sind: Agnostiker, Atheisten, Katholiken, Protestanten (es findet keine weitere Untereilung der Protestanten statt. Es war nur möglich anzugeben, dass man Mormone oder Anderer Christ ist.)
+* Ausbildung beschränkt auf US-amerikanische Teilnehmer: weniger als Highschool-Abschluss, High School-Abschluss, University-Degree, Graduate-Degree
+* Wahlverhalten im letzten Jahr beschränkt auf US-amerikanische Teilnehmer: "Have you voted in a national election in the past year?"
+* Beziehungsstatus: Nie verheiratet gewesen, verheiratet, geschieden
+
+
+# Die PWES im Lichte anderer Persönlichkeitsitems
+```{r}
+dat_2 <- cbind.data.frame(dat, 
+			dat_raw %>% select(`Extraverted, enthusiastic`:`Conventional, uncreative`))
+gmodel1_pwes_tipi <- mirt(dat_2, 1, "graded", verbose = FALSE)
+summary(gmodel1_pwes_tipi)
+```
+Die erste Frage, der ich nachgehe, ist, inwiefern die PWES ein eigenständiges Konstrukt darstellt.
+Wären weitere ganze Fragebögen mit erhoben worden, dann würde ich mir einfach anschauen, wie die PWES und diese Fragebögen korrelieren, also linear zusammenhängen.
+Wünschenswert wäre dann, dass Personen, die hohe Werte in der PWES haben, auch höhere Werte in ähnlichen Konstrukten haben, dass z.B.  sehr gewissenhafte Personen, auch einen hohen Wert in der PWES erreichen (**konvergente Validität**).
+Gleichzeitig sollte der Zusammenhang mit unähnlichen Konstrukten gering sein, Intelligenz und PWES sollten z.B. gering miteinander zusammenhängen (**divergente Validität**). 
+Der PWES-Wert sollte also keine Information darüber enthalten, wie intelligent eine Person ist.
+
+Da im vorliegenden Datensatz keine ganzen Fragebögen erhoben wurden, sondern nur 10 Adjektive ("I see myself as:" u.a. "Dependable, self-disciplined", 1 = Disagree strongly bis 7 = Agree strongly), die als Indikatoren für Persönlichkeitseigenschaften dienen, habe ich mir nicht die 10 Korrelationen mit diesen Antworten angeschaut.
+Stattdessen greife ich die Analysen des vorherigen Blogposts auf, indem ich einfach die PWES Daten und die TIPI Items zusammennehme und wieder ein Modell an diesen großen Datensatz fitte.
+Dann schaue ich mir wieder die Faktorladungen auf die Hauptdimension der Daten an - die Zahlen unter F1, um zu bestimmen, ob einzelne TIPI Items mit dem PWES Konstrukt zusammenhängen (ist ein anderer Ansatz, als sich die 10 Korrelationen anzuschauen, macht aber im Grunde dasselbe).
+
+Was sich dann zeigt ist, dass die Ladungen der TIPI Items grundsätzlich geringer ausfallen, was gut so ist, denn das spricht dafür, dass die PWES etwas relativ eigenständiges ist.
+Dass die höchste Ladung bei "Dependable, self-disciplined" erreicht wird, macht in Anbetracht der PWES Inhalte auch Sinn.
+Ebenso die relativ hohe Ladung von "Disorganized, careless".
+Die negative Ladung bedeutet hierbei, dass wer sich als desorganisiert einschätzt, einen geringeren PWES Score erreicht - genau wie man es erwarten würde.
+Dass "Extraverted, enthusiastic", "Calm, emotionally stable" und "Anxious, easily upset" hoch auf der PWES Dimension laden, deutet an, dass sich Personen mit hohen PWES Werten tendenziell eher als emotional ausgeglichen einschätzen, auch wenn das emotionale Befinden nicht in besonders hohen Maße mit der PWES zusammenhängt.
+Die restlichen Ladungen nahe 0 sind im Sinne divergenter Validität alles in allem auch sinnvoll.
+
+
+# PWES und Tatsachen der nicht-Fragebogen-Realität
+## Religion
+Jetzt wird es endlich Zeit, die Ebene psychologischer Tests zu verlassen, um zu erfahren, ob es auch Zusammenhänge mit halbwegs harten Tatsachen der echten Welt zusammenhängt.
+Die erste Fragestellung ist dabei schon die spannendste: hängt der PWES-Wert, der dezidiert eine protestantische Einstellung zu Arbeit erfassen möchte, tatsächlich mit der angegebenen Religion der Teilnehmer zusammen?
+Erwarten kann man meiner Meinung nach zweierlei: 1. dass christliche Teilnehmer höhere Werte als nicht-christliche erreichen, 2. dass "innerhalb der Christen" Protestanten höhere Werte erreichen als Katholiken.
+Was wir dafür machen ist einfach: Wir testen die mittleren Unterschiede dieser Gruppen darauf, ob sie insgesamt überzufälliger Art zu sein scheinen, ob also "die" Religionen sich insgesamt unterscheiden.
+Wir fragen: Erreichen alle Religionen in etwa die gleichen Werte oder nicht?
+Ferner betrachten wir, ob die einzelnen Religionen sich unterscheiden: Erreichen Protestanten höhere Werte als Katholiken?
+
+
+
+```{r}
+dat_raw %>% filter(religion %in% c("Atheist","Agnostic","Catholic","Protestant") ) %>%
+	ggbetweenstats(data = .,x = religion,y = PWES_Theta,
+				title = "Verteilung des Theta-Testscores je Religion",
+				pairwise.comparisons = TRUE, p.adjust.method = "holm")
+```
+
+Mit den Einzelheiten, wie man das feststellt, möchte ich mich nicht zu lange beschäftigen.
+Wir vertrauen dem Entwickler des sehr feinen 'ggstatsplot'-Pakets, dass alles mit rechten Dingen zugeht, wenn wir für die 'ggbetweenstats'-Funktion die richtigen Eingaben machen.
+Dieser Funktion übergeben wir den ggf. gefilterten Datensatz und legen als unabhängige Variable die je interessierende Variable fest (x = religion) und als abhängige Variable den PWES Score (y = PWES_Theta; verwendet habe ich den modellbasierten Score, keinen Summenscore).
+Dabei wird automatisch ein parametrischen Test verwendet, um Gruppenunterschiede auf Signifikanz zu testen, also zu entscheiden, ob wir diese als zufällig entstanden akzeptieren, oder als echte Gruppenunterschiede. 
+Wir folgen hier der Einfachheit halber stupide den ausgegebenen p-Werten, die uns im Falle der Religion folgendes sagen:
+
+  1. die Religonen unterscheiden sich im PWES-Score: F_Welch(3,201) = 26.78, p < .001
+  2. Katholiken und Protestanten scoren jeweils höher als Agnostiker und Atheisten - an den halboffenen eckigen Klammern mit p_adjust < .001 zu erkennen
+  3. Dass sich Katholiken und Protestanten unterscheiden, wird nicht bekräftigt. Auch wenn die Richtung stimmt: nominell erreichen Protestanten einen höheren Score als Katholiken. 
+  Mit größeren Fallzahlen würde sich ggf. zeigen, dass hier ein echter Unterschied besteht, auch wenn nicht direkt zu erwarten wäre, dass dieser sehr groß ausfällt (sonst würde wir ihn vielleicht jetzt schon finden)
+  
+Meiner Ansicht nach ist das ein ziemlich spannendes Ergebnis! 
+
+
+## Beziehungsstatus und sexuelle Orientierung
+Die ersten Ergebnisse stellen den Kern dessen dar, was mit den vorhandenen Daten gerechnet werden kann und auch zu spannenden Ergebnissen führt.
+Denn für die restlichen Untersuchungen sehen die Hypothesen weniger eindeutig aus, außerdem sind die Ergebnisse etwas langweiliger.
+Willkommen in der Welt psychologischer Datenanalysen!
+Die restlichen Variablen, die hier untersucht werden unterteilen sich in eher persönliche, intime Eigenschaften: Beziehungsstatus & Sexualität; und öffentlichere Eigenschaften: Wahlverhalten & Ausbildungserfolg.
+
+Für Beziehungsstatus sowie die sexuelle Orientierung würde ich ganz naiv vermuten, dass verheiratete Personen höhere PWES Werte erreichen als geschiedene / nicht verheiratete Personen, sowie dass Heterosexuelle höhere PWES Werte erreichen.
+Ganz einfach deshalb, weil sich Personen mit hohen PWES Werten vor meinem inneren Auge eher als konservativ zeigen.
+Dafür sprechen schon die ersten Ergebnisse zu Religion.
+Diese sind außerdem ein Indikator dafür, dass die Ergebnisse wie erwartet ausfallen, denn wir haben bereits festgestellt, dass Christen höhere PWES Werte erreichen als Agnostiker und Atheisten.
+Das heißt im Umkehrschluss, dass die Personen mit hohen PWES Werten eher Christen sind (bzw. sich als solche bekennen), für die wahrscheinlich eher gilt, dass sie heterosexuell und/oder verheiratet sind.
+Diese Hypothese können wir dann auch weiter unten testen.
+
+Es nimmt deshalb nicht wunder, dass Verheirate höhere PWES Werte erreichen als Unverheiratete und dass Heterosexuelle höhere PWES Werte erreichen als Bisexuelle.
+Für Homosexuelle und solche, die "Other" angegeben haben, ist die Richtung der Unterschiede identisch, allerdings haben wir hier geringe Fallzahlen, sodass zumindest keine signifikanten Unterschiede zu den Heteroseuellen gefunden wurden.
+Was man mit den Ergebnissen der Asexuellen macht bzw. allgemein machen würde - keine Ahnung.
+
+```{r}
+dat_raw %>% ggbetweenstats(data = .,x = married,y = PWES_Theta,
+				title = "Verteilung des Theta-Testscores je Beziehungsstatus",
+				pairwise.comparisons = TRUE, p.adjust.method = "holm")
+```
+
+```{r}
+dat_raw %>% ggbetweenstats(data = .,x = orientation,y = PWES_Theta,
+				title = "Verteilung des Theta-Testscores je Sexueller Orientierung",
+				pairwise.comparisons = TRUE, p.adjust.method = "holm")
+```
+
+
+
+Testen wir nun noch, ob der PWES Score sich auch dann noch unterscheidet, wenn wir die angegebene Religionszugehörigkeit berücksichtigen.
+Dieser Hypothese standen wir weiter oben etwas ablehnend gegenüber.
+Dafür schätzen wir zwei lineare Modelle: 1. eines, in dem nur der Effekt der Religion berücksichtigt wird und 2. eines, in dem zusätzlich der Effekt des Familienstandes vorhanden ist.
+Dann prüfen wir: Unterscheidet sich das 2. Modell signifikant vom ersten? 
+Oder: Wenn wir schon auf die Religion konditionieren, gibt es dann "weitere" Mittelwertunterschiede zwischen den verschiedenen Familienständen?
+
+Was wir dafür betrachten ist der Output von 'anova'.
+Dabei finden wir: der p-Wert ist über .05, dementsprechend fände sich auch bei relativ laxem Signifikanzkriterium kein Hinweis dafür, dass sich der erreichte PWES Score je Familienstand unterscheidet, gegeben die unterschiedlichen Religionszugehörigkeiten.
+Hinter den Mittelwertunterschieden zwischen den Familienständen scheint sich also einfach die Religionszugehörigkeit zu verbergen.
+Diese würde ich dabei als bedeutsamer einschätzen, denn sie war bereits vor dem Familienstand da und ist vermutlich mit ursächlich für den resultierenden Familienstand.
+Letzteres mag heißen, die Heirat macht die Verheirateten nicht zu Protestanten, aber Protestanten heiraten eher.
+Randbemerkung: Ich habe auch untersucht, wie sich die Religion auf den Familienstatus auswirkt und in der Tat sind die Protestanten des Datensatzes signifikant häufiger verheiratet als Atheisten, Agnostiker und Katholiken.
+
+```{r}
+# Datenauswahl: 
+  # Nimm nur Datenpunkte mit Angaben zum Familienstand.
+  # Nimm nur Atheisten, Agnostiker, Katholiken & Protestanten.
+dat_mr <- dat_raw %>% 
+  filter( !is.na(married) ) %>% 
+  filter(religion %in% c("Atheist","Agnostic","Catholic","Protestant") )
+
+lm_theta__religion <- lm(PWES_Theta ~ religion, data = dat_mr)
+lm_theta__religion_married <- lm(PWES_Theta ~ religion + married, data = dat_mr)
+anova(lm_theta__religion, lm_theta__religion_married)
+```
+
+
+## Ausbildungserfolg und Wahlverhalten
+Zu guter Letzt noch 2 Nullergebnisse für den Ausbildungserfolg bzw. die Ausbildungshöhe und das Wahlverhalten.
+Der Logik für sexuelle Orientierung und Beziehungsstatus folgend, würde ich auch hier erwarten, dass der PWES-Konservatismus sich darin niederschlagen könnte, dass eher zur Wahl gegangen wird und dass eine hohe Bildung angestrebt wird.
+Ersteres ist natürlich relativ schwach geschlussfolgert: denn egal, ob ich konservativ oder progressiv unterwegs bin, ich möchte, dass meine Partei gewinnt, also gehe ich zur Wahl.
+Das Null-Ergebnis ist also nicht so verwunderlich, denn die dahinterliegende Logik ist eher nicht so stark.
+
+Für die Ausbildungshöhe könnte das Nullergebnis dahingehend interessanter sein, dass ein protestantischer Arbeitsethos einen zu höheren Ausbildungsabschlüssen antreiben könnte.
+Gleichzeitig geht - soweit ich das recht in Erinnerung habe - ein höherer Ausbildungsabschluss mit geringerer Religiosität einher, sodass man vielleicht mit hohem religionsnahen Ethos startet, diesen aber mit der Zeit ablegt.
+Oder atheistischer gesehen: Man startet voll motiviert und auf Fleiß gesinnt, und wird dann im Laufe der Ausbildung entspannter.
+Aber, das ist müßige Spekulation, die vorliegenden Daten reichen nicht dahin, dass wir das untersuchen könnten.
+
+Kleine Randnote dazu: es zeigt sich kein Zusammenhang zwischen PWES und Alter, was nicht gerade für irgendwelche Entwicklungshypothesen spricht.
+Auch hier kann man in beide Richtungen argumentieren: Mit dem Alter baut man erst ein Arbeitsethos auf, oder man merkt mit dem Alter, dass Arbeit nicht alles ist und wird etwas entspannter, freizeitorientierter.
+Das macht deutlich: hier müsste man schon genauere Untersuchungen durchführen, um mehr Daten zu sammeln als die spärlichen, über die wir in diesem Datensatz verfügen.
+Das wäre der klassische Punkt, an dem man in einer Bachelor- oder Masterarbeit (anderen) empfehlen würde, doch mal eine längschnittliche Untersuchung durchzuführen.
+
+```{r}
+dat_raw %>% filter(country %in% c("US") ) %>%
+		ggbetweenstats(data = .,x = education,y = PWES_Theta,
+				title = "Verteilung des Theta-Testscores je Ausbildungshöhe",
+				pairwise.comparisons = TRUE, p.adjust.method = "holm")
+```
+
+```{r}
+dat_raw %>% filter(country %in% c("US") ) %>%
+			ggbetweenstats(data = .,x = voted,y = PWES_Theta,
+				title = "Verteilung des Theta-Testscores: Wurde im letzten Jahr gewählt?",
+				pairwise.comparisons = TRUE, p.adjust.method = "holm")
+```
+
+
+# Fazit
+
+
+
