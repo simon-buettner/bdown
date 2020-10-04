@@ -16,6 +16,7 @@ library(dplyr)
 load("../../static/data/ProtestandWorkEthic/PWES.Rdata")
 ```
 # Wie funktioniert eigentlich psychologische Testentwicklung? (1)
+## Protestantische Arbeitsethik
 Mein erster Post soll Einblick darin geben, wie ein Großteil der Psychologen grundsätzlich versucht, bestimmte ausgedachte psychologische Eigenschaften, empirisch mit halbwegs modernen Tests zu untersuchen. 
 Den eigentlich sehr spannenden Prozess der Itemgenerierung lassen wir hier außen vor und steigen bei der empirischen Überprüfung der Items ein.
 **Halt erstmal: Was sind Items? Items sind die einzelnen Aufgaben, die man in einem Test bearbeitet.**
@@ -78,7 +79,7 @@ Zum einen sucht man als Gläubiger durch weltlichen Erfolg zu bestätigen, dass 
 Nicht zu unrecht konzentriert sich Weber deshalb auf den Calvinismus. 
 Interessant wäre die Wirkung von Prädestinationsüberzeugungen deshalb alle Mal, auch wenn diese gar nicht in der Skala aufgenommen wurden, was aber auch verständlich ist, ist sie doch eine "Arbeitsethik"-Skala.
 
-# Grundlegende Faktorenstruktur: Was steckt hinter den Daten?
+## Grundlegende Faktorenstruktur: Was steckt hinter den Daten?
 G'nug g'schwätzt.
 **Um die Frage zu beantworten, welche Faktorstruktur der PWES zugrunde liegt, ist für den gewieften Psychologen zunächst zu klären, wie viele Faktoren/Dimensionen sich hinter den Daten verbergen. Aber was bedeutet das jetzt?** 
 Wenn Psychologen einen Test konstruieren, untersuchen sie in der Regel, inwiefern einzelne Items des Tests miteinander zusammenhängen bzw. auch nicht miteinander zusammenhängen. 
@@ -116,7 +117,7 @@ set.seed(1234)
 fa.parallel(dat)
 ```
 
-# Das 'Graded Response Model' der protestantischen Arbeitsethik: einige Kennwerte
+## Das 'Graded Response Model' der protestantischen Arbeitsethik: einige Kennwerte
 Um den Test jetzt eingehender zu untersuchen, stülpen wir den Daten ein eindimensionales statistisches Modell über: ein Graded Response Modell. 
 Was genau das macht sei hier zurückgestellt. 
 Eine Google Suche ergibt diese netten Seiten: [allgemeine Erklärung](https://www.statisticshowto.com/graded-response-model-ordered-categorical/) sowie [eine detailliertere Erklärung](http://statmath.wu-wien.ac.at/~hatz/psychometrics/11w/GPCM_GRM_GRASOM.pdf). 
@@ -144,7 +145,7 @@ itemfit(gmodel1, fit_stats = "PV_Q1")
   
   4. **"itemfit"** zeigt uns, inwiefern die empirischen Antworten auf einzelne Items *nicht* modellkonform sind - quasi eine Betrachtung wie bei M2 aber auf Item- statt auf Testebene. Wünschenswert ist, dass "p.PV_Q1" größer als .05 oder .01 ist, dass also keine signifikante Modellabweichung bei einzelnen Items besteht. Mit Ausnahme von Q9A, Q13 und Q15 ist das grundsätzlich der Fall. 
 
-# Messgenauigkeit: Reliabilität
+## Messgenauigkeit: Reliabilität
 Der erste Blick in die Daten der PWES ist schon recht vielversprechend (für die harte Analysearbeit scheinen wir belohnt zu werden), jetzt gehen wir einmal in Richtung Benutzbarkeit der Skala.
 Wir schauen uns hierfür die Reliabilität der Skala an und außerdem die Verteilung der latenten Theta-Werte, also die PWES Dimension, die wir statistisch konstruiert haben.
 **Die Reliabilität gibt an, wie genau wir messen können, welche Ausprägung eine Person auf einer psychologischen Dimension erreicht.**
@@ -184,7 +185,7 @@ plot(density(thetgm1[,"F1"]), main = "Verteilung der 'protestantischen Arbeitset
 ```
 
 
-# Kurzzusammenfassung
+## Kurzzusammenfassung
 Bisher lief alles schön glatt. 
 Der Modellfit ist in Ordnung, die Reliabilität ist in Ordnung - wir haben einen Test, der eine schöne einzelne Dimension protestantischer Überzeugung von und Einstellung zu Arbeit erfassbar macht.
 Aber mehr auch nicht! 
