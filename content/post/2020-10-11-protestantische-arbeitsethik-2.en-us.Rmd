@@ -53,7 +53,7 @@ Betrachten werden wir insbesondere folgende Variablen:
 
 
 * Das Ten Item Personality Inventory (TIPI; Gosling, S. D., Rentfrow, P. J., & Swann, W. B., Jr. (2003). A Very Brief Measure of the Big Five Personality Domains. Journal of Research in Personality, 37, 504-528.)
-* Religion (Achtung das wird das Highlight!), wobei ich den Fokus auf diejenigen angegebenen Religionszugehörigkeiten setze, für die genug Teilnehmer vorhanden sind: Agnostiker, Atheisten, Katholiken, Protestanten (es findet keine weitere Unterteilung der Protestanten statt. Es war nur möglich anzugeben, dass man Mormone oder Anderer Christ ist.)
+* Religion (Achtung das wird das Highlight!), wobei ich den Fokus auf diejenigen Religionszugehörigkeiten setze, für die genug Teilnehmer vorhanden sind: Agnostiker, Atheisten, Katholiken, Protestanten (es findet keine weitere Unterteilung der Protestanten statt. Es war nur möglich anzugeben, dass man Mormone oder "Anderer Christ" ist.)
 * Familienstatus: Nie verheiratet gewesen, verheiratet, geschieden
 <!-- * Sexualität -->
 * Ausbildung beschränkt auf US-amerikanische Teilnehmer (damit die Abschlüsse wirklich vergleichbar sind): weniger als Highschool-Abschluss, Highschool-Abschluss, University-Degree, Graduate-Degree
@@ -68,14 +68,14 @@ gmodel1_pwes_tipi <- mirt(dat_2, 1, "graded", verbose = FALSE)
 summary(gmodel1_pwes_tipi)
 ```
 Als erstes widmen wir uns der Frage, inwiefern die PWES ein eigenständiges Konstrukt darstellt.
-Wären weitere ganze Fragebögen mit erhoben worden, würde ich mir einfach anschauen, wie die PWES mit diesen Fragebögen korreliert, also linear zusammenhängt.
+Wären weitere ganze Fragebogen mit erhoben worden, würde ich mir einfach anschauen, wie die PWES mit diesen Fragebogen korreliert, also linear zusammenhängt.
 Wünschenswert wäre dann, dass Personen, die hohe Werte in der PWES haben, auch höhere Werte in ähnlichen Konstrukten haben, dass z.B.  sehr gewissenhafte Personen, auch einen hohen Wert in der PWES erreichen (**konvergente Validität**).
 Gleichzeitig sollte der Zusammenhang mit unähnlichen Konstrukten gering sein, Intelligenz und PWES sollten z.B. gering miteinander zusammenhängen (**divergente Validität**). 
 Der PWES-Wert sollte also keine oder sehr wenig Information darüber enthalten, wie intelligent eine Person ist.
 
-Da im vorliegenden Datensatz keine ganzen Fragebögen erhoben wurden, sondern nur 10 Adjektivpaare (TIPI: "I see myself as:" u.a. "Dependable, self-disciplined", 1 = Disagree strongly bis 7 = Agree strongly), die als Indikatoren für Persönlichkeitseigenschaften dienen, habe ich mir nicht die 10 Korrelationen mit diesen Antworten angeschaut.
+Da im vorliegenden Datensatz keine ganzen Fragebogen erhoben wurden, sondern nur 10 Adjektivpaare (TIPI: "I see myself as:" u.a. "Dependable, self-disciplined", 1 = Disagree strongly bis 7 = Agree strongly), die als Indikatoren für Persönlichkeitseigenschaften dienen, habe ich mir nicht die 10 Korrelationen mit diesen Antworten angeschaut.
 Stattdessen greife ich die Analysen des vorherigen Blogposts auf, indem ich einfach die PWES Daten und die TIPI Items aneinander hänge und wieder das gleiche Modell fitte - nur eben an diesen großen Datensatz.
-Dann schaue ich mir wieder die Faktorladungen auf die Hauptdimension der Daten an - die Zahlen unter F1, um zu bestimmen, ob einzelne TIPI Items mit dem PWES Konstrukt zusammenhängen (ist ein anderer Ansatz, macht aber im Grunde dasselbe).
+Dann schaue ich mir wieder die Faktorladungen auf die Hauptdimension der Daten an - die Zahlen unter F1 -, um zu bestimmen, ob einzelne TIPI Items mit dem PWES Konstrukt zusammenhängen (ist ein anderer Ansatz als direkt die Korrelationen anzuschauen, macht aber im Grunde dasselbe).
 
 Was sich dann zunächst zeigt ist, dass die Ladungen der TIPI Items grundsätzlich geringer ausfallen als die der PWES-Items.
 Was gut so ist, denn das spricht dafür, dass die PWES etwas relativ Eigenständiges misst und nicht z.B. einfach Gewissenhaftigkeit in neuem Gewand.
@@ -95,9 +95,9 @@ Jetzt wird es endlich Zeit, die Ebene psychologischer Tests zu verlassen, um zu 
 Die erste Fragestellung ist dabei schon die spannendste: hängt der PWES-Wert, der dezidiert eine protestantische Ethik erfassen möchte, tatsächlich mit der angegebenen Religion der Teilnehmer zusammen?
 Erwarten kann man meiner Meinung nach zweierlei: 1. dass christliche Teilnehmer höhere Werte als nicht-christliche erreichen, 2. dass "innerhalb der Christen" Protestanten höhere Werte erreichen als Katholiken.
 Die Logik ist ganz einfach die, dass sich christliche Wertvorstellungen untereinander weniger unterscheiden sollten, also solche zwischen Nicht-Christen und Christen.
-Um das zu untersuchen, gehen wir wie folgt vor: Wir testen die mittleren Unterschiede dieser Gruppen darauf, ob sie insgesamt überzufälliger Art zu sein scheinen, ob also "die" Religionszugehörigen sich insgesamt signifikant voneinander unterscheiden.
-Wir fragen: Erreichen alle Religionen in etwa die gleichen Werte oder nicht?
-Analog betrachten wir, ob die einzelnen Religionen sich unterscheiden: Erreichen Protestanten höhere Werte als Katholiken?
+Um das zu untersuchen, gehen wir wie folgt vor: Wir testen die mittleren Unterschiede dieser Gruppen darauf, ob sie insgesamt überzufälliger Art zu sein scheinen, ob also die Religionsgruppen sich insgesamt signifikant voneinander unterscheiden.
+Wir fragen: Erreichen die Angehörigen *aller* Religionen in etwa die gleichen Werte oder nicht?
+Analog betrachten wir, ob die *einzelnen* Religionsgruppen sich unterscheiden: Erreichen Protestanten höhere Werte als Katholiken?
 
 
 
@@ -130,7 +130,7 @@ Was sich natürlich über die Lebenszeit aufgeschaukelt haben könnte: diejenige
 Aber Achtung: Spekulation!
 
 Spannend an diesem Ergebnis ist, dass die Skala nicht explizit religiöse Aussagen einschätzen lässt.
-Ganz plump: man wird ja nicht gefragt, einzuschätzen, ob man an ein Leben nach dem Tod glaubt, ob man an "höhere Mächte" glaubt oder sonst etwas, bei dem man hinterher gefundene Unterschiede zwischen den Religionen trivial finden würde.
+Ganz plump: man wird ja nicht gefragt, einzuschätzen, ob man an ein Leben nach dem Tod glaubt, ob man an Fegefeuer und Paradies, oder ob man an "höhere Mächte" glaubt oder sonst etwas, bei dem man hinterher gefundene Unterschiede zwischen den Religionen trivial finden würde.
 Meiner Ansicht nach ist das sehr schön! 
 
 Kleine Randnote: Ich habe mir natürlich auch angeschaut, was passiert, wenn man die Scores der 38 Muslime und die 122 "anderen Christen" betrachtet: Beide bewegen sich auf Höhe der Protestanten.
@@ -141,17 +141,17 @@ Ein Vergleich mit Juden, orthodoxen Christen, Hindus, Buddhisten etc. wäre, um 
 ## Familienstatus
 Die ersten Ergebnisse stellen den Kern dessen dar, was mit den vorhandenen Daten gerechnet werden kann und auch zu spannenden Ergebnissen führt.
 Denn für die restlichen Untersuchungen sehen die Hypothesen weniger eindeutig aus, außerdem sind die Ergebnisse etwas langweiliger.
-Willkommen in der Welt psychologischer Datenanalysen!
+Willkommen in der Welt psychologischer Daten!
 Die restlichen Variablen, die hier untersucht werden, unterteilen sich in eher persönliche, intime Eigenschaften: Familienstatus; und öffentlichere Eigenschaften: Wahlverhalten & Ausbildungserfolg.
 
 Für den Familienstatus würde ich naiv vermuten, dass verheiratete Personen höhere PWES Werte erreichen als geschiedene / nicht verheiratete Personen.
-Ganz einfach deshalb, weil sich Personen mit hohen PWES Werten vor meinem inneren Auge eher als konservativ ausmalen.
+Ganz einfach deshalb, weil sich Personen mit hohen PWES Werten vor meinem inneren Auge eher als (christlich-)konservativ ausmalen.
 Dafür sprechen schon die ersten Ergebnisse zu Religion.
 Diese sind außerdem ein Indikator dafür, dass die Ergebnisse wie erwartet ausfallen, denn wir haben bereits festgestellt, dass Christen höhere PWES Werte erreichen als Agnostiker und Atheisten.
 Das heißt im Umkehrschluss, dass die Personen mit hohen PWES Werten sich eher als Christen bekennen, für die wiederum wahrscheinlicher gilt, dass sie verheiratet sind.
 Es nimmt deshalb nicht wunder, dass Verheirate tatsächlich leicht höhere PWES Werte erreichen als Unverheiratete.
 Dass sich kein Unterschied zu den Geschiedenen einstellt, ist nicht ganz im Sinne der Erklärung für die Unterschiede.
-So sollte man doch eigentlich vermuten, dass Personen mit hohen PWES-Werten sich eher nicht scheiden lassen und dementsprechend in dieser Personengruppe unterrepräsentiert sind.
+So sollte man doch eigentlich vermuten, dass Personen mit hohen PWES-Werten sich eher *nicht* scheiden lassen und dementsprechend in dieser Personengruppe unterrepräsentiert sind.
 Hierfür sprechen die Daten allerdings nicht.
 
 Der Vollständigkeit halber: In den Daten gefunden habe ich ebenso, dass sich Unterschiede im PWES-Score für unterschiedliche sexuelle Orientierung ergeben, die ebenfalls dafür sprechen, dass die PWES durchaus eher religiös-konservative Wertorientierungen widerzuspiegeln scheint.
@@ -162,7 +162,7 @@ dat_raw %>% ggbetweenstats(data = .,x = married,y = PWES_Theta,
 				pairwise.comparisons = TRUE, p.adjust.method = "holm")
 ```
 
-Testen wir nun noch, ob der PWES Score sich auch dann noch unterscheidet, wenn wir die Religionszugehörigkeit berücksichtigen.
+Testen wir nun noch, ob der PWES Score sich auch dann noch je Familienstatus unterscheidet, wenn wir die Religionszugehörigkeit berücksichtigen.
 Dieser Hypothese standen wir etwas ablehnend gegenüber.
 Dafür schätzen wir lineare Modelle, das heißt, wir versuchen mithilfe von Prädiktoren (Familienstand, Religionszugehörigkeit), den PWES-Score vorherzusagen. 
 1. lineares Modell: nur der Effekt der Religion wird berücksichtigt und 2. der Effekt des Familienstandes ist zusätzlich im Modell.
@@ -174,7 +174,7 @@ Hierfür betrachten wir den Output von 'anova' (damit werden die Modelle verglic
 Dabei finden wir: der *p*-Wert ist über .05, dementsprechend fände sich auch bei relativ laxem Signifikanzkriterium kein Hinweis dafür, dass sich der erreichte PWES Score je Familienstand unterscheidet, gegeben die unterschiedlichen Religionszugehörigkeiten.
 Hinter den Mittelwertunterschieden zwischen den Familienständen scheint sich also einfach die Religionszugehörigkeit zu verbergen.
 Diese würde ich dabei als bedeutsamer einschätzen, denn sie war bereits vor dem Familienstand da und ist vermutlich mit ursächlich für den resultierenden Familienstand.
-Letzteres mag auch heißen: die Heirat macht einen nicht zum Christen, aber wer Christ ist, heiratet eher.
+Letzteres mag heißen: die Heirat macht einen nicht zum Christen, aber wer Christ ist, heiratet eher.
 
 
 ```{r}
@@ -197,7 +197,7 @@ Zu guter Letzt noch 1 Mini- und 1 Nullergebnis, nämlich für das Wahlverhalten 
 Der Logik für den Familienstatus folgend, würde ich auch hier erwarten, dass der "PWES-Konservatismus" sich darin niederschlagen könnte, dass eher zur Wahl gegangen wird und dass eine hohe Bildung angestrebt und erreicht wird.
 Ersteres ist natürlich relativ schwach geschlussfolgert: denn egal, ob ich konservativ oder progressiv unterwegs bin, ich möchte, dass meine Partei gewinnt, also gehe ich zur Wahl.
 Außerdem ist das keine Handlung, für die man sehr diszipliniert sein oder schmerzhaft ein Mußestündchen opfern müsste.
-Dennoch war ich dann überrascht, dass sich das genaue Gegenteil ergibt, wiewohl wir einen nur kleinen Effekt beobachten: die Letztjahr-Nichtwähler erreichen einen höheren PWES Score!
+Dennoch war ich dann überrascht, dass sich das genaue Gegenteil ergibt, wiewohl wir nur einen kleinen Effekt beobachten: die Letztjahr-Nichtwähler erreichen einen höheren PWES Score!
 So kann man sich täuschen.
 Hat man vielleicht zu viel zu tun und verzichtet deshalb auf die Wahl?
 
@@ -209,9 +209,9 @@ dat_raw %>% filter(country %in% c("US") ) %>%
 ```
 
 
-Für die Ausbildungshöhe könnte das Nullergebnis dahingehend ein wenig überraschend, sollte ein protestantischer Arbeitsethos einen doch zu höheren Ausbildungsabschlüssen antreiben.
+Für die Ausbildungshöhe könnte das Nullergebnis dahingehend ein wenig überraschen, dass ein protestantischer Arbeitsethos doch zu höheren Ausbildungsabschlüssen antreiben sollte.
 Gleichzeitig geht - soweit ich das recht in Erinnerung habe - ein höherer Ausbildungsabschluss mit geringerer Religiosität einher, sodass man vielleicht mit hohem religionsnahen Ethos startet, diesen aber mit der Zeit ablegt, sodass sich ein Nulleffekt ergibt.
-Oder atheistischer gesehen: Man startet voll motiviert und auf Fleiß gesinnt, und wird dann im Laufe der Ausbildung entspannter.
+Oder atheistischer gesehen: Man startet voll motiviert und fleißig, und wird dann im Laufe der Ausbildung entspannter.
 
 Aber, das ist sehr müßige Spekulation, die vorliegenden Daten reichen ganz und gar nicht dahin, dass wir das untersuchen könnten.
 Ich muss aber auch zugeben, dass ich nicht recht weiß, ob ein asketischer Arbeitsethos in der US-amerikanischen Welt den Ausschlag auf den Weg zum höheren Bildungsabschluss geben kann, ist diese doch stark von SAT-, ACT-, LSAT- und GRE-Scores (alles mehr oder weniger stark Maße der Intelligenz / kognitiver Fähigkeiten) geprägt.
@@ -232,18 +232,18 @@ dat_raw %>% filter(country %in% c("US") ) %>%
 
 # Fazit
 Wie glücklich sind wir jetzt mit all diesen Ergebnissen? 
-Ich für meinen Teil bin glücklich genug: die Skala funktioniert aus psychometrischer Sicht nicht übel, sie erfasst etwas, das sich nicht unbedingt einfach anderen Persönlichkeitseigenschaften zuordnen lässt und außerdem erfüllt sie den Wunsch, (wenigstens irgend-)etwas zu messen, das über bloßes "Aussageneinschätzen" hinausgeht.
+Ich für meinen Teil bin glücklich genug: die Skala funktioniert aus psychometrischer Sicht nicht übel, sie erfasst etwas, das zwar mit anderen Persönlichkeitseigenschaften zusammenhängt, sich diesen aber nicht einfach *vollständig* zuordnen ließe und außerdem erfüllt sie den Wunsch, (wenigstens irgend-)etwas zu messen, das über bloßes "Aussageneinschätzen" hinausgeht.
 Die Messlatte ist jetzt nicht super ambitioniert hoch angesetzt, aber mehr ist von einem so frei verfügbaren Datensatz auch nicht zu erwarten.
 Wer wissen möchte, wie die PWES-Werte mit weiteren Skalen oder echteren Verhaltensweisen zusammenhängt, der kann sich ja in die Literatur zur PWES stürzen.
 
-Ohnehin bestand das Ziel dieser ersten beiden Posts weniger darin, die gerade so virulente Frage zu beantworten, wie valide die PWES wohl ist, als einen Einblick zu geben, was man als Psychologe so macht, wenn man einen "Test entwickelt".
+Ohnehin bestand das Ziel dieser ersten beiden Posts weniger darin, die gerade so virulente Frage zu beantworten, wie valide die PWES wohl ist, als einen Einblick darin zu gewähren, was man als Psychologe so macht, wenn man einen "Test entwickelt".
 Viele wissen glaube ich einfach nicht, wie bodenständig man dabei vorgeht.
 Es wird nicht analysiert, wie verschnörkelt jemandes Handschrift ist.
-Man versucht auch nicht, jemanden irgendwie reinzulegen, um womöglich gegen sein Interesse eine seiner verborgenen Skurrilitäten bloß zu stellen.
+Man versucht auch nicht, jemanden irgendwie reinzulegen, um womöglich gegen sein Interesse eine seiner verborgenen Skurrilitäten bloß zu stellen und ihm dann zu attestieren, in der ["oralen Phase" hängen geblieben zu sein](https://arbeitsblaetter.stangl-taller.at/PSYCHOLOGIEENTWICKLUNG/EntwicklungFreud.shtml).
 
 Nein, stattdessen stellt man Personen viele Fragen, am besten in formalisierter Art, und sammelt erstmal Daten. 
-An diese setzt man dann einige "Test-interne" Kriterien an, wie wir sie im ersten Blogpost zu PWES durchexerziert haben: (welche) Items hängen sinnvoll miteinander zusammen; das statistische Modell passt; man misst halbwegs messgenau.
+An diese setzt man dann einige "Test-interne" Kriterien an, wie wir sie im ersten Blogpost zur PWES durchexerziert haben: die Items hängen sinnvoll miteinander zusammen; das statistische Modell passt; man misst halbwegs messgenau.
 Dann versucht man noch diese etwas spezielle Testwelt zu verlassen und Zusammenhänge mit der echten Welt zu finden, wobei Mittelwertvergleiche und korrelative Zusammenhänge (wer mehr X ist, macht mehr Y) schon gute Einblicke erlauben (und auf Daten basieren, die der gemeine Forscher realistischerweise erheben kann).
 Dass man dabei manchmal falsche Erwartungen an die Welt legt (Wahlverhalten) oder halbwegs komplexe Betrachtungen anstellen muss (PWES-Score in Abhängigkeit von Religiosität und Familienstatus), haben wir auch gesehen.
 
-Um diesen zweiten Teil nun würdig so zu beenden, wie wir ihn angefangen haben - nämlich schwäbisch: bis zum nächsten Mal, wenn ich offenlege, was Mittelwertunterschiede eigentlich *wirklich* bedeuten, Ade!
+Um noch einen kleinen Ausblick zu geben und diesen zweiten Teil würdig so zu beenden, wie wir ihn begonnen haben - nämlich schwäbisch: bis zum nächsten Mal, wenn ich offenlege, was Mittelwertunterschiede *eigentlich* bedeuten, und Adele!
