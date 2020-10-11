@@ -53,7 +53,7 @@ Betrachten werden wir insbesondere folgende Variablen:
 
 
 * Das Ten Item Personality Inventory (TIPI; Gosling, S. D., Rentfrow, P. J., & Swann, W. B., Jr. (2003). A Very Brief Measure of the Big Five Personality Domains. Journal of Research in Personality, 37, 504-528.)
-* Religion (Achtung das wird das Highlight!), wobei ich den Fokus auf diejenigen Religionszugehörigkeiten setze, für die genug Teilnehmer vorhanden sind: Agnostiker, Atheisten, Katholiken, Protestanten (es findet keine weitere Unterteilung der Protestanten statt. Es war nur möglich anzugeben, dass man Mormone oder "Anderer Christ" ist.)
+* Religion (Achtung das wird das Highlight!), wobei ich den Fokus auf diejenigen Religionszugehörigkeiten setze, für die genug Teilnehmer vorhanden sind bzw. die sich später sinnvoll interpretieren lassen: Agnostiker, Atheisten, Katholiken, Protestanten (es findet keine weitere Unterteilung der Protestanten statt. Es war nur möglich anzugeben, dass man Mormone oder "Anderer Christ" ist.)
 * Familienstatus: Nie verheiratet gewesen, verheiratet, geschieden
 <!-- * Sexualität -->
 * Ausbildung beschränkt auf US-amerikanische Teilnehmer (damit die Abschlüsse wirklich vergleichbar sind): weniger als Highschool-Abschluss, Highschool-Abschluss, University-Degree, Graduate-Degree
@@ -75,7 +75,7 @@ Der PWES-Wert sollte also keine oder sehr wenig Information darüber enthalten, 
 
 Da im vorliegenden Datensatz keine ganzen Fragebogen erhoben wurden, sondern nur 10 Adjektivpaare (TIPI: "I see myself as:" u.a. "Dependable, self-disciplined", 1 = Disagree strongly bis 7 = Agree strongly), die als Indikatoren für Persönlichkeitseigenschaften dienen, habe ich mir nicht die 10 Korrelationen mit diesen Antworten angeschaut.
 Stattdessen greife ich die Analysen des vorherigen Blogposts auf, indem ich einfach die PWES Daten und die TIPI Items aneinander hänge und wieder das gleiche Modell fitte - nur eben an diesen großen Datensatz.
-Dann schaue ich mir wieder die Faktorladungen auf die Hauptdimension der Daten an - die Zahlen unter F1 -, um zu bestimmen, ob einzelne TIPI Items mit dem PWES Konstrukt zusammenhängen (ist ein anderer Ansatz als direkt die Korrelationen anzuschauen, macht aber im Grunde dasselbe).
+Dann schaue ich mir wieder die Faktorladungen auf die Hauptdimension der Daten an - die Zahlen unter F1 -, um zu bestimmen, ob einzelne TIPI Items mit dem PWES Konstrukt zusammenhängen (ist ein anderer Ansatz als direkt die Korrelationen anzuschauen, macht aber im Grunde das gleiche).
 
 Was sich dann zunächst zeigt ist, dass die Ladungen der TIPI Items grundsätzlich geringer ausfallen als die der PWES-Items.
 Was gut so ist, denn das spricht dafür, dass die PWES etwas relativ Eigenständiges misst und nicht z.B. einfach Gewissenhaftigkeit in neuem Gewand.
