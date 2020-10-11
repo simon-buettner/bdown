@@ -154,7 +154,7 @@ Dass sich kein Unterschied zu den Geschiedenen einstellt, ist nicht ganz im Sinn
 So sollte man doch eigentlich vermuten, dass Personen mit hohen PWES-Werten sich eher *nicht* scheiden lassen und dementsprechend in dieser Personengruppe unterrepräsentiert sind.
 Hierfür sprechen die Daten allerdings nicht.
 
-Der Vollständigkeit halber: In den Daten gefunden habe ich ebenso, dass sich Unterschiede im PWES-Score für unterschiedliche sexuelle Orientierung ergeben, die ebenfalls dafür sprechen, dass die PWES durchaus eher religiös-konservative Wertorientierungen widerzuspiegeln scheint.
+Der Vollständigkeit halber: In den Daten gefunden habe ich ebenso, dass sich Unterschiede im PWES-Score für unterschiedliche sexuelle Orientierungen ergeben, die ebenfalls dafür sprechen, dass die PWES durchaus eher religiös-konservative Wertorientierungen widerzuspiegeln scheint.
 
 ```{r}
 dat_raw %>% ggbetweenstats(data = .,x = married,y = PWES_Theta,
