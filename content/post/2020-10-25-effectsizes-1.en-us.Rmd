@@ -1,0 +1,153 @@
+---
+title: Effektstärken 1
+author: ''
+date: '2020-10-27'
+slug: effectsizes-1.en-us
+output:
+  blogdown::html_page:
+    toc: false
+categories: []
+runtime: shiny
+tags: []
+keywords:
+  - tech
+---
+# Psychologische Befunde ...  aber was bedeuten sie?
+## 
+Psychologen finden beinahe täglich irgendwelche mehr oder weniger schöne neuen Effekte - another day, another dollar. 
+Meistens laufen diese in etwa auf folgende Muster hinaus, die selbstverständlich aber nicht nur für psychologische Forschung prototypisch sind:
+
+* **Korrelationen / lineare Zusammhänge**: 
+  + Mehr X geht mit mehr Y einher. Beispiel: gewissenhafte Personen sind am Arbeitsplatz und in der Schule generell erfolgreicher. 
+
+* **Gruppenvergleiche**: 
+  + Personen aus Gruppe A sind mehr Y als Personen aus Gruppe B. Die Gruppe kann dabei relativ natürlich sein, wie z.B. Bayern versus Schwaben, oder aber künstlich: Personen in Experimentalgruppe A versus die aus Experimentalgruppe B. Die Experimentalgruppen können dabei alle möglichen Manipulationen widerspiegeln, seien es unterschiedliche Therapieformen oder auch so etwas wie, Personen, die vor einer Klausur einen Apfel gegessen haben gegen solche, die ihre Klausur auf nüchternem Magen geschrieben haben. Das "Y" könnte in diesem Fall dann beispielsweise die Leistung oder die Nervosität bei der Klausur sein.
+
+Die hierzu in der Forschung zu findenen Varianten sind natürlich sehr umfangreich. 
+Wenn die Methoden dann noch komplexer werden, blickt der Laie schnell gar nicht mehr durch. 
+Nicht nur deshalb sind viele Psychologen durchaus daran interessiert, ihre Forschungsergebnisse ein wenig auf solche Vergleiche herunterzubrechen. 
+
+## Zwei allgemeine Forschungsgrundfragen
+Grundsätzlich geht es der Forscherzunft dabei dann fast immer um folgende 2 Fragen: 
+
+  1. Sind die Effekte, die man beobachtet hat, rein zufälliger Natur, oder hat man ein Datenmuster vorgefunden, das echte Unterschiede vermuten lässt? Womit die Frage der **statistischen Signifikanz** angestoßen ist. Damit wiederum verwandt ist die Frage, ob gefundene Effekte auch von anderen Wissenschaftlern gefunden, also repliziert werden können. Das Thema Replizierbarkeit von Forschungsergebnissen ist recht heikel und für sich schon sehr umfangreich. Übrigens nicht nur, was psychologische Forschung angeht! Um es nur ganz kurz zu machen: Es gibt definitiv Probleme bei der Replikation von wissenschaftlichen Befunden, weshalb es schwer ist, einzelne glänzende Forschungsergebnisse wirklich für Gold zu halten. Nichtsdestoweniger: diese Ergebnisse sind deshalb nicht alle schlecht und außerdem zumeist das Beste, was wir haben. Wie gesagt, gilt das nicht nur für psychologische Forschungsergebnisse, sondern auch naturwissenschaftlichere Forschungszweige wie z.B. die Medizin versprechen "mehr Schein als sein".  
+
+  2. Wie **bedeutend** oder **groß** sind die Effekte, die wir gefunden haben? Oder weiter gefragt: Was bedeuten die Effekte eigentlich? Z.B. für den Alltag? Wer ein bisschen was von Signifikanztests versteht, der weiß, dass auch kleine Effekte bei sehr hohen Fallzahlen statistisch signifikant werden, ohne dass ein dabei gefundener Effekt irgendwie im echten Leben von Belang wäre. Deshalb wird (immer wieder) versucht, irgendeine Sprache zu finden, die einem auch diese Interpretation von Forschungsergebnissen erlaubt.
+
+Die erste Frage lassen wir außen vor und widmen uns lieber dem interessanten Thema **Effektstärken**. 
+<!-- Was ich hierzu berichte, richtet sich größtenteils nach einem relativ jungen Artikel von Funder und Ozer (2019): ["Evaluating Effect Size in Psychological Research: Sense and Nonsense"](https://journals.sagepub.com/doi/pdf/10.1177/2515245919847202). -->
+
+## Effektstärken: d wie "das ist doch nicht normal"
+
+Beim Thema Effektstärken ergeben sich wieder unterschiedliche Betrachtungsebenen: 1. Statistische Kennwerte, 2. Interpretation dieser Kennwerte.
+Zunächst und für den Rest dieses Posts bleiben wir bei den Kennwerten selbst - ich versuche einmal, komplett ohne Formeln auszukommen.
+Wer diese möchte, folge den verlinkten Wikipediaseiten und stürze sich von da aus in Googleeskapaden.
+
+Jeder Psychologe kennt die beiden: [**Pearson's *r***](https://de.wikipedia.org/wiki/Korrelationskoeffizient) (Korrelationskoeffizient) und [**Cohen's *d***](https://de.wikipedia.org/wiki/Effektst%C3%A4rke#Cohens_d). 
+Diese lassen sich glücklicherweise ineinander umrechnen - meinen Fokus möchte ich zunächst einmal auf Cohen's *d* setzen, das  Unterschiede von Mittelwerten zwischen verschiedenen Gruppen verständlicher macht.
+Um dieses komische *d* zu verstehen, ist ein wenig Wissen über Verteilungen unabdingbar, genauer: über die **Normalverteilung** (wie eine Normalverteilung aussieht, dafür unten einfach die ShinyApp bemühen - oben rechts sind zwei Normalverteilungen zu sehen).
+(Normal-)Verteilungen zeichnen sich durch einen Tendenzwert aus, bei der Normalverteilung der Mittelwert, der angibt, welchen Wert eine Zufallsvariable im Mittel annimmt.
+Ferner durch die Streuung dieser Werte als Varianz oder Standardabweichung. 
+Die Streuung hilft uns zu verstehen: Erreichen beispielsweise die meisten Personen Testwerte sehr nah um den Mittelwert, oder auch komplett andere Werte?
+Um hier die Kommunikation zu erleichtern, kann man die Werte so transformieren, dass sie z.B. bei der **z-Transformation** (/Standardisierung) den Mittelwert 0 und die Standardabweichung 1 haben.
+In diesem Fall spricht man dann von einer Standardnormalverteilung, für die gilt: 
+
+* 68% erreichen Werte zwischen -1 und 1, 
+* 95% erreichen Werte zwischen -2 und 2,
+* 99.7% erreichen Werte zwischen -3 und 3,
+* 50% haben einen Wert größer 0; 50% einen Wert kleiner 0,
+* alle Werte größer oder kleiner 3 sind sehr selten.
+
+Kleiner Hinweis: für die Normalverteilung gilt allgemein, dass 68% der Werte innerhalb **einer Standardabweichung um den Mittelwert** liegen, also zwischen "Mittelwert - 1 Standardabweichung" und "Mittelwert + 1 Standardabweichung" - für den Rest analog. 
+[Hier](https://towardsdatascience.com/understanding-the-68-95-99-7-rule-for-a-normal-distribution-b7b7cbf760c2) ein recht netter einführender Artikel zur Normalverteilung.
+
+Man kann aber auch eine andere Transformation durchführen, die sehr bekannt ist, die Transformation in **IQ-Werte**, wie man sie von Intelligenztests kennt. 
+Hier ist der Mittelwert 100, und die Standardabweichung 15. 
+Es liegen also 68% zwischen IQ-Wert 85 und 115, und 95% zwischen 70 und 130. 
+Deswegen sind Mitglieder von MENSA (statistisch) ganz besonders, denn sie sind mit einem IQ von über 130 intelligenter als 98% der Vergleichsbevölkerung! 
+Wer stattdessen nur einen IQ-Wert von 115 erreicht, ist gerade einmal intelligenter als 84% der Bevölkerung. 
+Bei einem IQ-Wert von 100 ist die Hälfte intelligenter, die Hälfte weniger intelligent als wir. 
+Hier wird auch deutlich: Wer denkt, dass IQ-Werte eine inhärente und direkt greifbare Bedeutung haben, liegt erst mal falsch! 
+IQ-Werte sind nur umgerechnete Werte, die angeben, wie man im Vergleich zu einer Stichprobe (z.B. der Allgemeinheit) in einem standardisierten Test abschneidet.
+
+Dieses Wissen um Normalverteilungen ist der Schlüssel zum Verständnis von Effektstärken, wenn es um Mittelwertunterschiede geht, denn wir müssen uns immer wieder vor Augen führen, dass wir bei Mittelwertunterschieden Verteilungen vergleichen.
+Statt nur davon zu sprechen, dass z.B. Gruppe A 10 Aufgaben mehr löst als Gruppe B, setzen wir den Mittelwertunterschied ins Verhältnis zur vorgefundenen Streuung  der Verteilungen.
+Wenn Mittelwertunterschied und Standardabweichung bei 10 liegen, ist der Effekt schon allerhand: Gruppe A schneidet eine ganze Standardabweichung besser ab als Gruppe B! 
+Ist die Standardabweichung aber nur 4, dann liegt sie im Mittel nur 0.2 Standardabweichungen (weil 4/20 = 0.2) über Gruppe B. 
+So werden dann ganz verschiedene Mittelwertunterschiede überhaupt erst vergleichbar, denn Cohen's *d* bedeutet genau das: um wie viele Standardabweichungen unterscheiden sich zwei Gruppen im Mittel?
+Im ersten Fall wäre Cohen's *d* also 1.0, im zweiten 0.2.
+Bei Korrelationen ist das ganz ähnlich, denn auch hier werden gefundene Zusammenhänge in Relation zu den vorgefundenen Standardabweichungen gesetzt, um die (statistische) Interpretation zu erleichtern.
+
+## Shiny App zu Effektstärken
+
+Super, alle Fragen beantwortet, gell? 
+Hanoi! Cohen's *d* mag für statistikbewandte Personen bollaguat sein, aber für Normalos, die ihre Spätzle gern mit brauner Sauce und ihren Wein gern im Viertele und mit fein säuerlicher Note genießen, ist mit *d* noch nicht allzu viel gesagt. 
+Um Licht in diese dunkle Besenwirtschaft zu bringen, hilft anschauen und selbst erproben meiner Meinung nach am besten. 
+Deswegen habe ich kurzerhand eine kleine ShinyApp gebaut, mit der sich "hands-on" untersuchen lässt, was welches Cohen's *d* bedeutet und insbesondere auch, wie das dann aussieht. 
+Unten zerhackt's die Darstellung der ShinyApp ein bisschen, deshalb [hier der Link](https://sbuettner.shinyapps.io/Effectsizes/).
+Das nachfolgende Bild bezieht sich auf die App, wie sie einem erscheint, wenn man dem Link folgt.
+
+<br>
+
+![Erklärung ShinyApp](/img/ShinyApp_explained.png){width=100%}
+
+<iframe height="800" width="100%" frameborder="no" src="https://sbuettner.shinyapps.io/Effectsizesss/"> </iframe>
+<br>
+
+
+#### Zunächst zur Bedienung
+Links bzw. oben lässt sich die Effektstärke *d* nach Cohen eines simulierten Datensatz zwischen zwei Gruppen einstellen. 
+Es wird also eingestellt, um wie viele Standardbweichungen (gepoolt) Gruppe B über A auf einem unspezifischen, standardnormalverteilten Wert, könnte z.B. Intelligenz sein, liegt.
+Der Gesamtmittelwert ist dabei 0, die Gesamtstandardabweichung ist 1.
+Außerdem kann man die Standardabweichungen der beiden Gruppen einstellen - aber das sei erst einmal unterschlagen. 
+Wenn die Einstellung vorgenommen wurde: einfach bei der Katze auf "Neu berechnen!" klicken.
+
+#### Darstellung: Bunte Bilder ...
+Rechts oben werden die dazugehörigen Verteilungen der Werte dargestellt. 
+Zur besseren Veranschaulichung tun wir einfach so, als würde das "Trait" irgendein psychologischer [Bruddligkeits](http://schwaebisches-woerterbuch.de/default.asp?q=bruddlig)-Wert sein und Gruppe A seien B**A**yern, Gruppe B seien Schwa**B**en (alles fiktiv, oder: "any resemblance to a living person is purely coincindental").
+
+Man sieht nun: die meisten Bruddligkeits-Werte finden sich im Bereich um 0.
+Zwischen -3 und 3 liegen so gut wie alle Werte.
+Darunter eine etwas informativere Aufteilung der Werte je nach Gruppenzugehörigkeit: Ganz links in der Abbildung ist ein Block, der die Personen repräsentiert, die die niedrigsten 10% der Bruddligkeits-Werte (Schwaben und Bayern gemeinsam) erreichen. 
+Das sind die 10% am wenigsten bruddligen Personen.
+Dieser Block ist so aufgeteilt, dass der Anteil von Bayern und Schwaben erkennbar ist.
+Für Cohen's *d* = 0.3: rund 62% der 10% unbruddligsten Personen sind Bayern, folglich sind 38% davon Schwaben. 
+
+Die weiteren Blöcke sind analog aufgebaut: nach den unteren 10% folgt der untere Bruddligkeits-Bereich, in den 10-25% der Personen fallen, d.h.
+
+ 1. 10-25% sind mindestens so bruddlig wie die Personen in diesem Bereich,
+ 2. 75-90% sind bruddliger als diese Personen.
+
+Dann folgt der leicht unterdurchschnittliche Bereich, von Traitausprägungen 25-50% etc. 
+
+Was diese Grafik - es handelt sich um einen Mosaikplot - veranschaulicht: Wenn wir uns bei "normalen" Effektstärken (0.3 ist vielleicht schon etwas größer als normal für Psychologen) bewegen, dann machen sich Unterschiede erst an den Rändern der Verteilung wirklich bemerkbar, also im Bereich sehr hoher / niedriger Bruddligkeit.
+So stellen wir fest, dass wenn wir uns im Bereich typischer Bruddligkeitswerte aufhalten, wir nahezu eine 50/50 Aufteilung je Gruppe vorfinden. 
+Hier geht es um den Bereich, der "mittleren 50%" also die unteren 25-50% und die oberen 50-75%. 
+Man sieht, der Anteil von Schwaben liegt bei 47% bei den leicht unterdurchschnittlich und komplementär bei 53% bei den leicht überdurchschnittlich Bruddligen. 
+Heißt: Wenn wir uns bei diesem Cohen's *d* "normale" Werte anschauen, dann müssten wir schon sehr sensibel für statistische Unterschiede sein, um festzustellen, dass z.B. Schwaben bruddliger als Bayern sind. 
+
+Wenn wir aber die sehr bruddligen Personen inspizieren, dann zeigt sich uns ein ziemlich anderes Bild: Bei den 10% der bruddligsten Personen haben wir zu 2/3 Schwaben! 
+Wenn also jemand so etwas sagen würde wie "Ich finde, bei den Normalbruddligen gibt es gleich viele Schwaben wie Bayern. 
+Aber sehr bruddlige Personen … das sind doch eher die Schwaben, nur so jeder Dritte Superbruddler ist ein Bayer!", dann könnten wir ihm nur zustimmen!
+Andersherum könnten wir erwidern: "Aha, Du meinst also, ein Cohen's *d* von 0.3 liegt vor!"
+
+#### ... und graue Kästen
+Ich finde so werden Mittelwertunterschiede dann schon deutlich greifbarer und ich muss gestehen, wie diese sich im Detail ausgestalten, habe ich meist selbst nicht im Kopf, wenn ich ein Paper lese, in dem ein paar Cohen's *d*s angegeben sind.
+Aber man kann rein auf Basis von Cohen's *d* noch einiges mehr folgern.
+Weitere assoziierte statistische Kennwerte habe ich links unter dem Eingabebereich eingefügt, eine Auswahl an Standardwerten, außerdem eine einfache "Eigenkreationen". 
+Die Kennwerte beantworten folgende Fragen:
+
+* **Superiority**: Wie groß ist der Anteil von Personen aus Gruppe B, die höhere Werte erreichen als die aus Gruppe A?
+* **Cohen's U3**: Wie hoch ist der Anteil von B-Personen, die über dem Mittelwert der A-Personen liegen?
+* **Cohen's *d* und Pearson's *r***: das sind einfach die standardisierten Effektgrößen, wie das Paket 'effectsize' sie ausgibt. Das Schöne: für jedes *d*, das wir einstellen, sehen wir das dazugehörige *r*.
+* **GLM Vorhersagegenauigkeit**: Wenn man ein einfaches Modell rechnet, bei dem man mit dem Trait die Gruppenzugehörigkeit statistisch bestimmen möchte (Modellformulierung unten links), wie oft läge man dann richtig (wenn man sagt, zu Gruppe B gehört man, wenn auf Basis der Modellvorhersage die Wahrscheinlichkeit bei mind. 50% liegt, dieser Gruppe anzugehören)? Im Mosaikplot rechts haben wir schon gesehen, dass wir hier nicht an jedem Punkt der Bruddligkeitsverteilung die gleiche Erfolgswahrscheinlichkeit erreichen. Umgekehrt: gegeben sei *d* = 0.3 und wir wissen, jemand liegt im Bereich der Top 10% Bruddler, dann ist er mit 62% Wahrscheinlichkeit ein Schwabe. Hier aber sehen wir nur die Gesamtgenauigkeit einer Modellvorhersage allein auf Basis des Traits.
+* **Überlappen der Verteilungsdichten**: Im Plot oben rechts sehen wir, dass die beiden Verteilungen sich stark überlappen, zu wie viel Prozent das der Fall ist, das lesen wir hier ab. Achtung: Gilt nur, wenn die Standardabweichungen identisch sind.
+* **Vorgeschlagene Interpretation**: Von den verschiedenen Richtlinien zur Beurteilung einer Effektstärke/-größe, die es gibt, ist die von Cohen am bekanntesten und die von Funder sehr sinnvoll (zum referierten Funder-Artikel bald mehr), weshalb ich sie hier angegeben habe.
+
+Sehr fein, jetzt hat man doch etwas Schönes an der Hand, um verschiedene Cohen's *d* Werte von allen Seiten her einmal zu betrachten und informativere Aussagen zu treffen als "Schwaben sind bruddliger als Bayern" oder eben wieder weiter gedacht auch "Therapieform X führt zu geringerer Depression als eine Placebotherapie" sowie "Apfel essen führt zu besseren Klausurnoten".
+Gleichzeitig können Sie jetzt wann immer Sie irgendwo von Mittelwertunterschieden lesen, den Mittelwertunterschied durch die gemeinsame gegebene Standardabweichung teilen - denn so erhalten Sie Cohen's *d* - und sich wieder vor Augen führen, was der Unterschied denn eigentlich bedeutet.
+Und wer nicht mal Standardabweichungen angibt, dem begegnen Sie mit dem verächtlichen Augenrollen des Besserwissers.
+Und dennoch, auch dann sind wir noch nicht super zufrieden, denn uns fehlt die 2. Betrachtungsebene richtiger Interpretationen: Was bedeuten bestimmte Effekte grundsätzlich, oder im Alltag, oder im Lichte anderer Forschungsergebnisse? 
+Bei welchem Cohen's *d* oder Pearson's *r* sollte man gespannt die Ohren spitzen?
+Tja, im Internet ist diese Woche kein Platz mehr, deswegen kommt bald mehr im zweiten Teil zum Thema Effektstärken.
+

@@ -3,17 +3,22 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/post/</loc>
-    <lastmod>2020-10-11T00:00:00+00:00</lastmod>
+    <loc>/2020/10/26/effectsizes-1.en-us/</loc>
+    <lastmod>2020-10-26T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/2020/10/11/2020-10-11-protestantische-arbeitsethik-2.en-us/</loc>
-    <lastmod>2020-10-11T00:00:00+00:00</lastmod>
+    <loc>/post/</loc>
+    <lastmod>2020-10-26T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/</loc>
+    <lastmod>2020-10-26T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2020/10/11/2020-10-11-protestantische-arbeitsethik-2.en-us/</loc>
     <lastmod>2020-10-11T00:00:00+00:00</lastmod>
   </url>
   
