@@ -39,14 +39,14 @@ Umso schöner, dass man hier den eigenen Horizont erweitern kann und am Ende des
 
 Bevor wir zu den Effekten selbst kommen, möchte ich die einfachsten bereits seit 30 Jahren vorhandenen Benchmarks wiedergeben. 
 Der Namensgeber des berühmten *d*, **Cohen** (1988), hat seine **Effektstärkeneinteilung** im Grunde auch darauf bezogen, wie bestimmte andere Effekte ausfallen bzw. sie sich sichtbar machen. 
-Generell war schon sein Credo: Effektstärken müssen immer im Kontext des Forschungsgegenstands interpretiert werden. Für den Fall, dass das nicht möglich sein sollte, hat er einige allgemeine, zugegebenermaßen teils eigenartige, aber dafür sehr im wahrsten Sinne des Wortes anschauliche Benchmarks angegeben. 
-Als solche setzt er die mittleren Körpergrößenunterschiede zwischen verschiedenen Altersstufen von Mädchen (wohl gemerkt: das sind nicht die einzigen Benchmarks, die er zitiert, aber wir begnügen uns mit diesen):
+Generell war schon sein Credo: Effektstärken müssen immer im Kontext des Forschungsgegenstands interpretiert werden. Für den Fall, dass das nicht möglich sein sollte, hat er einige allgemeine, zugegebenermaßen teils eigenartige, aber dafür wörtlich sehr anschauliche Benchmarks angegeben. 
+Als solche setzt er die mittleren Körpergrößenunterschiede zwischen verschiedenen Altersstufen von Mädchen (das sind nicht die einzigen Benchmarks, die er zitiert, aber wir begnügen uns mit diesen):
 
-- **kleine Effekte**, *d* zwischen 0.2 und 0.5 (r zwischen ~0.1 und ~0.24): Größenunterschiede zwischen 15 und 16 jährigen Mädchen.
-- **mittlere Effekte**, *d* zwischen 0.5 und 0.8 (r zwischen ~0.24 und ~0.37): Größenunterschiede zwischen 14 und 18 jährigen Mädchen. Laut Cohen sind diese „visible to the naked eye“, weshalb ähnlich große Effekte verdienen, von uns „mittelstark“ genannt zu werden.
-- **große Effekte**, *d* größer 0.8 (r größer ~0.37): Größenunterschiede zwischen 13 und 18 jährigen Mädchen.
+- **kleine Effekte**, *d* zwischen 0.2 und 0.5 (*r* zwischen ~0.1 und ~0.24): Größenunterschiede zwischen 15 und 16 jährigen Mädchen.
+- **mittlere Effekte**, *d* zwischen 0.5 und 0.8 (*r* zwischen ~0.24 und ~0.37): Größenunterschiede zwischen 14 und 18 jährigen Mädchen. Laut Cohen sind diese „visible to the naked eye“, weshalb ähnlich große Effekte verdienen, von uns „mittelstark“ genannt zu werden.
+- **große Effekte**, *d* größer 0.8 (*r* größer ~0.37): Größenunterschiede zwischen 13 und 18 jährigen Mädchen.
 
-Cohen hatte aber wohl keineswegs beabsichtigt, dass seine grobe Einteilung, die eigentlich auch nur gelten soll, wenn andere Informationen zur Einordnung der Effektstärken nicht vorliegen, derart zombiehaft zitiert wird, wie es Psychologen seit den 90ern praktizieren (Stand 15.11.2020: 186.088 Zitierungen auf Google Scholar. Übrigens, selbstverständlich habe ich die Einteilung auch schon zombiehaft zitiert.). 
+Cohen hatte aber wohl keineswegs beabsichtigt, dass seine grobe Einteilung, die eigentlich auch nur gelten soll, wenn andere Informationen zur Einordnung der Effektstärken nicht vorliegen, derart zombiehaft zitiert wird, wie es Psychologen seit den 90ern praktizieren (Stand 22.11.2020: 186.510 Zitierungen auf Google Scholar. Übrigens, selbstverständlich habe ich die Einteilung auch schon zombiehaft zitiert.). 
 Interessant fand ich die Anekdote im Funder und Ozer Artikel, dass Cohen im Nachhinein wohl auch bereut haben soll, diese Einteilung vorgenommen zu haben, denn so wie sie dann genutzt wurde, war sie nicht gedacht. 
 
 Auch wenn die Einteilung meiner Meinung nach vor dem Hintergrund der Sichtbarkeit von Effekten im Alltag (dass 16 jährige Mädchen nicht so viel größer sind als 15 jährige, der Unterschied zwischen 13 und 18 jährig hingegen schon recht eindeutig ist) durchaus sinnig ist, würde ich wie Cohen und viele nach ihm doch auch behaupten, **besser Effekte aus vergleichbaren Forschungsdisziplinen zu nutzen**, um zu entscheiden, wie der spezifische Effekt, den man gefunden hat, einzuschätzen ist. 
@@ -80,6 +80,7 @@ Insgesamt fällt auf – und da ist meine Aufzählung etwas irreführend – es 
 Diese erste wichtige Feststellung wird sich im Weiteren bestätigen. 
 
 ```{r}
+# library(effectsizes)
 r <- seq(0,.7,.01)
 d <- r_to_d(seq(0,.7,.01))
 plot(r, d, main = "Pearson's r und entsprechendes Cohen's d", type="l", xaxt = "n", yaxt= "n")
@@ -101,7 +102,9 @@ Doch auch hier müssen wir nicht anfangen mühsam Studien zu durchforsten, um mi
 Die beiden Disziplinen unterscheiden sich häufig methodisch dahingehend, dass Sozialpsychologen experimentelle Manipulationen vergleichen (läuft häufig auf Mittelwertunterschiede hinaus) während Persönlichkeitpsychologen häufig untersuchen, wie bestimmte Persönlichkeitseigenschaften mit irgendeinem Kriterium (z.B. Berufserfolg) zusammenhängen.
 Deswegen lassen sich beide eigentlich nicht so großartig vergleichen.
 Ferner lassen lassen sich experimentelle Untersuchungen untereinander schon schwer vergleichen: Wie soll man ein Experiment, in dem ein minimaler Unterschied zwischen den Experimentalgruppen betrachtet wird (z.B. vor der Klausur wird ein oder kein Apfel gevespert) mit einem, in dem die Experimentalgruppen sich stark unterscheiden (z.B. 4 Wochen lang tägliche 1-stündige Mentalcoachings vs. keine solche Coachings)?
-Interessanterweise haben dennoch beide ähnliche Tendenzwerte der Effektstärken gefunden. 
+Dass nur als kleines Denkmal dafür, dass auch wenn man in einer (Sub-)Disziplin selbst verbleibt, der Vergleich von Effektstärken eben nicht so einfach ist.
+
+Interessanterweise sind die Effektstärken für sozial- und persönlichkeitspsychologische Untersuchungen sich dennoch recht ähnlich. 
 Richard, Bond und Stokes-Zota (2003) haben für die von ihnen untersuchten **sozialpsychologischen Effekte** eine Median-Effektstärke von ***r* = 0.18** gefunden.
 Gignac und Szorodai (2016), die sich Korrelationen vornehmlich aus der **Persönlichkeitspsychologie** angeschaut haben, finden als Effektstärke eine Median-Korrelation von ***r* = .19**. 
 Das heißt, 50% der Effekte liegen über, 50% liegen unter *r* = .19 (bei den Sozialpsychologen eben über/unter *r* = 0.18). 
@@ -111,8 +114,8 @@ Sehr fein, zumindest für sozial- und persönlichkeitspsychologische Effekte loh
 Jetzt sind wir aber immer noch nicht am Ende der Reise angelangt: 1. wissen wir zwar seit dem letzten Blogpost, wie Gruppenunterschiede statistisch aussehen, nicht aber wie eine Korrelation *r* von .19 aussieht, und 2. wissen wir nicht, wie sich solche Effekte in tatsächlichen Ereignissen widerspiegeln (wie viele Leben werden denn jetzt durch die Herzinfarkt-Prävention mit Aspirin gerettet?). 
 Außerdem fragen wir uns noch: **3. kann man das alles überhaupt für bare Münze nehmen?** und **4. wie allgemeingültig sind diese Benchmarks für unterschiedliche psychologische Disziplinen?** 
 
-Die ersten zwei Punkte werden wieder ein eigener Blogpost (und ich dachte doch tatsächlich, dass ich einen schönen kurzen Effektstärken-Blogpost über den Funder und Ozer Artikel schreibe!) mit ShinyApp. 
-Der letzte kratzt wieder das Thema **Replizierbarkeit**, wofür ich nur eine Studie etwas genauer vorstellen möchte, die auch 4. etwas aufklärt. 
+Die ersten zwei Punkte werden wieder ein eigener Blogpost mit ShinyApp (und ich dachte doch tatsächlich, dass ich einen schönen kurzen Effektstärken-Blogpost über den Funder und Ozer Artikel schreibe!). 
+Der letzte kratzt wieder an das Thema **Replizierbarkeit**, wofür ich nur eine Studie etwas genauer vorstellen möchte, die auch 4. etwas aufklärt. 
 
 ## Negative Effektdeflation und erfolgreiche Nicht-Replikation
 
@@ -143,8 +146,8 @@ Dass die Kollegen Forschungsergebnisse, die am Ende zweier unterschiedlicher Weg
 
 - Camerer und Kollegen (2018) untersuchten 21 zwischen 2010 und 2015 in *Nature* und *Science* (sehr prestigeträchtige Journals) veröffentlichte sozialwissenschaftlichte Experimente auf ihre Replizierbarkeit: 
   - Von den mit deutlich größeren Fallzahen replizierten Experimenten wurden in 13 Fällen (= 62%) statistisch signifikante Effekte in die gleiche Richtung wie in den originalen Experimenten gefunden – was als deren Hauptkriterium galt, um von „erfolgreichen Replizierungen“ zu sprechen. 
-  - Die Effektstärken nicht-replizierter und replizierter Studien fielen im Schnitt halb so hoch aus wie im Original, mittleres *r* = 0.249 zu mittleres *r* = 0.460. Die Effektstärken der erfolgreich replizierten Studien erreichte ca. 75% der originalen Effektstärken - ein meiner Meinung nach gutes Ergebnis!
-  - Außerdem konnte gezeigt werden, dass auf unterschiedliche Weise gesammelte Meinungen dazu, welche Effekte sich wohl replizieren ließen, eine recht gute Vorhersage dafür lieferten, welche Effekte tatsächlich replizierbar waren. Die Forschercommunity scheint also die Replizierbarkeit bzw. Robustheit von Effekten relativ gut einschätzen zu können (aber: da nur 21 Effekte untersucht wurden, muss das natürlich nicht uneingeschränkte gelten).
+  - Die Effektstärken nicht-replizierter und replizierter Studien fielen im Schnitt halb so hoch aus wie im Original, mittleres *r* = 0.249 zu mittleres *r* = 0.460. Die Effektstärken der erfolgreich replizierten Studien erreichte ca. 75% der originalen Effektstärken (was wiederum ganz gut ist).
+  - Außerdem konnte gezeigt werden, dass auf unterschiedliche Weise gesammelte Meinungen dazu, welche Effekte sich wohl replizieren ließen, eine recht gute Vorhersage dafür lieferten, welche Effekte tatsächlich replizierbar waren. Die Forschercommunity scheint also die Replizierbarkeit bzw. Robustheit von Effekten relativ gut einschätzen zu können (aber: da nur 21 Effekte untersucht wurden, gilt das natürlich nicht uneingeschränkt).
 - Open Science Collaboration (2015), mehrere Forschergruppen untersuchten die Replizierbarkeit von 100 psychologischen Effekten: 
   - Von 100 Effekten konnten „nur“ 39% so repliziert werden, dass diese auch als repliziert eingeschätzt wurden (oder auch andersherum: 61% konnten nicht repliziert werden). 
   - Insgesamt fiel die Effektstärke der replizierten Studien halb so hoch aus wie in den originalen Studien, mittleres *r* = 0.197 zu mittleres *r* = 0.403.
@@ -163,7 +166,7 @@ Das bedeutsamste Ergebnis: wie erwartet, fallen die Effektstärken in der Pre-Re
 Bei den traditionellen Studien wurde ein Median-Effekt von *r* = 0.36 gefunden, bei den Pre-Registration Studien mit *r* = 0.16 von nur etwas weniger als der Hälfte. 
 
 Bevor wir zu einigen der restlichen Ergebnisse kommen, müssen wir hier natürlich erst mal einhaken. 
-Das Ergebnis selbst erfüllt so ziemlich die negativen Erwartungen meines inneren Descartes: Je strikter und weniger verzerrt die Studie durchgeführt wird, desto geringer die Effektstärke. 
+Das Ergebnis selbst erfüllt so ziemlich die negativen Erwartungen meines inneren Zweiflers: Je strikter und weniger verzerrt die Studie durchgeführt wird, desto geringer die Effektstärke. 
 Aber: die Effektstärke ist *nicht* deutlich kleiner als bei den angesprochenen Meta-Meta-Analysen. 
 Woran liegt das? 
 Die Studie von Richard, Bond und Stokes-Zoota (2003) wird von Schäfer und Schwarz tatsächlich mit dem rätselhaften Hinweis zitiert, dass die dort angegebenen Effektstärken vergleichsweise klein seien.
@@ -176,7 +179,7 @@ Aber klar, man kann auch nicht alles in eine einzige Untersuchung schieben.
 
 Der Vollständigkeit halber: Die geringeren Effektstärken der Pre-Registrierungsstudien müssen nicht auf fragwürdige Forschungspraktiken allein zurückgeführt werden, Schäfer und Schwarz berichten z.B., dass nicht unwahrscheinlich ist, dass in diesen Studien vielleicht besonders solche Effekte untersucht werden, die eher klein oder etwas wackelig sind, bei denen man also ggf. Pech hat und anders keine Publikation erreicht. 
 Forscher, die dann ihre Risiken minimieren wollen, stecken möglicherweise also einfach mehr Aufwand in die Vorarbeit einer Pre-Registrierung, was für die Forschercommunity super ist, denn dann werden auch wieder mehr Nullergebnisse unproblematisch veröffentlicht. 
-Es findet vielleicht also auch eine Selbst-Selektion statt: in pre-registrierten Studien werden kleinere Effekte untersucht.
+Es findet vielleicht also auch eine Selbst-Selektion statt: in pre-registrierten Studien werden tendenziell kleinere Effekte untersucht.
 
 Das zweite interessante Ergebnis, dass in der Studie aufgegriffen wird, betrifft die Unterschiedlichkeit der Effektstärken, die je Subdisziplin gefunden werden (siehe Graphik unten). Hier zeigen sich deutliche Unterschiede, die es eigentlich wünschenswert erscheinen lassen, dass weitere Meta-Meta-Analysen je Subdisziplin durchgeführt werden (falls es die nicht schon gibt, das weiß ich ehrlich gesagt einfach nicht). 
 Beispielsweise überschneiden sich die Konfidenzintervalle der Biopsychologen und Sozialpsychologen nicht einmal, Schäfer und Schwarz sprechen deshalb nicht zu Unrecht davon, dass diese beiden Disziplinen in unterschiedlichen Effektstärke-Universen beheimatet sind. 
@@ -184,7 +187,7 @@ Also auch ein weiteres starkes Indiz dafür, dass es nicht eine „Effectsize to
 Für die Sozialpsychologen ist das eine entspannende Nachricht, denn endlich dürfen deren klassischerweise „klein“ genannten Effekte ganz typisch genannt werden und man dürfte realistische Erwartung hegen und setzen.
 
 
-![Effektstärken je Subdisziplin](/img/Effektstärken_je_Subdisziplin.png){width=100%}
+![Effektstärken je Subdisziplin](/img/Effektstärken_je_Subdisziplin.png){width=90%}
 
 ## Zwischenfazit auf dem Weg zu "Effektstärken 3"
 Zeit für ein Zwischenfazit.
@@ -193,7 +196,7 @@ Man sollte sie zunächst auf statistischer Basis verstehen und nach und nach ein
 Dann kann man den nächsten Schritt gehen: Man vergleicht Effektstärken. 
 Wir können dann einschätzen, wie sichtbar ein bestimmtes *d* ist (man erinnere sich an die Körpergrößenunterschiede junger und noch jüngerer Damen), wie Effektstärken allgemein ausfallen (wie wirksam z.B. kleine blauen Pillen sind). 
 Dann muss man sich einen Überblick für die entsprechenden Disziplinen schaffen. 
-Wer wissen will, ob ein sozialpsychologischer Effekt groß oder klein ist, sollte den Vergleich mit Studien in Biopsychostudien nicht aufnehmen. 
+Wer wissen will, ob ein sozialpsychologischer Effekt groß oder klein ist, sollte den Vergleich mit Biopsychostudien nicht aufnehmen. 
 Fehlen noch die zwei oben schon erwähnten Punkte: Wie sehen eigentlich Korrelationen aus? 
 Und wie sehen spezifische Effekte, die wir so finden, in die Realität übersetzt aus? Beides soll im nächsten Post kommen, wenn Sie unter anderem erfahren, wie viele Leben der Aspirineffekt von *r* =  .02 wohl rettet und wie so eine Korrelation aussieht (Spoiler: man erkennt sie nicht in einem Plot).
 
