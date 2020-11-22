@@ -183,8 +183,8 @@ Beispielsweise überschneiden sich die Konfidenzintervalle der Biopsychologen un
 Also auch ein weiteres starkes Indiz dafür, dass es nicht eine „Effectsize to rule them all“ geben sollte, sondern man nach Disziplin unterscheiden muss. 
 Für die Sozialpsychologen ist das eine entspannende Nachricht, denn endlich dürfen deren klassischerweise „klein“ genannten Effekte ganz typisch genannt werden und man dürfte realistische Erwartung hegen und setzen.
 
-![]('/images/Effektstärken_je_Subdisziplin.png')
-![]('../public/images/Effektstärken_je_Subdisziplin.png')
+![]('public/images/Effektstärken_je_Subdisziplin.png')
+![]('../../public/images/Effektstärken_je_Subdisziplin.png')
 
 ## Zwischenfazit auf dem Weg zu "Effektstärken 3"
 Zeit für ein Zwischenfazit.
