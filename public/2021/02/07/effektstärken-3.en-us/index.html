@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.75.1 with theme Tranquilpeak 0.4.7-BETA">
+<meta name="author" content="Simon Büttner">
+<meta name="keywords" content="tech">
+<meta name="description" content="Allzweckwaffe Korrelation Nach dem wir Mittelwertvergleiche bereits durchexerziert haben, fehlt mit Korrelationen noch das zweite statistische Lieblingsinstrumentarium der Psychologen. Kurze Vorabinfo: es soll hier eigentlich nur um Pearson&rsquo;s Korrelationskoeffizient r gehen, wenn ich das irgendwo nicht mehr dazu schreibe, meine ich also im Zweifel Pearson&rsquo;s r. Und wenn irgendwo „Validität“ steht, dann kann man das grundsätzlich gleichbedeutend wie „Korrelation“ verstehen. Zurück zum Thema. Im Gegensatz zu den vielen zusätzlichen Kennwerten, über die bestimmte Cohen&rsquo;s d Werte Auskunft liefern, also z.">
+
+
+<meta property="og:description" content="Allzweckwaffe Korrelation Nach dem wir Mittelwertvergleiche bereits durchexerziert haben, fehlt mit Korrelationen noch das zweite statistische Lieblingsinstrumentarium der Psychologen. Kurze Vorabinfo: es soll hier eigentlich nur um Pearson&rsquo;s Korrelationskoeffizient r gehen, wenn ich das irgendwo nicht mehr dazu schreibe, meine ich also im Zweifel Pearson&rsquo;s r. Und wenn irgendwo „Validität“ steht, dann kann man das grundsätzlich gleichbedeutend wie „Korrelation“ verstehen. Zurück zum Thema. Im Gegensatz zu den vielen zusätzlichen Kennwerten, über die bestimmte Cohen&rsquo;s d Werte Auskunft liefern, also z.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Effektstärken 3">
+<meta name="twitter:title" content="Effektstärken 3">
+<meta property="og:url" content="/2021/02/07/effektst%C3%A4rken-3.en-us/">
+<meta property="twitter:url" content="/2021/02/07/effektst%C3%A4rken-3.en-us/">
+<meta property="og:site_name" content="Psychometer">
+<meta property="og:description" content="Allzweckwaffe Korrelation Nach dem wir Mittelwertvergleiche bereits durchexerziert haben, fehlt mit Korrelationen noch das zweite statistische Lieblingsinstrumentarium der Psychologen. Kurze Vorabinfo: es soll hier eigentlich nur um Pearson&rsquo;s Korrelationskoeffizient r gehen, wenn ich das irgendwo nicht mehr dazu schreibe, meine ich also im Zweifel Pearson&rsquo;s r. Und wenn irgendwo „Validität“ steht, dann kann man das grundsätzlich gleichbedeutend wie „Korrelation“ verstehen. Zurück zum Thema. Im Gegensatz zu den vielen zusätzlichen Kennwerten, über die bestimmte Cohen&rsquo;s d Werte Auskunft liefern, also z.">
+<meta name="twitter:description" content="Allzweckwaffe Korrelation Nach dem wir Mittelwertvergleiche bereits durchexerziert haben, fehlt mit Korrelationen noch das zweite statistische Lieblingsinstrumentarium der Psychologen. Kurze Vorabinfo: es soll hier eigentlich nur um Pearson&rsquo;s Korrelationskoeffizient r gehen, wenn ich das irgendwo nicht mehr dazu schreibe, meine ich also im Zweifel Pearson&rsquo;s r. Und wenn irgendwo „Validität“ steht, dann kann man das grundsätzlich gleichbedeutend wie „Korrelation“ verstehen. Zurück zum Thema. Im Gegensatz zu den vielen zusätzlichen Kennwerten, über die bestimmte Cohen&rsquo;s d Werte Auskunft liefern, also z.">
+<meta property="og:locale" content="en-us">
+
+  
+    <meta property="article:published_time" content="2021-02-07T00:00:00">
+  
+  
+    <meta property="article:modified_time" content="2021-02-07T00:00:00">
+  
+  
+  
+  
+
+
+<meta name="twitter:card" content="summary">
+
+
+
+
+
+
+
+
+
+
+
+  <meta property="og:image" content="/images/profilepic.png">
+  <meta property="twitter:image" content="/images/profilepic.png">
+
+
+    <title>Effektstärken 3</title>
+
+    <link rel="icon" href="/favicon.png">
+    
+
+    
+
+    <link rel="canonical" href="/2021/02/07/effektst%C3%A4rken-3.en-us/">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+    
+    
+    <link rel="stylesheet" href="/css/style-twzjdbqhmnnacqs0pwwdzcdbt8yhv8giawvjqjmyfoqnvazl0dalmnhdkvp7.min.css" />
+    
+    
+
+    
+      
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="4">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="/">Psychometer</a>
+  </div>
+  
+    
+      <a class="header-right-picture "
+         href="/about">
+    
+    
+    
+      
+        <img class="header-picture" src="/images/profilepic.png" alt="Author&#39;s picture" />
+      
+    
+    </a>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="4">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="/#about">
+          <img class="sidebar-profile-picture" src="/images/profilepic.png" alt="Author&#39;s picture" />
+        </a>
+        <h4 class="sidebar-profile-name">Simon Büttner</h4>
+        
+          <h5 class="sidebar-profile-bio">Als R&amp;D Consultant beschäftige ich mich mit der datenlastigeren Seite der Psychologie. Daran möchte ich mit diesem Blog gerne andere teilhaben lassen.</h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">Home</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">Tags</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/about">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+      
+      <span class="sidebar-button-desc">About</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">Archives</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://www.linkedin.com/in/simon-b%C3%BCttner-480a8611a/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-linkedin"></i>
+      
+      <span class="sidebar-button-desc">Linkedin</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="4"
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+            <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title" itemprop="headline">
+      Effektstärken 3
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2021-02-07T00:00:00Z">
+        
+  February 7, 2021
+
+      </time>
+    
+    
+  </div>
+
+</div>
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              <h1 id="allzweckwaffe-korrelation">Allzweckwaffe Korrelation</h1>
+<p>Nach dem wir Mittelwertvergleiche bereits durchexerziert haben, fehlt mit <strong>Korrelationen</strong> noch das zweite statistische Lieblingsinstrumentarium der Psychologen. Kurze Vorabinfo: es soll hier eigentlich nur um Pearson&rsquo;s Korrelationskoeffizient <em>r</em> gehen, wenn ich das irgendwo nicht mehr dazu schreibe, meine ich also im Zweifel Pearson&rsquo;s <em>r</em>. Und wenn irgendwo „Validität“ steht, dann kann man das grundsätzlich gleichbedeutend wie „Korrelation“ verstehen. Zurück zum Thema. Im Gegensatz zu den vielen zusätzlichen Kennwerten, über die bestimmte Cohen&rsquo;s <em>d</em> Werte Auskunft liefern, also z.B. betreffend die Überlappung der Verteilungen, Anteil der Personen aus Gruppe A, die über/unter Gruppe B liegt etc., konnte ich tatsächlich solche Werte für Korrelationen nur mit bedingtem Erfolg finden. Höchstens mit Ausnahme von Taylor-Russel-Tafeln und dem bekannteren R^2, der aufgeklärten Varianz.</p>
+<p>Wenn man sich über Korrelationen besonders schlau machen will, findet man stattdessen viele wichtige Dinge, die mich hier jetzt gar nicht interessieren: Welche verschiedenen <strong>Korrelationseffizienten</strong> es so gibt; dass <strong>Korrelation nicht Kausalität</strong> impliziert (der wichtigste zu bedenkende Punkt bei der Interpretation, allerdings auch der bekannteste); wie man mit Korrelationen <strong>statistische Hypothesen</strong> testet; dass Pearson&rsquo;s (aber auch andere) Korrelationseffizient <em>r</em> nur <strong>lineare Zusammenhänge</strong> beschreibt; wie Korrelationen und <strong>Regressionen</strong> miteinander zusammenhängen und so weiter und so fort.</p>
+<p>Das alles lassen wir beiseite und fragen uns hier und heute: Was bedeuten bestimmte Korrelationen <strong>eigentlich</strong> und in <strong>Normalsprache</strong> übersetzt? Der letzte Blogeintrag hat uns schon gewappnet, die Größe von Korrelationen im medizinischen/psychologischen Forschungsbereich vergleichsweise einzuschätzen, es fehlte nur noch das Pendant zum Blogeintrag über Cohen&rsquo;s <em>d</em> darüber, wie bestimmte statistische Werte aussehen und was sie über den reinen Zahlenwert hinaus bedeuten.</p>
+<p>Noch einmal zum allgemeinen Verständnis: <strong>Pearson&rsquo;s <em>r</em> drückt aus, wie stark zwei Variablen linear miteinander zusammenhängen</strong>. Beispiel: Allgemeine Intelligenz und die berufliche Leistung hängen miteinander zusammen, sie korrelieren also miteinander; in etwa mit <strong><em>r</em> = .5</strong> (wenn Korrekturen der Korrelation vorgenommen wurden; Schmidt &amp; Hunter, 1998). Läge <em>r</em> bei 0, bestünde kein linearer Zusammenhang, d.h. die Intelligenz würde uns keine Information darüber liefern, wie erfolgreich eine Person in ihrem Beruf ist. Läge sie unter 0, würde das bedeuten, dass höhere Intelligenz mit schlechteren beruflichen Leistungen einhergeht. Die Korrelation könnte maximal bei 1 bzw. -1 liegen. Dann bestünden perfekt lineare Zusammenhänge, was wir gemeinen Sozialwissenschaftler nie finden (sollte man auch erstmal nicht erwarten). Nun auch ganz kurz zu R^2, der <strong>aufgeklärten Varianz</strong>: die Korrelation von .5 bedeutet, dass 25 % (weil 0.5^2 = 0.25) der Varianz, also der Unterschiede der beruflichen Leistung zwischen den verschiedenen Personen, sich durch Unterschiede in deren Intelligenz „erklären“ lassen. Statistisch gesehen ist hier jedoch egal, ob die Varianz der beruflichen Leistung die Varianz der Intelligenz erklärt oder andersherum.</p>
+<h1 id="shinyapp-punktewolken-und-taschenspielertricks">ShinyApp, Punktewolken und Taschenspielertricks</h1>
+<p>Aber um nicht direkt bei statistischen Erklärungen stehen zu bleiben, habe ich diesmal wieder mit <strong>ShinyApp</strong> (<a href="https://sbuettner.shinyapps.io/correlations/"><strong>hier ein Link zur App</strong></a>), die es erlaubt, die Größe von Korrelationskoeffizienten anzupassen und dann einfach mal anzuschauen, wie dazugehörige bivariate (weil wir immer 2 Variablen betrachten) Punktewolken aussehen. Darüber hinaus habe ich einige Werte mit angefügt, die inspiriert sind von den statistischen Zusatzinformationen, die man zu Cohen&rsquo;s <em>d</em> findet und denen wir uns in Kürze widmen werden.</p>
+<p>Wer nun ein bisschen mit den Reglern spielt, wird feststellen, <strong>dass wir erst bei Korrelationen ab ca. .5 wirklich sehen, dass ein Zusammenhang besteht</strong>. Umso trauriger die Erinnerung an den letzten Blogeintrag, der offenbart hat, dass wir in der Psychologie (u.a. aber eben auch in der Medizin) in den seltensten Fällen Effekte finden, die einem <em>r</em> von über .5 entsprechen. Der Durchschnitt liegt vielmehr bei ca. .2. Solche Korrelationen sieht man in den Punktewolken kaum. Wie versprochen, können Sie jetzt auch einmal anschauen, was die Korrelation von .02 für die Reduktion von Herzinfarkten durch Aspirin bedeutet. Man sieht schnell: man sieht nicht viel. Dennoch ist das ein Effekt, den Mediziner ernst zu nehmen scheinen. Denn es geht um Leben und Tod, außerdem bedeutet ein kleiner Effekt nur, dass erst dann wirklich durchschlägt, wenn man ihn bei einer hinreichend großen Zahl Personen wirken lässt, wenn man also so etwas wie Skaleneffekte berücksichtigt.</p>
+<h2 id="wie-gut-sind-unsere-entscheidungen">Wie gut sind unsere Entscheidungen?</h2>
+<p>Jedoch: nicht nur traurig soll uns das stimmen, es sollte vielmehr unsere Neugier wecken in Bezug auf die Frage: was bedeutet <em>r</em> = .2 denn dann? Hierfür müssen wir ein paar Taschenspielertricks anwenden und zwar verlassen wir die Denke „mehr A = mehr B“ und dichotomisieren unsere Welt (so verrucht Schwarz-Weiß-Vergleiche sind, so eindrücklich sind sie unserer kognitiven Maschinerie). Genauer, wir stellen die Korrelationen in den Raum irgendeiner möglichst einfachen Entscheidung: Es soll entschieden werden, ob wir auf Basis von <strong>Variable A</strong>, dem <strong>Prädiktor</strong>, entscheiden können, ob ein <strong>Kriterium</strong> festgesetzt über <strong>Variable B</strong> erreicht wird. Als Wirtschaftspsychologe mache ich das im Rahmen einer fiktiven Personalauswahlentscheidung (heute leider kein Schwabenvergleich à la „höhere Bruddligkeit geht mit einem erhöhten Spätzlekonsum einher“). Die Prädiktorvariable der X-Achse sei dabei irgendein <strong>Intelligenztest</strong>, den wir zur Auswahl unserer Kandidaten einsetzen. Die Kriteriumsvariable auf der Y-Achse sei die <strong>tatsächliche Eignung</strong>, angenähert durch bspw. eine summarische <strong>Vorgesetzteneinschätzung</strong>. Wir machen es uns hier ganz einfach: Wer überdurchschnittlich eingeschätzt wird, den halten wir einfach für geeignet und den stellen wir auch ein.</p>
+<p>Jetzt können wir uns eine Reihe interessanter Fragen stellen in Bezug auf unsere Erwartungen (weniger die echte Welt, die Erwartungswelt!):</p>
+<ul>
+<li><strong>Wie gut ist unsere Entscheidung</strong> bei bestimmtem <em>r</em>?</li>
+<li><strong>Wie viel besser sind die Eingestellten</strong> (nochmal: „Eingestellt“ = Als-Geeignet-Eingeschätzt = überdurchschnittliche Prädiktor- oder X-Variable) tatsächlich?</li>
+</ul>
+<p>Die erste Frage bringt uns in die Gefilde von <strong>Spezifität</strong>, <strong>Sensitivität</strong> und <strong>Genauigkeit</strong>, mit denen wir mittlerweile seit Covid-19-Testungen bestens vertraut sein sollten (für Psychologen: Taylor-Russel-Tafeln sind hier ein weiteres Stichwort). Dennoch in Worte ganz kurz gefasst, was diese bedeuten, außerdem einige weitere ähnliche Werte:</p>
+<ul>
+<li>
+<p>Die <strong>Sensitivität</strong> gibt in diesem Fall an, wie oft wir für eine Person korrekterweise auf Basis eines überdurchschnittlichen Prädiktorwerts entscheiden, dass sie geeignet ist.</p>
+</li>
+<li>
+<p>Die <strong>Spezifität</strong> gibt an, wie oft wir für eine Person korrekterweise entscheiden, dass sie nicht geeignet ist.</p>
+</li>
+<li>
+<p>Die <strong>Genauigkeit</strong> gibt an, wie oft wir insgesamt die richtige Entscheidung über die Eignung treffen</p>
+</li>
+<li>
+<p>Die <strong>Erfolgs-zu-Misserfolgs-Rate</strong> gibt das Verhältnis zwischen korrekten und falschen Entscheidungen an.</p>
+</li>
+</ul>
+<p>Solange unsere Auswahlrate (das ist der Prozentsatz, den wir einstellen) und Basisrate (das sind die, die unabhängig vom Prädiktor geeignet wären) jeweils bei 50% liegen, ist alles schön symmetrisch, sodass Sensitivität, Spezifität und Genauigkeit den gleichen Wert annehmen. Auf diesen Fall beschränken wir uns. Wer entdeckungslustiger ist, darf an den Reglern spielen. Wer die „Sternchen-Hausaufgabe“ machen möchte, der googlet „ROC-Kurve“ und findet heraus, wie diese mit der Grafik hier zusammenhängen könnte.</p>
+<p>Wir gehen jetzt einmal vom wirklichen Standardsetting aus, d.h. wir legen eine psychologisch-realistische <strong>Korrelation von <em>r</em> = .2</strong> zugrunde, und entscheiden so dichotom, wie oben beschrieben. Dann finden wir, dass wir „nur“ eine <strong>Sensitivität/Spezifität/Genauigkeit</strong> von etwa <strong>56%</strong> erreichen. Das heißt, wir sind gar nicht so viel besser, als wenn wir eine Zufallsentscheidung (genauer 50/50 Erfolgswahrscheinlichkeit) treffen würden. Gleichzeitig treffen wir immerhin ca. <strong>1,3  mal so viele korrekte, wie falsche Entscheidungen</strong>. Steigern wir dir Korrelation auf <strong><em>r</em> = .3</strong>, liegen wir schon in <strong>60%</strong> der Fälle mit unserer Entscheidung richtig, und gelangen <strong>1,5</strong> mal häufiger zu korrekten als zu falschen Entscheidungen. Gehen wir hoch auf eine recht hohe Korrelation von <strong><em>r</em> = .4</strong>, sind wir bei <strong>63%</strong> richtigen Entscheidungen und einer Erfolgs-zu-Misserfolgs-Rate von <strong>1,6</strong>. Bei einer optimistischen Korrelation von <strong><em>r</em> = .5</strong> knacken wir dann zwei gedanklich wertvolle Marken: <strong>2/3</strong> der Entscheidungen sind korrekt und wir erreichen doppelt so viele korrekte wie falsche Entscheidungen. Doch um hier hin zu gelangen, ist einiges an Gehirnschmalz und (Forschungs-) Aufwand notwendig.</p>
+<p>Gleichzeitig ist die Korrelation von <em>r</em> = .5 für das spezifische Feld der Personalauswahl eine gewissermaßen „magische“ Korrelation, denn sie entspricht der in der vielleicht bedeutendsten Meta-Analyse der Personalauswahl gefundenen <strong>Validität (/Korrelation) von Intelligenzverfahren für die Personalauswahl</strong>. Zu bedenken ist hier aber, dass diese angegebenen Korrelationen <strong>korrigiert</strong> wurden für die <strong>imperfekte Messgenauigkeit</strong> in Prädiktor und Kriterium (weder der Berufserfolg noch die Intelligenz lassen sich ganz ohne Messfehler messen) sowie die <strong>Einschränkung der Varianz</strong> in Prädiktor und Kriterium (im tatsächlichen Beruf wird man nie Personen finden, die ganz unten am Leistungsspektrum angesiedelt sind, ebenso wenig wird man die komplette Range der Intelligenz abbilden – man denke an Berufe, die ein Studium erfordern, wo entsprechend stark nach Intelligenz vorselektiert wurde). In gewisser Weise gelten diese Korrelationswerte also nur in der Welt perfekt gemessener Variablen, doch diese ist eben nicht von dieser Welt.</p>
+<p>Aber wir gehen etwas weiter in der großen Metaanalyse. <strong>Kombiniert man Intelligenzverfahren mit strutkturierten Interviews, Arbeitsproben, oder  Integritätstests, kommt man auf eine Validität von .6</strong>. Laut dem neueren Paper von Schmidt und Kollegen (das aber seit 2016 ein „working Paper“ ist – keine Ahnung, wieso) scheinen in den Jahren nach 1998 auch anderen Interviewmethoden (unstrukturierte, strukturiert-telefonisch) mit ähnlichen Validitätssteigerungen verbunden zu sein. Außerdem gingen die Schätzungen für die multiple Korrelation (wir kombinieren mehrere X-Werte, um den Y-Wert vorherzusagen), sodass man scheinbar sogar gut mit korrigiertem <em>r</em> über .7 operiert. Hier bleibt jedoch festzuhalten, dass angesichts von Publication Bias, Questionable Research Practices etc. man allgemein gut daran tut, von geringeren Korrelationen auszugehen, außerdem interessieren im echten Leben weniger die korrigierten als die manifesten Korrelationen. .2 bis .4 dürfte dann die Range sein, auf die wir uns einstellen sollten.</p>
+<p>Als Beispiel: Kramer (2009) hat für Deutschland untersucht, wie die Korrelationen von Arbeitsleistung und Intelligenz ausfällt und gibt hier einen <strong>mittleren korrigierten Wert von <em>r</em> = .62</strong> an, die mittlere <strong>unkorrigierte Korrelation</strong> liegt hingegen bei <strong>.33</strong>. Was dann wie erwartet wieder näher an der Durschnittspsychologenkorrelation von .2 ist. <strong>Korrigiert für Publication Bias</strong>, landet Kramer dann bei <strong>.19</strong> – beinahe die Punktlandung auf .2.</p>
+<h2 id="wie-viel-besser-sind-die-eingestellten">Wie viel besser sind die Eingestellten?</h2>
+<p>Bleibt die zweite obere Frage zu klären: Wie viel besser sind die Eingestellten (nochmal: „Eingestellt“ = Als-Geeignet-Eingeschätzt = überdurchschnittliche Prädiktor- oder X-Variable) tatsächlich? Dafür schauen wir die untere der beiden Tabellen über der Grafik an. Hier habe ich einige Werte für das Kriterium aufgeführt.</p>
+<ul>
+<li>
+<p><strong>Kriteriumsmittel Ueber-/Unterdurchschnitt-Praediktor</strong>: Dieser Wert gibt den Mittelwert auf einer Z-Skala (Mittelwert 100, Standardabweichung = 10) für das Kriterium, bspw. Vorgesetzteneinschätzung, an: 1. von denen, die auf dem Prädiktor überdurchschnittlich  abschneiden (überdurchschnittlich intelligent sind), 2. die auf dem Prädiktor unterdurchschnittlich abschneiden (unterdurchschnittlich intelligent sind).</p>
+</li>
+<li>
+<p><strong>% Ueberdurchschnitt-Praediktor &gt; Unterdurchschnitt-Praediktor</strong>: Wie viel Prozent derjenigen, die überdurchschnittlich im Prädiktor abschneiden, sind auch überdurchschnittlich im Kriterium? Also: Wie viel Prozent der überdurchschnittlich intelligenten Personen werden erwartungsweise besser von ihren Vorgesetzten eingeschätzt als diejenigen, die unterdurchschnittlich intelligent sind?</p>
+</li>
+<li>
+<p><strong>% Ueberdurchschnitt-Praediktor ueber Kriteriumsmittel</strong>: Der Anteil der Personen, die überdurchschnittlich im Prädiktor abschneiden und über dem Gesamtmittelwert des Kriteriums liegen.</p>
+</li>
+</ul>
+<p>Zum besseren Verständnis gehe ich hier auch nochmal einige Werte durch. Bei einer <strong>Korrelation von .3</strong> finden wir, dass die als <strong>geeignet eingeschätzten Kandidaten</strong> in der Vorgesetzteneinschätzung etwas weniger als eine <strong>halbe Standardabweichung</strong> (legen wir die gemeinsame Standardabweichung zugrund) <strong>über</strong> den als <strong>nicht geeignet</strong> eingeschätzten Kandidaten liegen („Kriteriumsmittel Ueberdurchschnitt-Praediktor“ MINUS „Kriteriumsmittel Unterdurchschnitt-Praediktor“) und gleichzeitig nur in etwa <strong>1/5 Standardabweichung über dem Gesamtmittelwert</strong> von 100 liegt. Wir finden außerdem, dass sie in etwa <strong>63% der Fälle besser abschneiden, als die Kandidaten, die wir <em>nicht</em> für geeignet halten</strong>. Bleibt noch zu erwähnen, dass die Eingestellten in ca. <strong>60% der Fälle über dem Gesamtmittel</strong> der Vorgesetzten liegen (wieder: bei Symmetrie aller Raten, entspricht das den Spezifizitäts-/Sensitivitäts-/Genauigkeitswerten).</p>
+<p>Noch einmal das Gleiche mit <em>r</em> = .5. Die überdurchschnittlich Intelligenten liegen nun 4 Z-Werte über dem Gesamtmittel, also schon fast eine halbe Standardabweichung. Gleichzeitig liegen sie 8 Z-Wertpunkte über den unterdurchschnittlich intelligenten (= Cohen&rsquo;s <em>d</em> von .8, bei zugrundegelegter gemeinsamer Standardabweichung). Ferner werden sie in fast 3/4 besser von ihren Vorgesetzten eingeschätzt als die unterdurchschnittlich intelligenten, in 2/3 der Fälle werden sie als überdurchschnittlich geeignet von den Vorgesetzten eingeschätzt.</p>
+<h2 id="alle-guten-effekte-haben-eine-ende">Alle guten Effekte haben eine Ende</h2>
+<p>Bevor wir zum Ende gelangen, noch ein paar abschließende Bemerkungen. Die vielen Prozentzahlen lassen erahnen, dass damit unsere Korrelationen wirklich durchschlagende Effekte bringen, wir mit größeren Fallzahlen immer in der Welt der absoluten Zahlen schönere Endeffekte erwarten können. Zum Beispiel: Nehmen wir an, unsere Auswahl auf Basis der Korrelation von .3 sorgt dafür, dass ein so ausgesuchter Kandidat im Schnitt 2,000€ mehr Umsatz pro Jahr generiert, dann ist dieser Effekt bei 10 Kandidaten eben „nur“ 20,000€ Wert, bei 100 Kandidaten aber schon 200,000€. Wenn die Bewerber dann noch im Schnitt 10 Jahre im Unternehmen bleiben, ist mit schönen Skaleneffekten zu rechnen (unter der sehr vereinfachten Annahme, dass die ursprüngliche Korrelation zwischen Intelligenz und Umsatz bestehen bleibt). Die Kosten für den einmalig durchgeführten Intelligenztest unterscheiden sich aber zwischen 10 und 100 Kandidaten nicht so sehr. Der Intelligenztest wird so gesehen nicht für jeden weiteren durchgeführten Test besonders viel teurer ausfallen, aber ihn erst einmal zu bauen, da steckt schon Aufwand dahinter. Für solche Berechnungen gibt es einige Nutzenmodelle, die ich mir im Voraus zu diesem Blogeintrag auch angeschaut habe, allerdings fand ich das zumeist nicht besonders erquicklich, weshalb ich mich dagegen entschieden habe, diesen Blogeintrag mit Fokus auf diesen Modellen zu schreiben (damit  bin ich glaube ich den Weg der Forschung nachgegangen: Neuere Forschung zu diesen Nutzenmodellen habe ich wenige gefunden.).</p>
+<p>Der Sinn dieser abschließenden Bemerkung ist, dass das letzte Thema bei der Beurteilung von Effekten immer die Einbettung in der realen Welt ist. Das kann die Berechnung des zusätzlich generierten Umsatzes von intelligenteren Personen, die Heilungsrate bei gewissen Krankheiten/Störungen, oder eine subjektiv akzeptable Anzahl korrekter/falsche Entscheidungen sein. Daraus mache ich aber keinen Blogeintrag mehr (der guten Dinge sind nun schon 3), sondern verabschiede mich bis zum nächsten Mal.</p>
+<!-- raw HTML omitted -->
+<p>Quellen:</p>
+<p>Kramer, J. (2009). Allgemeine Intelligenz und beruflicher Erfolg in Deutschland: vertiefende und weiterführende Metaanalysen. <em>Psychologische Rundschau, 60</em>(2), 82-98.</p>
+<p>Schmidt, F. L., &amp; Hunter, J. E. (1998). The validity and utility of selection methods in personnel psychology: Practical and theoretical implications of 85 years of research findings. <em>Psychological bulletin, 124</em>(2), 262.</p>
+<p><a href="https://home.ubalt.edu/tmitch/645/session%204/Schmidt%20&amp;%20Oh%20validity%20and%20util%20100%20yrs%20of%20research%20Wk%20PPR%202016.pdf">Schmidt, F. (2016). The Validity and Utility of Selection Methods in Personnel Psychology: Practical and Theoretical Implications of 100 Years of Research Findings. <em>Working Paper</em>.</a></p>
+
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+            
+            <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--disabled">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="/2020/11/22/effektst%C3%A4rken-2.en-us/" data-tooltip="Effektstärken 2">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=/2021/02/07/effektst%C3%A4rken-3.en-us/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=/2021/02/07/effektst%C3%A4rken-3.en-us/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=/2021/02/07/effektst%C3%A4rken-3.en-us/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+            
+              
+            
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2021 Simon Büttner. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+        <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--disabled">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="/2020/11/22/effektst%C3%A4rken-2.en-us/" data-tooltip="Effektstärken 2">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=/2021/02/07/effektst%C3%A4rken-3.en-us/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=/2021/02/07/effektst%C3%A4rken-3.en-us/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=/2021/02/07/effektst%C3%A4rken-3.en-us/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+  <i id="btn-close-shareoptions" class="fa fa-close"></i>
+  <ul class="share-options">
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=%2F2021%2F02%2F07%2Feffektst%25C3%25A4rken-3.en-us%2F">
+          <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=%2F2021%2F02%2F07%2Feffektst%25C3%25A4rken-3.en-us%2F">
+          <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=%2F2021%2F02%2F07%2Feffektst%25C3%25A4rken-3.en-us%2F">
+          <i class="fa fa-google-plus"></i><span>Share on Google&#43;</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+      <img id="about-card-picture" src="/images/profilepic.png" alt="Author&#39;s picture" />
+    
+    <h4 id="about-card-name">Simon Büttner</h4>
+    
+      <div id="about-card-bio">Als R&amp;D Consultant beschäftige ich mich mit der datenlastigeren Seite der Psychologie. Daran möchte ich mit diesem Blog gerne andere teilhaben lassen.</div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        R&amp;D Consultant
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker"></i>
+        <br/>
+        Esslingen
+      </div>
+    
+  </div>
+</div>
+
+    
+
+    
+  
+    
+      <div id="cover" style="background-image:url('/images/why.jpg');"></div>
+    
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
+
+
+<script src="/js/script-pcw6v3xilnxydl1vddzazdverrnn9ctynvnxgwho987mfyqkuylcb1nlt.min.js"></script>
+
+
+<script lang="javascript">
+window.onload = updateMinWidth;
+window.onresize = updateMinWidth;
+document.getElementById("sidebar").addEventListener("transitionend", updateMinWidth);
+function updateMinWidth() {
+  var sidebar = document.getElementById("sidebar");
+  var main = document.getElementById("main");
+  main.style.minWidth = "";
+  var w1 = getComputedStyle(main).getPropertyValue("min-width");
+  var w2 = getComputedStyle(sidebar).getPropertyValue("width");
+  var w3 = getComputedStyle(sidebar).getPropertyValue("left");
+  main.style.minWidth = `calc(${w1} - ${w2} - ${w3})`;
+}
+</script>
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+  
+    
+  
+
+
+
+
+    
+  </body>
+</html>
+
